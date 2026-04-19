@@ -125,6 +125,15 @@ def is_blacklisted(name: str, urls: list, blacklist: list) -> bool:
 
 
 # ============================
+# 纯数字频道过滤
+# ============================
+def is_numeric_channel(name: str) -> bool:
+    n = name.strip()
+    n = re.sub(r"[台频道]+$", "", n)
+    return n.isdigit()
+
+
+# ============================
 # 添加频道源
 # ============================
 def add_channel(channels, name, url):
@@ -193,7 +202,7 @@ def detect_and_parse(content, channels):
     if text.startswith("{") and '"lives"' in text:
         parse_tvbox_json(text, channels)
     elif "#EXTM3U" in text or "#EXTINF" in text:
-        parse_m3u(text, channels)
+        parse_m3u(text)
     else:
         parse_txt_like(text, channels)
 
@@ -212,13 +221,13 @@ def channel_sort_key(name: str):
 
 
 # ============================
-# 输出酷9可用 txt（含娱乐频道 + 黑名单过滤）
+# 输出酷9可用 txt（含娱乐频道 + 黑名单 + 数字过滤）
 # ============================
 def build_output_txt(channels, whitelist, blacklist):
     lines = []
 
-    # 主频道分组
-    lines.append("主频道,#genre#")
+    # 电视频道
+    lines.append("电视频道,#genre#")
     for name in sorted(channels.keys(), key=channel_sort_key):
         if name not in whitelist:
             continue
@@ -229,7 +238,7 @@ def build_output_txt(channels, whitelist, blacklist):
             lines.append(f"{name},{url}")
         lines.append("")
 
-    # 娱乐频道分组
+    # 娱乐频道
     lines.append("娱乐频道,#genre#")
     for name in sorted(channels.keys()):
         if name in whitelist:
@@ -241,8 +250,12 @@ def build_output_txt(channels, whitelist, blacklist):
         if is_blacklisted(name, urls, blacklist):
             continue
 
-        # 源数量必须 ≥ 5
-        if len(urls) < 5:
+        # 纯数字频道过滤
+        if is_numeric_channel(name):
+            continue
+
+        # 源数量必须 ≥ 2
+        if len(urls) < 2:
             continue
 
         for url in urls:
