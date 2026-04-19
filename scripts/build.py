@@ -7,12 +7,12 @@ import json
 from collections import defaultdict
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
 from quality import (
     probe_stream,
     measure_first_frame_delay,
     snapshot_blur_score,
     quality_score,
+    save_cache,
     cache
 )
 
@@ -429,3 +429,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    save_cache(cache)
