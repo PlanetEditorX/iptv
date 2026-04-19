@@ -1,6 +1,5 @@
 import subprocess
 import json
-import re
 import tempfile
 import threading
 from pathlib import Path
@@ -9,20 +8,24 @@ import numpy as np
 import cv2
 
 CACHE_FILE = Path(__file__).parent / "cache.json"
-cache_lock = threading.Lock()
+FAIL_FILE = Path(__file__).parent / "fail_count.json"
 
-def load_cache():
-    if CACHE_FILE.exists():
+cache_lock = threading.Lock()
+fail_lock = threading.Lock()
+
+def load_json(path):
+    if path.exists():
         try:
-            return json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+            return json.loads(path.read_text(encoding="utf-8"))
         except:
             return {}
     return {}
 
-def save_cache(cache):
-    CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
+def save_json(path, data):
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
-cache = load_cache()
+cache = load_json(CACHE_FILE)
+fail_count = load_json(FAIL_FILE)
 
 
 def run_silent(cmd, timeout=5):
@@ -79,22 +82,32 @@ def snapshot_blur_score(url, timeout=5):
 
 
 def quality_score(url):
-    # 线程安全读取缓存
+    # 缓存命中
     with cache_lock:
         if url in cache:
             return cache[url]["score"]
 
-    # 未命中 → 检测
+    # 检测
     ok, w, h, bitrate = probe_stream(url)
     delay = measure_first_frame_delay(url)
     blur = snapshot_blur_score(url)
 
-    if not ok:
+    failed = (not ok) or (w == 0) or (h == 0)
+
+    # 更新失败计数
+    with fail_lock:
+        if failed:
+            fail_count[url] = fail_count.get(url, 0) + 1
+        else:
+            fail_count[url] = 0
+
+    # 评分
+    if failed:
         score = -999999
     else:
         score = (w * h) / 1000 + bitrate / 10000 + blur - delay * 10
 
-    # 线程安全写入缓存（但不写文件）
+    # 写入缓存
     with cache_lock:
         cache[url] = {
             "width": w,
@@ -106,3 +119,8 @@ def quality_score(url):
         }
 
     return score
+
+
+def save_all():
+    save_json(CACHE_FILE, cache)
+    save_json(FAIL_FILE, fail_count)

@@ -7,13 +7,15 @@ import json
 from collections import defaultdict
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
 from quality import (
     probe_stream,
     measure_first_frame_delay,
     snapshot_blur_score,
     quality_score,
-    save_cache,
-    cache
+    cache,
+    fail_count,
+    save_all
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -79,6 +81,7 @@ def get_logo(name: str):
         return None
     return f"{LOGO_BASE}{key}.png"
 
+
 # ============================
 # 读取上游 LIVE_URLS
 # ============================
@@ -126,15 +129,29 @@ def load_blacklist():
 
 
 # ============================
-# 下载上游内容
+# 下载上游内容（带重试）
 # ============================
-def fetch_text(url, timeout=8):
+def fetch_text(url, timeout=8, retries=3):
     print(f"[fetch] {url}")
-    r = requests.get(url, timeout=timeout)
-    r.raise_for_status()
-    if not r.encoding or r.encoding.lower() == "iso-8859-1":
-        r.encoding = r.apparent_encoding
-    return r.text
+
+    for attempt in range(1, retries + 1):
+        try:
+            r = requests.get(url, timeout=timeout)
+            r.raise_for_status()
+
+            if not r.encoding or r.encoding.lower() == "iso-8859-1":
+                r.encoding = r.apparent_encoding
+
+            return r.text
+
+        except Exception as e:
+            print(f"  Error: {e}  (attempt {attempt}/{retries})")
+
+            if attempt < retries:
+                continue
+            else:
+                print(f"  >>> Skip {url}\n")
+                return ""
 
 
 # ============================
@@ -151,7 +168,7 @@ def normalize_name(name: str) -> str:
     if m:
         return f"CETV{m.group(1)}"
 
-    name = re.sub(r"[^\u4e00-\u9fa5A-Za-z0-9]+", "", name)
+    name = re.sub(r"[^\u4e00-\u9fa5A-Za-z0-9+]+", "", name)
     return name
 
 
@@ -264,25 +281,13 @@ def detect_and_parse(content, channels):
         parse_m3u(text, channels)
     else:
         parse_txt_like(text, channels)
-
-
 # ============================
-# 自然排序
-# ============================
-def channel_sort_key(name: str):
-    m = re.match(r"(CCTV|CETV)(\d+)$", name.upper())
-    if m:
-        prefix = m.group(1)
-        num = int(m.group(2))
-        order_prefix = {"CCTV": 0, "CETV": 1}.get(prefix, 2)
-        return (order_prefix, num, "")
-    return (3, 0, name)
-
-
-# ============================
-# 并发 + 缓存 + 详细进度 B
+# 并发 + 缓存 + 失败计数 + 自动剔除坏源
 # ============================
 def detect_and_sort_urls(name, urls):
+    # 自动剔除失败 >= 10 次的源
+    urls = [u for u in urls if fail_count.get(u, 0) < 10]
+
     good_urls = [u for u in urls if is_good_url(u)]
     total = len(good_urls)
 
@@ -298,16 +303,15 @@ def detect_and_sort_urls(name, urls):
             url = future_map[future]
             score = future.result()
 
-            if url in cache:
-                w = cache[url]["width"]
-                h = cache[url]["height"]
-                bitrate = cache[url]["bitrate"]
-                delay = cache[url]["delay"]
-                blur = cache[url]["blur"]
-                cached = True
-            else:
-                w = h = bitrate = delay = blur = 0
-                cached = False
+            # 从缓存读取详细信息
+            info = cache.get(url, {})
+            w = info.get("width", 0)
+            h = info.get("height", 0)
+            bitrate = info.get("bitrate", 0)
+            delay = info.get("delay", 0)
+            blur = info.get("blur", 0)
+
+            cached = (url in cache)
 
             print(
                 f"[{name}] {idx}/{total}  "
@@ -364,11 +368,11 @@ def build_output_txt(channels, whitelist, blacklist):
 
 
 # ============================
-# M3U 输出
+# M3U 输出（含图标）
 # ============================
 def build_output_m3u(channels, whitelist, blacklist):
     lines = []
-    lines.append("#EXTM3U")
+    lines.append('#EXTM3U x-tvg-url="http://gh.qninq.cn/https://raw.githubusercontent.com/PlanetEditorX/iptv-api/refs/heads/master/output/epg/epg.gz"')
 
     # 电视频道
     for name in sorted(channels.keys(), key=channel_sort_key):
@@ -380,12 +384,18 @@ def build_output_m3u(channels, whitelist, blacklist):
 
         for url in urls:
             if logo:
-                lines.append(f'#EXTINF:-1 tvg-id="{name}" tvg-logo="{logo}" group-title="电视频道",{name}')
+                lines.append(
+                    f'#EXTINF:-1 tvg-id="{LOGO_ID_MAP.get(name, name)}" '
+                    f'tvg-name="{LOGO_ID_MAP.get(name, name)}" '
+                    f'tvg-logo="{logo}" group-title="📺央视频道",{LOGO_ID_MAP.get(name, name)}'
+                )
             else:
-                lines.append(f'#EXTINF:-1 tvg-id="{name}" group-title="电视频道",{name}')
+                lines.append(
+                    f'#EXTINF:-1 tvg-id="{name}" group-title="📺央视频道",{name}'
+                )
             lines.append(url)
 
-    # 娱乐频道
+    # 卫视频道 / 娱乐频道
     for name in sorted(channels.keys()):
         if name in whitelist:
             continue
@@ -405,9 +415,14 @@ def build_output_m3u(channels, whitelist, blacklist):
 
         for url in urls:
             if logo:
-                lines.append(f'#EXTINF:-1 tvg-id="{name}" tvg-logo="{logo}" group-title="娱乐频道",{name}')
+                lines.append(
+                    f'#EXTINF:-1 tvg-id="{name}" tvg-name="{name}" '
+                    f'tvg-logo="{logo}" group-title="📡卫视频道",{name}'
+                )
             else:
-                lines.append(f'#EXTINF:-1 tvg-id="{name}" group-title="娱乐频道",{name}')
+                lines.append(
+                    f'#EXTINF:-1 tvg-id="{name}" group-title="📡卫视频道",{name}'
+                )
             lines.append(url)
 
     return "\n".join(lines)
@@ -424,6 +439,7 @@ def main():
     blacklist = load_blacklist()
     live_sources = load_live_urls()
 
+    # 解析上游源
     for url, label in live_sources:
         try:
             content = fetch_text(url)
@@ -431,17 +447,19 @@ def main():
         except Exception as e:
             print(f"[error] {url} -> {e}")
 
-    # TXT
+    # TXT 输出
     out_txt = build_output_txt(channels, whitelist, blacklist)
     (OUTPUT_DIR / "ku9_live.txt").write_text(out_txt, encoding="utf-8")
 
-    # M3U
+    # M3U 输出
     out_m3u = build_output_m3u(channels, whitelist, blacklist)
     (OUTPUT_DIR / "ku9_live.m3u").write_text(out_m3u, encoding="utf-8")
 
     print("[done] wrote ku9_live.txt + ku9_live.m3u")
 
+    # 保存缓存 + 失败计数
+    save_all()
+
 
 if __name__ == "__main__":
     main()
-    save_cache(cache)
