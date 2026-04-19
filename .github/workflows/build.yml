@@ -1,0 +1,67 @@
+name: Build IPTV
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"   # 每 6 小时自动构建一次
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # -------------------------
+      # 1. 拉取仓库
+      # -------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # -------------------------
+      # 2. 缓存 IPTV 质量检测结果
+      # -------------------------
+      - name: Cache IPTV quality results
+        uses: actions/cache@v4
+        with:
+          path: scripts/cache.json
+          key: iptv-cache-${{ github.run_id }}
+          restore-keys: |
+            iptv-cache-
+
+      # -------------------------
+      # 3. 安装 Python
+      # -------------------------
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # -------------------------
+      # 4. 安装 ffmpeg（质量检测核心）
+      # -------------------------
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      # -------------------------
+      # 5. 安装依赖
+      # -------------------------
+      - name: Install Python dependencies
+        run: |
+          pip install pillow numpy opencv-python requests
+
+      # -------------------------
+      # 6. 运行 IPTV 构建脚本
+      # -------------------------
+      - name: Run IPTV build
+        run: |
+          python scripts/build.py
+
+      # -------------------------
+      # 7. 上传构建产物
+      # -------------------------
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ku9_live_output
+          path: output/
