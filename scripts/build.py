@@ -349,16 +349,20 @@ def build_output_txt(channels, whitelist, blacklist):
         if name in whitelist:
             continue
 
-        urls = detect_and_sort_urls(name, channels[name])
+        raw_urls = channels[name]
 
-        if is_blacklisted(name, urls, blacklist):
+        # 先过滤，不够 8 条直接跳过，不检测
+        if len(raw_urls) < 8:
+            continue
+
+        if is_blacklisted(name, raw_urls, blacklist):
             continue
 
         if is_numeric_channel(name):
             continue
 
-        if len(urls) < 8:
-            continue
+        # 需要检测的才检测
+        urls = detect_and_sort_urls(name, raw_urls)
 
         for url in urls:
             lines.append(f"{name},{url}")
@@ -400,16 +404,20 @@ def build_output_m3u(channels, whitelist, blacklist):
         if name in whitelist:
             continue
 
-        urls = detect_and_sort_urls(name, channels[name])
+        raw_urls = channels[name]
 
-        if is_blacklisted(name, urls, blacklist):
+        # 先过滤，不够 8 条直接跳过，不检测
+        if len(raw_urls) < 8:
+            continue
+
+        if is_blacklisted(name, raw_urls, blacklist):
             continue
 
         if is_numeric_channel(name):
             continue
 
-        if len(urls) < 8:
-            continue
+        # 需要检测的才检测
+        urls = detect_and_sort_urls(name, raw_urls)
 
         logo = get_logo(name)
 
