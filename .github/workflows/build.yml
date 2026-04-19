@@ -1,67 +1,117 @@
-name: Build IPTV
+name: IPTV Build
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: "0 */12 * * *"   # 每 12 小时自动构建一次
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
 
 jobs:
-  build:
+
+  # ============================
+  # CCTV 构建
+  # ============================
+  cctv:
     runs-on: ubuntu-latest
-
     steps:
-      # -------------------------
-      # 1. 拉取仓库
-      # -------------------------
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # -------------------------
-      # 2. 缓存 IPTV 质量检测结果
-      # -------------------------
-      - name: Cache IPTV quality results
-        uses: actions/cache@v4
-        with:
-          path: scripts/cache.json
-          key: iptv-cache-${{ github.run_id }}
-          restore-keys: |
-            iptv-cache-
-
-      # -------------------------
-      # 3. 安装 Python
-      # -------------------------
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      # -------------------------
-      # 4. 安装 ffmpeg（质量检测核心）
-      # -------------------------
-      - name: Install ffmpeg
+      - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
+          sudo apt update
+          sudo apt install -y ffmpeg python3-pip
+          pip3 install pillow numpy opencv-python-headless
 
-      # -------------------------
-      # 5. 安装依赖
-      # -------------------------
-      - name: Install Python dependencies
+      - name: Build CCTV
         run: |
-          pip install pillow numpy opencv-python requests
+          python3 scripts/build.py cctv
 
-      # -------------------------
-      # 6. 运行 IPTV 构建脚本
-      # -------------------------
-      - name: Run IPTV build
-        run: |
-          python scripts/build.py
-
-      # -------------------------
-      # 7. 上传构建产物
-      # -------------------------
-      - name: Upload build artifacts
+      - name: Upload CCTV artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ku9_live_output
+          name: cctv
+          path: output/
+
+  # ============================
+  # 卫视 构建
+  # ============================
+  satellite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y ffmpeg python3-pip
+          pip3 install pillow numpy opencv-python-headless
+
+      - name: Build Satellite
+        run: |
+          python3 scripts/build.py satellite
+
+      - name: Upload Satellite artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: satellite
+          path: output/
+
+  # ============================
+  # 娱乐频道 构建
+  # ============================
+  entertainment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y ffmpeg python3-pip
+          pip3 install pillow numpy opencv-python-headless
+
+      - name: Build Entertainment
+        run: |
+          python3 scripts/build.py entertainment
+
+      - name: Upload Entertainment artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: entertainment
+          path: output/
+
+  # ============================
+  # 合并 Job（依赖前 3 个 Job）
+  # ============================
+  merge:
+    runs-on: ubuntu-latest
+    needs: [cctv, satellite, entertainment]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: merged/
+
+      - name: Merge outputs
+        run: |
+          mkdir -p output
+
+          # 合并 TXT
+          cat merged/cctv/channels_cctv.txt \
+              merged/satellite/channels_satellite.txt \
+              merged/entertainment/channels_entertainment.txt \
+              > output/channels_all.txt
+
+          # 合并 M3U（去掉重复 EXTM3U 头）
+          echo '#EXTM3U' > output/channels_all.m3u
+          grep -h -v '#EXTM3U' merged/cctv/channels_cctv.m3u >> output/channels_all.m3u
+          grep -h -v '#EXTM3U' merged/satellite/channels_satellite.m3u >> output/channels_all.m3u
+          grep -h -v '#EXTM3U' merged/entertainment/channels_entertainment.m3u >> output/channels_all.m3u
+
+      - name: Upload final merged output
+        uses: actions/upload-artifact@v4
+        with:
+          name: final
           path: output/

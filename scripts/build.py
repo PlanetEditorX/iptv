@@ -7,6 +7,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import sys
 
 from quality import (
     quality_score,
@@ -86,14 +87,6 @@ def get_epg_id(name: str):
     return name
 
 def get_epg_meta(name: str, index: int):
-    """
-    自动生成增强版 EPG 字段：
-    - tvg-id
-    - tvg-name
-    - tvg-chno
-    - tvg-language
-    - tvg-country
-    """
     epg_id = get_epg_id(name)
     return {
         "id": epg_id,
@@ -102,6 +95,16 @@ def get_epg_meta(name: str, index: int):
         "lang": "zh",
         "country": "CN"
     }
+
+# ============================
+# 频道排序（自然排序）
+# ============================
+
+def channel_sort_key(name: str):
+    m = re.match(r"(CCTV|CETV)(\d+)", name)
+    if m:
+        return (m.group(1), int(m.group(2)))
+    return ("ZZZ", name)
 
 # ============================
 # 读取上游 LIVE_URLS
@@ -178,18 +181,6 @@ def normalize_name(name: str) -> str:
         return f"CETV{m.group(1)}"
     name = re.sub(r"[^\u4e00-\u9fa5A-Za-z0-9+]+", "", name)
     return name
-
-def channel_sort_key(name: str):
-    """
-    自然排序：
-    - CCTV1、CCTV2、CCTV10 按数字排序
-    - CETV 同理
-    - 其他频道按字典序排序
-    """
-    m = re.match(r"(CCTV|CETV)(\d+)", name)
-    if m:
-        return (m.group(1), int(m.group(2)))
-    return ("ZZZ", name)
 
 # ============================
 # URL 过滤
@@ -326,107 +317,131 @@ def detect_and_sort_urls(name, urls):
     return sorted(results.keys(), key=lambda u: results[u], reverse=True)
 
 # ============================
-# TXT 输出
+# TXT 输出（支持 mode）
 # ============================
 
-def build_output_txt(channels, whitelist, blacklist):
+def build_output_txt(channels, whitelist, blacklist, mode):
     lines = []
 
     # 电视频道
-    lines.append("电视频道,#genre#")
-    for idx, name in enumerate(sorted(channels.keys(), key=channel_sort_key), start=1):
-        if name not in whitelist:
-            continue
+    if mode in ("all", "cctv", "satellite"):
+        lines.append("电视频道,#genre#")
+        for idx, name in enumerate(sorted(channels.keys(), key=channel_sort_key), start=1):
+            if name not in whitelist:
+                continue
 
-        urls = detect_and_sort_urls(name, channels[name])
+            # CCTV 模式
+            if mode == "cctv" and not name.startswith("CCTV"):
+                continue
 
-        for url in urls:
-            lines.append(f"{name},{url}")
-        lines.append("")
+            # 卫视模式
+            if mode == "satellite" and name.startswith("CCTV"):
+                continue
+
+            urls = detect_and_sort_urls(name, channels[name])
+
+            for url in urls:
+                lines.append(f"{name},{url}")
+            lines.append("")
 
     # 娱乐频道
-    lines.append("娱乐频道,#genre#")
-    for idx, name in enumerate(sorted(channels.keys()), start=1):
-        if name in whitelist:
-            continue
+    if mode in ("all", "entertainment"):
+        lines.append("娱乐频道,#genre#")
+        for idx, name in enumerate(sorted(channels.keys()), start=1):
+            if name in whitelist:
+                continue
 
-        raw_urls = channels[name]
+            raw_urls = channels[name]
 
-        if len(raw_urls) < 8:
-            continue
-        if is_blacklisted(name, raw_urls, blacklist):
-            continue
-        if is_numeric_channel(name):
-            continue
+            if len(raw_urls) < 8:
+                continue
+            if is_blacklisted(name, raw_urls, blacklist):
+                continue
+            if is_numeric_channel(name):
+                continue
 
-        urls = detect_and_sort_urls(name, raw_urls)
+            urls = detect_and_sort_urls(name, raw_urls)
 
-        for url in urls:
-            lines.append(f"{name},{url}")
-        lines.append("")
+            for url in urls:
+                lines.append(f"{name},{url}")
+            lines.append("")
 
     return "\n".join(lines)
 
 # ============================
-# M3U 输出（增强版 EPG）
+# M3U 输出（支持 mode）
 # ============================
 
-def build_output_m3u(channels, whitelist, blacklist):
+def build_output_m3u(channels, whitelist, blacklist, mode):
     lines = []
     lines.append('#EXTM3U x-tvg-url="http://gh.qninq.cn/https://raw.githubusercontent.com/PlanetEditorX/iptv-api/refs/heads/master/output/epg/epg.gz"')
 
     # 电视频道
-    for idx, name in enumerate(sorted(channels.keys(), key=channel_sort_key), start=1):
-        if name not in whitelist:
-            continue
+    if mode in ("all", "cctv", "satellite"):
+        for idx, name in enumerate(sorted(channels.keys(), key=channel_sort_key), start=1):
+            if name not in whitelist:
+                continue
 
-        urls = detect_and_sort_urls(name, channels[name])
-        logo = get_logo(name)
-        epg = get_epg_meta(name, idx)
+            if mode == "cctv" and not name.startswith("CCTV"):
+                continue
 
-        for url in urls:
-            lines.append(
-                f'#EXTINF:-1 tvg-id="{epg["id"]}" tvg-name="{epg["name"]}" '
-                f'tvg-chno="{epg["chno"]}" tvg-language="{epg["lang"]}" '
-                f'tvg-country="{epg["country"]}" '
-                f'tvg-logo="{logo}" group-title="📺央视频道",{epg["name"]}'
-            )
-            lines.append(url)
+            if mode == "satellite" and name.startswith("CCTV"):
+                continue
 
-    # 卫视频道 / 娱乐频道
-    for idx, name in enumerate(sorted(channels.keys()), start=1):
-        if name in whitelist:
-            continue
+            urls = detect_and_sort_urls(name, channels[name])
+            logo = get_logo(name)
+            epg = get_epg_meta(name, idx)
 
-        raw_urls = channels[name]
+            for url in urls:
+                lines.append(
+                    f'#EXTINF:-1 tvg-id="{epg["id"]}" tvg-name="{epg["name"]}" '
+                    f'tvg-chno="{epg["chno"]}" tvg-language="{epg["lang"]}" '
+                    f'tvg-country="{epg["country"]}" '
+                    f'tvg-logo="{logo}" group-title="📺央视频道",{epg["name"]}'
+                )
+                lines.append(url)
 
-        if len(raw_urls) < 8:
-            continue
-        if is_blacklisted(name, raw_urls, blacklist):
-            continue
-        if is_numeric_channel(name):
-            continue
+    # 娱乐频道
+    if mode in ("all", "entertainment"):
+        for idx, name in enumerate(sorted(channels.keys()), start=1):
+            if name in whitelist:
+                continue
 
-        urls = detect_and_sort_urls(name, raw_urls)
-        logo = get_logo(name)
-        epg = get_epg_meta(name, idx)
+            raw_urls = channels[name]
 
-        for url in urls:
-            lines.append(
-                f'#EXTINF:-1 tvg-id="{epg["id"]}" tvg-name="{epg["name"]}" '
-                f'tvg-chno="{epg["chno"]}" tvg-language="{epg["lang"]}" '
-                f'tvg-country="{epg["country"]}" '
-                f'tvg-logo="{logo}" group-title="📡卫视频道",{name}'
-            )
-            lines.append(url)
+            if len(raw_urls) < 8:
+                continue
+            if is_blacklisted(name, raw_urls, blacklist):
+                continue
+            if is_numeric_channel(name):
+                continue
+
+            urls = detect_and_sort_urls(name, raw_urls)
+            logo = get_logo(name)
+            epg = get_epg_meta(name, idx)
+
+            for url in urls:
+                lines.append(
+                    f'#EXTINF:-1 tvg-id="{epg["id"]}" tvg-name="{epg["name"]}" '
+                    f'tvg-chno="{epg["chno"]}" tvg-language="{epg["lang"]}" '
+                    f'tvg-country="{epg["country"]}" '
+                    f'tvg-logo="{logo}" group-title="📡卫视频道",{name}'
+                )
+                lines.append(url)
 
     return "\n".join(lines)
 
 # ============================
-# 主流程
+# 主流程（支持 mode）
 # ============================
 
 def main():
+    mode = "all"
+    if len(sys.argv) >= 2:
+        mode = sys.argv[1].lower()
+
+    print(f"[mode] 当前构建模式：{mode}")
+
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     channels = defaultdict(list)
@@ -441,13 +456,13 @@ def main():
         except Exception as e:
             print(f"[error] {url} -> {e}")
 
-    out_txt = build_output_txt(channels, whitelist, blacklist)
-    (OUTPUT_DIR / "channels.txt").write_text(out_txt, encoding="utf-8")
+    out_txt = build_output_txt(channels, whitelist, blacklist, mode)
+    (OUTPUT_DIR / f"channels_{mode}.txt").write_text(out_txt, encoding="utf-8")
 
-    out_m3u = build_output_m3u(channels, whitelist, blacklist)
-    (OUTPUT_DIR / "channels.m3u").write_text(out_m3u, encoding="utf-8")
+    out_m3u = build_output_m3u(channels, whitelist, blacklist, mode)
+    (OUTPUT_DIR / f"channels_{mode}.m3u").write_text(out_m3u, encoding="utf-8")
 
-    print("[done] wrote channels.txt + channels.m3u")
+    print(f"[done] wrote channels_{mode}.txt + channels_{mode}.m3u")
 
     save_all()
 
