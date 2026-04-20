@@ -25,8 +25,7 @@ jobs:
           pip3 install pillow numpy opencv-python-headless
 
       - name: Build CCTV
-        run: |
-          python3 scripts/build.py cctv
+        run: python3 scripts/build.py cctv
 
       - name: Upload CCTV artifact
         uses: actions/upload-artifact@v4
@@ -49,8 +48,7 @@ jobs:
           pip3 install pillow numpy opencv-python-headless
 
       - name: Build Satellite
-        run: |
-          python3 scripts/build.py satellite
+        run: python3 scripts/build.py satellite
 
       - name: Upload Satellite artifact
         uses: actions/upload-artifact@v4
@@ -73,8 +71,7 @@ jobs:
           pip3 install pillow numpy opencv-python-headless
 
       - name: Build Entertainment
-        run: |
-          python3 scripts/build.py entertainment
+        run: python3 scripts/build.py entertainment
 
       - name: Upload Entertainment artifact
         uses: actions/upload-artifact@v4
@@ -101,17 +98,24 @@ jobs:
         run: |
           mkdir -p output
 
-          # 合并 TXT
-          cat merged/cctv/channels_cctv.txt \
-              merged/satellite/channels_satellite.txt \
-              merged/entertainment/channels_entertainment.txt \
-              > output/channels_all.txt
+          echo "合并 TXT..."
+          touch output/channels_all.txt
+          for f in merged/*/*.txt; do
+            if [ -f "$f" ]; then
+              echo "合并 $f"
+              cat "$f" >> output/channels_all.txt
+              echo "" >> output/channels_all.txt
+            fi
+          done
 
-          # 合并 M3U（去掉重复 EXTM3U 头）
+          echo "合并 M3U..."
           echo '#EXTM3U' > output/channels_all.m3u
-          grep -h -v '#EXTM3U' merged/cctv/channels_cctv.m3u >> output/channels_all.m3u
-          grep -h -v '#EXTM3U' merged/satellite/channels_satellite.m3u >> output/channels_all.m3u
-          grep -h -v '#EXTM3U' merged/entertainment/channels_entertainment.m3u >> output/channels_all.m3u
+          for f in merged/*/*.m3u; do
+            if [ -f "$f" ]; then
+              echo "合并 $f"
+              grep -h -v '#EXTM3U' "$f" >> output/channels_all.m3u
+            fi
+          done
 
       - name: Upload final merged output
         uses: actions/upload-artifact@v4
@@ -124,6 +128,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add output/channels_all.m3u output/channels_all.txt
+          git add output/channels_all.m3u output/channels_all.txt || true
           git commit -m "Update merged IPTV output" || echo "No changes to commit"
-          git push
+          git push || true
