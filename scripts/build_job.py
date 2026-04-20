@@ -17,6 +17,10 @@ from quality_raw import (
     save_all
 )
 
+# ============================
+# 全局路径
+# ============================
+
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES_DIR = ROOT / "sources"
 OUTPUT_DIR = ROOT / "output"
@@ -25,11 +29,327 @@ LIVE_URLS_FILE = SOURCES_DIR / "live_urls.txt"
 CHANNEL_LIST_FILE = SOURCES_DIR / "channel_list.txt"
 BLACKLIST_FILE = SOURCES_DIR / "blacklist.txt"
 
+# ============================
+# 全局白名单 / 黑名单
+# ============================
+
 WHITELIST = set()
 BLACKLIST = []
 
+# URL → 上游源映射
 URL_SOURCE = {}
-CHANNEL_REPORT = {}
+
+# ============================
+# 名称规范化
+# ============================
+
+def normalize_name(name: str) -> str:
+    name = name.strip()
+    m = re.match(r"CCTV[- ]?0?(\d+)", name.upper())
+    if m:
+        return f"CCTV{m.group(1)}"
+    m = re.match(r"CETV[- ]?0?(\d+)", name.upper())
+    if m:
+        return f"CETV{m.group(1)}"
+    name = re.sub(r"[^\u4e00-\u9fa5A-Za-z0-9+]+", "", name)
+    return name
+
+# ============================
+# URL 过滤
+# ============================
+
+def is_good_url(u: str) -> bool:
+    u = u.strip()
+    if not u.startswith("http"):
+        return False
+    if u.endswith("$"):
+        return False
+    bad_keywords = ["udp/", "rtp/", "://239.", "://224."]
+    if any(k in u for k in bad_keywords):
+        return False
+    return True
+
+def is_numeric_channel(name: str) -> bool:
+    n = name.strip()
+    n = re.sub(r"[台频道]+$", "", n)
+    return n.isdigit()
+
+# ============================
+# URL 归一化
+# ============================
+
+from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
+
+def normalize_url(url: str) -> str:
+    if not url.startswith("http"):
+        return url
+
+    parsed = urlparse(url)
+    query = dict(parse_qsl(parsed.query))
+
+    drop_keys = {
+        "token", "auth", "ts", "sign", "expires", "expiry",
+        "e", "_t", "_ts", "uuid", "session", "sessionid",
+        "v", "ver", "random", "r", "t"
+    }
+
+    query = {k: v for k, v in query.items() if k.lower() not in drop_keys}
+    sorted_query = urlencode(sorted(query.items()))
+
+    path = parsed.path.rstrip("/")
+    path = re.sub(r"\.m3u8.*$", ".m3u8", path)
+    path = re.sub(r"\.flv.*$", ".flv", path)
+
+    return urlunparse((
+        parsed.scheme,
+        parsed.netloc,
+        path,
+        parsed.params,
+        sorted_query,
+        parsed.fragment
+    ))
+
+# ============================
+# 添加频道源（完整黑名单逻辑）
+# ============================
+
+def add_channel(channels, name, url, source_url=None):
+    name = normalize_name(name)
+    url = normalize_url(url.strip())
+
+    if not name or not url:
+        return
+
+    # 黑名单只对非白名单频道生效
+    if name not in WHITELIST:
+        for key in BLACKLIST:
+            if key in name or key in url:
+                return
+
+    if is_numeric_channel(name):
+        return
+
+    if not is_good_url(url):
+        return
+
+    if url not in channels[name]:
+        channels[name].append(url)
+        if source_url:
+            URL_SOURCE[url] = source_url
+
+# ============================
+# 解析 TXT / M3U / JSON
+# ============================
+
+def parse_txt_like(content, channels, source_url=None):
+    for line in content.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or line.startswith("//"):
+            continue
+        if ",http" in line:
+            name, url = line.split(",", 1)
+        elif "#" in line and "http" in line:
+            name, url = line.split("#", 1)
+        else:
+            continue
+        add_channel(channels, name, url, source_url)
+
+def parse_m3u(content, channels, source_url=None):
+    last_name = None
+    for line in content.splitlines():
+        line = line.strip()
+        if line.startswith("#EXTINF"):
+            if "," in line:
+                last_name = line.split(",", 1)[1].strip()
+        elif line and not line.startswith("#") and last_name:
+            add_channel(channels, last_name, line, source_url)
+            last_name = None
+
+def parse_tvbox_json(content, channels, source_url=None):
+    try:
+        data = json.loads(content)
+    except:
+        return
+    lives = data.get("lives") or []
+    for live in lives:
+        for ch in live.get("channels", []):
+            name = ch.get("name")
+            urls = ch.get("urls") or []
+            for url in urls:
+                add_channel(channels, name, url, source_url)
+
+def detect_and_parse(content, channels, source_url=None):
+    text = content.lstrip()
+    if text.startswith("{") and '"lives"' in text:
+        parse_tvbox_json(text, channels, source_url)
+    elif "#EXTM3U" in text or "#EXTINF" in text:
+        parse_m3u(text, channels, source_url)
+    else:
+        parse_txt_like(text, channels, source_url)
+
+# ============================
+# 并发检测 + 排序（无判刑）
+# ============================
+
+def detect_and_sort_urls(name, urls, is_entertainment=False):
+    urls = list(set(urls))
+    good_urls = [u for u in urls if is_good_url(u)]
+    total = len(good_urls)
+
+    print(f"\n[{name}] 开始检测，共 {total} 条源\n", flush=True)
+
+    results = {}
+    THREADS = 4
+
+    with ThreadPoolExecutor(max_workers=THREADS) as exe:
+        future_map = {exe.submit(quality_score, u): u for u in good_urls}
+
+        for idx, future in enumerate(as_completed(future_map), start=1):
+            url = future_map[future]
+            score, cached = future.result()
+
+            info = cache.get(url, {})
+            w = info.get("width", 0)
+            h = info.get("height", 0)
+            bitrate = info.get("bitrate", 0)
+            delay = info.get("delay", 0)
+            blur = info.get("blur", 0)
+
+            if bitrate and bitrate > 0:
+                mbps_text = f"{bitrate / 1_000_000:.2f}Mbps"
+            else:
+                mbps_text = "N/A"
+
+            print(
+                f"[{name}] {idx}/{total} "
+                f"{'缓存' if cached else '检测'} → "
+                f"{w}x{h} | {mbps_text} | 延迟 {delay}s | 清晰度 {blur:.1f} | 得分 {score:.1f}",
+                flush=True
+            )
+
+            results[url] = score
+
+    # 娱乐频道过滤（保留原逻辑）
+    if is_entertainment:
+        filtered = {}
+        for url, score in results.items():
+            info = cache.get(url, {})
+            w = info.get("width", 0)
+            h = info.get("height", 0)
+            if w >= 1280 and h >= 720 and score > 0:
+                filtered[url] = score
+        results = filtered
+
+    print(f"[{name}] 检测完成，可用 {sum(1 for s in results.values() if s > 0)} / {total}\n", flush=True)
+
+    return sorted(results.keys(), key=lambda u: results[u], reverse=True)
+
+# ============================
+# TXT 输出（完整拆分逻辑）
+# ============================
+
+def channel_sort_key(name: str):
+    m = re.match(r"(CCTV|CETV)(\d+)", name)
+    if m:
+        return (m.group(1), int(m.group(2)))
+    return ("ZZZ", name)
+
+def build_output_txt(channels, mode):
+    lines = []
+
+    if mode in ("all", "cctv", "satellite"):
+        lines.append("电视频道,#genre#")
+        for name in sorted(channels.keys(), key=channel_sort_key):
+
+            if name not in WHITELIST:
+                continue
+
+            if mode == "cctv" and not name.startswith("CCTV"):
+                continue
+
+            if mode == "satellite" and name.startswith("CCTV"):
+                continue
+
+            urls = detect_and_sort_urls(name, channels[name])
+
+            for url in urls:
+                lines.append(f"{name},{url}")
+            lines.append("")
+
+    if mode in ("all", "entertainment"):
+        lines.append("娱乐频道,#genre#")
+        for name in sorted(channels.keys()):
+
+            if name in WHITELIST:
+                continue
+
+            raw_urls = channels[name]
+
+            if len(raw_urls) < 5:
+                continue
+
+            if is_numeric_channel(name):
+                continue
+
+            urls = detect_and_sort_urls(name, raw_urls, is_entertainment=True)
+
+            for url in urls:
+                lines.append(f"{name},{url}")
+            lines.append("")
+
+    return "\n".join(lines)
+
+# ============================
+# M3U 输出（完整拆分逻辑）
+# ============================
+
+def build_output_m3u(channels, mode):
+    lines = []
+    lines.append("#EXTM3U")
+
+    if mode in ("all", "cctv", "satellite"):
+        for name in sorted(channels.keys(), key=channel_sort_key):
+
+            if name not in WHITELIST:
+                continue
+
+            if mode == "cctv" and not name.startswith("CCTV"):
+                continue
+
+            if mode == "satellite" and name.startswith("CCTV"):
+                continue
+
+            urls = detect_and_sort_urls(name, channels[name])
+
+            for url in urls:
+                lines.append(f"#EXTINF:-1,{name}")
+                lines.append(url)
+
+    if mode in ("all", "entertainment"):
+        for name in sorted(channels.keys()):
+
+            if name in WHITELIST:
+                continue
+
+            raw_urls = channels[name]
+
+            if len(raw_urls) < 5:
+                continue
+
+            if is_numeric_channel(name):
+                continue
+
+            urls = detect_and_sort_urls(name, raw_urls, is_entertainment=True)
+
+            for url in urls:
+                lines.append(f"#EXTINF:-1,{name}")
+                lines.append(url)
+
+    return "\n".join(lines)
+
+# ============================
+# 主流程（无判刑）
+# ============================
 
 def load_live_urls():
     items = []
@@ -76,158 +396,8 @@ def fetch_text(url, timeout=8, retries=3):
             return r.text
         except:
             if attempt == retries:
+                print(f"  >>> Skip {url}")
                 return ""
-
-def normalize_name(name: str) -> str:
-    name = name.strip()
-    m = re.match(r"CCTV[- ]?0?(\d+)", name.upper())
-    if m:
-        return f"CCTV{m.group(1)}"
-    m = re.match(r"CETV[- ]?0?(\d+)", name.upper())
-    if m:
-        return f"CETV{m.group(1)}"
-    name = re.sub(r"[^\u4e00-\u9fa5A-Za-z0-9+]+", "", name)
-    return name
-
-def is_good_url(u: str) -> bool:
-    u = u.strip()
-    if not u.startswith("http"):
-        return False
-    if u.endswith("$"):
-        return False
-    bad_keywords = ["udp/", "rtp/", "://239.", "://224."]
-    if any(k in u for k in bad_keywords):
-        return False
-    return True
-
-def add_channel(channels, name, url, source_url=None):
-    name = normalize_name(name)
-    url = url.strip()
-
-    if not name or not url:
-        return
-
-    if name not in WHITELIST:
-        for key in BLACKLIST:
-            if key in name or key in url:
-                return
-
-    if not is_good_url(url):
-        return
-
-    if url not in channels[name]:
-        channels[name].append(url)
-        if source_url:
-            URL_SOURCE[url] = source_url
-
-def parse_txt_like(content, channels, source_url=None):
-    for line in content.splitlines():
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        if ",http" in line:
-            name, url = line.split(",", 1)
-        elif "#" in line and "http" in line:
-            name, url = line.split("#", 1)
-        else:
-            continue
-        add_channel(channels, name, url, source_url)
-
-def parse_m3u(content, channels, source_url=None):
-    last_name = None
-    for line in content.splitlines():
-        line = line.strip()
-        if line.startswith("#EXTINF"):
-            if "," in line:
-                last_name = line.split(",", 1)[1].strip()
-        elif line and not line.startswith("#") and last_name:
-            add_channel(channels, last_name, line, source_url)
-            last_name = None
-
-def detect_and_parse(content, channels, source_url=None):
-    text = content.lstrip()
-    if text.startswith("{") and '"lives"' in text:
-        try:
-            data = json.loads(text)
-            lives = data.get("lives") or []
-            for live in lives:
-                for ch in live.get("channels", []):
-                    name = ch.get("name")
-                    urls = ch.get("urls") or []
-                    for url in urls:
-                        add_channel(channels, name, url, source_url)
-        except:
-            pass
-    elif "#EXTM3U" in text or "#EXTINF" in text:
-        parse_m3u(text, channels, source_url)
-    else:
-        parse_txt_like(text, channels, source_url)
-
-def detect_and_sort_urls(name, urls):
-    urls = list(set(urls))
-    good_urls = [u for u in urls if is_good_url(u)]
-    total = len(good_urls)
-
-    print(f"\n[{name}] 开始检测，共 {total} 条源\n", flush=True)
-
-    results = {}
-    THREADS = 4
-
-    with ThreadPoolExecutor(max_workers=THREADS) as exe:
-        future_map = {exe.submit(quality_score, u): u for u in good_urls}
-
-        for idx, future in enumerate(as_completed(future_map), start=1):
-            url = future_map[future]
-            score, cached = future.result()
-
-            info = cache.get(url, {})
-            w = info.get("width", 0)
-            h = info.get("height", 0)
-            bitrate = info.get("bitrate", 0)
-            delay = info.get("delay", 0)
-            blur = info.get("blur", 0)
-
-            if bitrate and bitrate > 0:
-                mbps_text = f"{bitrate / 1_000_000:.2f}Mbps"
-            else:
-                mbps_text = "N/A"
-
-            print(
-                f"[{name}] {idx}/{total} "
-                f"{'缓存' if cached else '检测'} → "
-                f"{w}x{h} | {mbps_text} | 延迟 {delay}s | 清晰度 {blur:.1f} | 得分 {score:.1f}",
-                flush=True
-            )
-
-            results[url] = score
-
-    print(f"[{name}] 检测完成，可用 {sum(1 for s in results.values() if s > 0)} / {total}\n", flush=True)
-
-    return sorted(results.keys(), key=lambda u: results[u], reverse=True)
-
-def build_output_txt(channels, mode):
-    lines = []
-    lines.append("电视频道,#genre#")
-
-    for name in sorted(channels.keys()):
-        urls = detect_and_sort_urls(name, channels[name])
-        for url in urls:
-            lines.append(f"{name},{url}")
-        lines.append("")
-
-    return "\n".join(lines)
-
-def build_output_m3u(channels, mode):
-    lines = []
-    lines.append("#EXTM3U")
-
-    for name in sorted(channels.keys()):
-        urls = detect_and_sort_urls(name, channels[name])
-        for url in urls:
-            lines.append(f"#EXTINF:-1,{name}")
-            lines.append(url)
-
-    return "\n".join(lines)
 
 def main(mode):
     OUTPUT_DIR.mkdir(exist_ok=True)
@@ -239,16 +409,19 @@ def main(mode):
     live_sources = load_live_urls()
     channels = defaultdict(list)
 
+    # 解析所有上游源
     for src, label in live_sources:
         content = fetch_text(src)
         detect_and_parse(content, channels, source_url=src)
 
+    # 输出
     txt = build_output_txt(channels, mode)
     m3u = build_output_m3u(channels, mode)
 
     (OUTPUT_DIR / f"channels_{mode}.txt").write_text(txt, encoding="utf-8")
     (OUTPUT_DIR / f"channels_{mode}.m3u").write_text(m3u, encoding="utf-8")
 
+    # 保存 raw_results
     save_all(mode)
 
 if __name__ == "__main__":
