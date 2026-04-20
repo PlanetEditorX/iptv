@@ -175,7 +175,7 @@ def rebuild_live_urls(failed_sources):
 
 def build_readme(report, failed_sources):
     html = []
-    html.append("# IPTV 质量报表（CI 合并版）\n")
+    html.append("# IPTV 质量报表\n")
 
     cst = timezone(timedelta(hours=8))
     build_time = datetime.now(cst).strftime("%Y-%m-%d %H:%M:%S")

@@ -79,10 +79,10 @@ jobs:
       - name: Restore state files
         run: |
           echo "=== 恢复 raw_results_* ==="
-          cp merged/state-*/state/raw_results_*.json sources/state/ || true
+          cp merged/state-*/raw_results_*.json sources/state/ || true
 
           echo "=== 恢复 cache.json ==="
-          cp merged/state-*/state/cache.json sources/state/ || true
+          cp merged/state-*/cache.json sources/state/ || true
 
       # ============================
       # 统一判刑（fail_count / failed_sources / live_urls / README）
