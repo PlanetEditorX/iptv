@@ -22,27 +22,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Restore quality cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            scripts/cache.json
-            scripts/fail_count.json
-          key: quality-${{ matrix.name }}
-          restore-keys: |
-            quality-
-
+      # 安装依赖
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y ffmpeg python3-pip
           pip3 install pillow numpy opencv-python-headless
 
+      # 构建
       - name: Build ${{ matrix.name }}
         run: |
           rm -rf output
           python3 scripts/build.py ${{ matrix.name }}
 
+          # 自动创建 output_目录
           mkdir -p output_${{ matrix.name }}
           mv output/* output_${{ matrix.name }}/
 
@@ -53,11 +46,22 @@ jobs:
           head -n 100 output_${{ matrix.name }}/channels_${{ matrix.name }}.m3u || true
           echo "==========================================="
 
+      # 上传构建产物
       - name: Upload artifact ${{ matrix.name }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.name }}
           path: output_${{ matrix.name }}/
+
+      # 自动提交状态文件（fail_count.json / cache.json / source_fail.json）
+      - name: Commit updated state files
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add scripts/cache.json scripts/fail_count.json scripts/source_fail.json || true
+          git commit -m "Update state files for ${{ matrix.name }}" || echo "No changes"
+          git push || true
 
   # ============================
   # 合并 Job
@@ -105,5 +109,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
           git add output/channels_all.m3u output/channels_all.txt README.md || true
-          git commit -m "Update merged IPTV output" || echo "No changes to commit"
+          git commit -m "Update merged IPTV output" || echo "No changes"
           git push || true
