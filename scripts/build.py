@@ -211,13 +211,69 @@ def is_numeric_channel(name: str) -> bool:
     n = re.sub(r"[台频道]+$", "", n)
     return n.isdigit()
 
+from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
+
+def normalize_url(url: str) -> str:
+    """
+    专业级 URL 归一化：
+    - 去掉无意义参数
+    - 参数排序
+    - 去掉重复 CDN
+    - 去掉 session/token/ts
+    - 去掉尾部斜杠
+    - 统一 m3u8/flv 格式
+    """
+
+    if not url.startswith("http"):
+        return url
+
+    # 解析 URL
+    parsed = urlparse(url)
+    query = dict(parse_qsl(parsed.query))
+
+    # 需要删除的无意义参数
+    drop_keys = {
+        "token", "auth", "ts", "sign", "expires", "expiry",
+        "e", "_t", "_ts", "uuid", "session", "sessionid",
+        "v", "ver", "random", "r", "t"
+    }
+
+    # 删除无意义参数
+    query = {k: v for k, v in query.items() if k.lower() not in drop_keys}
+
+    # 参数排序（避免顺序变化导致缓存失效）
+    sorted_query = urlencode(sorted(query.items()))
+
+    # 去掉尾部斜杠
+    path = parsed.path.rstrip("/")
+
+    # 去掉 .m3u8? → .m3u8
+    if path.endswith(".m3u8") or path.endswith(".flv"):
+        pass
+    else:
+        # 去掉奇怪的后缀
+        path = re.sub(r"\.m3u8.*$", ".m3u8", path)
+        path = re.sub(r"\.flv.*$", ".flv", path)
+
+    # 重建 URL
+    normalized = urlunparse((
+        parsed.scheme,
+        parsed.netloc,
+        path,
+        parsed.params,
+        sorted_query,
+        parsed.fragment
+    ))
+
+    return normalized
+
 # ============================
 # 添加频道源
 # ============================
 
 def add_channel(channels, name, url, blacklist):
     name = normalize_name(name)
-    url = url.strip()
+    url = normalize_url(url.strip())
 
     if not name or not url:
         return
