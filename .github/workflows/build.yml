@@ -139,6 +139,14 @@ jobs:
           path: output/
 
       # ============================
+      # 清理 raw_results
+      # ============================
+      - name: Cleanup raw_results
+        run: |
+          echo "=== 清理 raw_results_* ==="
+          rm -f sources/raw_results_*.json || true
+
+      # ============================
       # 最终一次性提交所有文件
       # ============================
       - name: Commit and push ALL updated files
@@ -146,9 +154,14 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add scripts/*.json || true
-          git add sources/*.json sources/live_urls.txt || true
+          # 只提交真正需要跨运行保存的状态文件
+          git add scripts/fail_count.json || true
+          git add sources/failed_sources.json sources/live_urls.txt || true
+
+          # 提交最终输出
           git add output/*.txt output/*.m3u || true
+
+          # 提交 README
           git add README.md || true
 
           git commit -m "Unified IPTV Update" || echo "No changes"
