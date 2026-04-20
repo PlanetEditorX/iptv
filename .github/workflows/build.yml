@@ -22,7 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 恢复 fail_count.json / cache.json
       - name: Restore quality cache
         uses: actions/cache@v4
         with:
@@ -44,9 +43,15 @@ jobs:
           rm -rf output
           python3 scripts/build.py ${{ matrix.name }}
 
-          # 自动创建 output_目录
           mkdir -p output_${{ matrix.name }}
           mv output/* output_${{ matrix.name }}/
+
+      # ⭐ 输出当前 job 的 M3U 前 100 行
+      - name: Show first 100 lines of M3U
+        run: |
+          echo "====== M3U Preview (first 100 lines) ======"
+          head -n 100 output_${{ matrix.name }}/channels_${{ matrix.name }}.m3u || true
+          echo "==========================================="
 
       - name: Upload artifact ${{ matrix.name }}
         uses: actions/upload-artifact@v4
@@ -55,7 +60,7 @@ jobs:
           path: output_${{ matrix.name }}/
 
   # ============================
-  # 合并 Job（自动匹配所有 output_*）
+  # 合并 Job
   # ============================
   merge:
     runs-on: ubuntu-latest
