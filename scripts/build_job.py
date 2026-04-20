@@ -308,6 +308,24 @@ def build_output_m3u(channels, mode):
     lines = []
     lines.append("#EXTM3U")
 
+    def get_logo(name):
+        # CCTV 图标：CCTV-1.png
+        if name.startswith("CCTV"):
+            num = name.replace("CCTV", "")
+            return f"https://www.xn--rgv465a.top/tvlogo/CCTV-{num}.png"
+        # 其他频道：湖南卫视.png
+        return f"https://www.xn--rgv465a.top/tvlogo/{name}.png"
+
+    def get_group(name):
+        if name.startswith("CCTV"):
+            return "📺 CCTV"
+        if "卫视" in name:
+            return "🛰️ 卫视"
+        return "🎬 娱乐"
+
+    # ============================
+    # CCTV + 卫视
+    # ============================
     if mode in ("all", "cctv", "satellite"):
         for name in sorted(channels.keys(), key=channel_sort_key):
 
@@ -322,10 +340,20 @@ def build_output_m3u(channels, mode):
 
             urls = detect_and_sort_urls(name, channels[name])
 
+            tvg_id = name
+            logo = get_logo(name)
+            group = get_group(name)
+
             for url in urls:
-                lines.append(f"#EXTINF:-1,{name}")
+                lines.append(
+                    f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{name}" '
+                    f'tvg-logo="{logo}" group-title="{group}",{name}'
+                )
                 lines.append(url)
 
+    # ============================
+    # 娱乐频道
+    # ============================
     if mode in ("all", "entertainment"):
         for name in sorted(channels.keys()):
 
@@ -342,8 +370,15 @@ def build_output_m3u(channels, mode):
 
             urls = detect_and_sort_urls(name, raw_urls, is_entertainment=True)
 
+            tvg_id = name
+            logo = get_logo(name)
+            group = get_group(name)
+
             for url in urls:
-                lines.append(f"#EXTINF:-1,{name}")
+                lines.append(
+                    f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{name}" '
+                    f'tvg-logo="{logo}" group-title="{group}",{name}'
+                )
                 lines.append(url)
 
     return "\n".join(lines)
