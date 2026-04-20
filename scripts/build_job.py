@@ -10,6 +10,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import sys
 import time
 import random
+import urllib.parse
 
 from quality_raw import (
     quality_score,
@@ -301,20 +302,59 @@ def build_output_txt(channels, mode):
     return "\n".join(lines)
 
 # ============================
-# M3U 输出（完整拆分逻辑）
+# M3U 输出
 # ============================
+
+LOGO_BASES = [
+    "https://www.xn--rgv465a.top/tvlogo/",
+    "https://live.fanmingming.cn/tv/",
+    "https://gitee.com/cquptxiong/live/raw/main/tv/"
+]
 
 def build_output_m3u(channels, mode):
     lines = []
     lines.append("#EXTM3U")
 
     def get_logo(name):
-        # CCTV 图标：CCTV-1.png
+        # 主源文件名（带横杠）
         if name.startswith("CCTV"):
             num = name.replace("CCTV", "")
-            return f"https://www.xn--rgv465a.top/tvlogo/CCTV-{num}.png"
-        # 其他频道：湖南卫视.png
-        return f"https://www.xn--rgv465a.top/tvlogo/{name}.png"
+            filename_main = f"CCTV-{num}.png"   # 主源格式
+            filename_alt  = f"CCTV{num}.png"    # fanmingming + Gitee 格式
+        else:
+            filename_main = f"{name}.png"
+            filename_alt  = f"{name}.png"
+
+        # URL encode（处理中文）
+        filename_main = urllib.parse.quote(filename_main)
+        filename_alt  = urllib.parse.quote(filename_alt)
+
+        # 1. 主源
+        url1 = LOGO_BASES[0] + filename_main
+        try:
+            if requests.head(url1, timeout=1.5).status_code == 200:
+                return url1
+        except:
+            pass
+
+        # 2. fanmingming
+        url2 = LOGO_BASES[1] + filename_alt
+        try:
+            if requests.head(url2, timeout=1.5).status_code == 200:
+                return url2
+        except:
+            pass
+
+        # 3. Gitee
+        url3 = LOGO_BASES[2] + filename_alt
+        try:
+            if requests.head(url3, timeout=1.5).status_code == 200:
+                return url3
+        except:
+            pass
+
+        # 全部失败
+        return None
 
     def get_group(name):
         if name.startswith("CCTV") or "卫视" in name:
