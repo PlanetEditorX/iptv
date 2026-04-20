@@ -561,6 +561,7 @@ def build_output_m3u(channels, whitelist, blacklist, mode):
 # ============================
 # 自动生成 README.md（HTML 质量报表）
 # ============================
+from datetime import datetime, timezone, timedelta
 
 def build_readme():
     readme_path = ROOT / "README.md"
@@ -573,8 +574,11 @@ def build_readme():
     kept_channels = total_channels - removed_channels
     total_usable = sum(x["usable"] for x in CHANNEL_REPORT.values())
 
+    # ===== 构建时间（中国 CST）=====
+    cst = timezone(timedelta(hours=8))
+    build_time = datetime.now(cst).strftime("%Y-%m-%d %H:%M:%S")
+
     for name, info in sorted(CHANNEL_REPORT.items(), key=lambda x: (x[1]["removed"], x[0])):
-        # 高分频道加 ⭐（得分 >= 2000）
         star = " ⭐" if info["best_score"] >= 2000 and not info["removed"] else ""
 
         row = (
@@ -594,6 +598,7 @@ def build_readme():
 
     html = []
     html.append("# IPTV 质量报表\n")
+    html.append(f"⏱ **构建时间：{build_time} (CST)**\n\n")
     html.append("> 本报表由构建脚本自动生成，展示最近一次检测结果。\n\n")
 
     # ======= 总统计 =======
