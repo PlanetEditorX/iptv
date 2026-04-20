@@ -399,7 +399,7 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
     THREADS = 6
 
     with ThreadPoolExecutor(max_workers=THREADS) as exe:
-        # ⭐ 这里 future.result() 会返回 (score, from_cache)
+        # 这里 future.result() 会返回 (score, from_cache)
         future_map = {exe.submit(quality_score, u): u for u in good_urls}
 
         for idx, future in enumerate(as_completed(future_map), start=1):
@@ -472,7 +472,7 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
             best_res = f"{w}x{h}" if w and h else "N/A"
             best_url = url
 
-    print(f">>> {name} 排序完成（可用 {usable} / 总 {total}）\n")
+    print(f">>> {name} 排序完成（可用 {usable} / 总共 {total}）\n")
 
     CHANNEL_REPORT[name] = {
         "total": total,
@@ -708,7 +708,7 @@ def main(mode):
     for src, label in live_sources:
         SOURCE_OK[src] = False
 
-    # 解析所有上游源
+    # 解析所有上游源（只解析，不做成功/失败判断）
     for src, label in live_sources:
         try:
             content = fetch_text(src)
@@ -717,7 +717,18 @@ def main(mode):
             print(f"[error] {src} -> {e}")
 
     # ============================
-    # 上游源连续失败统计
+    # 先输出 TXT / M3U（这里会触发 detect_and_sort_urls，
+    # 在 detect_and_sort_urls 里会根据 score>0 设置 SOURCE_OK[src] = True）
+    # ============================
+
+    txt = build_output_txt(channels, mode)
+    m3u = build_output_m3u(channels, mode)
+
+    (OUTPUT_DIR / f"channels_{mode}.txt").write_text(txt, encoding="utf-8")
+    (OUTPUT_DIR / f"channels_{mode}.m3u").write_text(m3u, encoding="utf-8")
+
+    # ============================
+    # 检测跑完之后，再做上游源连续失败统计
     # ============================
 
     updated_live_urls = []
@@ -729,20 +740,32 @@ def main(mode):
 
         if ok:
             SOURCE_FAIL[src] = 0
-            updated_live_urls.append((src, label))
-        else:
-            SOURCE_FAIL[src] = SOURCE_FAIL.get(src, 0) + 1
 
-            if SOURCE_FAIL[src] >= 10:
-                if src not in FAILED_SOURCES:
-                    remove_date = (datetime.now(cst) + timedelta(days=30)).strftime("%Y-%m-%d")
-                    FAILED_SOURCES[src] = {
-                        "fail_time": today,
-                        "remove_time": remove_date
-                    }
-                print(f"[source] {src} 连续 10 次全挂 → 已从 live_urls 删除")
-            else:
-                updated_live_urls.append((src, label))
+            if src in FAILED_SOURCES:
+                print(f"[source] {src} 恢复正常 → 从失败列表移除")
+                del FAILED_SOURCES[src]
+
+            updated_live_urls.append((src, label))
+            continue
+
+        SOURCE_FAIL[src] = SOURCE_FAIL.get(src, 0) + 1
+        fail_times = SOURCE_FAIL[src]
+
+        print(f"[source] {src} 全部失败（连续 {fail_times} 次）")
+
+        if fail_times < 10:
+            updated_live_urls.append((src, label))
+            continue
+
+        if src not in FAILED_SOURCES:
+            remove_date = (datetime.now(cst) + timedelta(days=30)).strftime("%Y-%m-%d")
+            FAILED_SOURCES[src] = {
+                "fail_time": today,
+                "remove_time": remove_date
+            }
+            print(f"[source] {src} 连续 10 次失败 → 已永久删除（记录到 FAILED_SOURCES）")
+
+        # 不写入 updated_live_urls → 从 live_urls.txt 删除
 
     # 写回 live_urls.txt
     with LIVE_URLS_FILE.open("w", encoding="utf-8") as f:
@@ -754,16 +777,6 @@ def main(mode):
 
     save_failed_sources(FAILED_SOURCES)
     save_source_fail(SOURCE_FAIL)
-
-    # ============================
-    # 输出 TXT / M3U
-    # ============================
-
-    txt = build_output_txt(channels, mode)
-    m3u = build_output_m3u(channels, mode)
-
-    (OUTPUT_DIR / f"channels_{mode}.txt").write_text(txt, encoding="utf-8")
-    (OUTPUT_DIR / f"channels_{mode}.m3u").write_text(m3u, encoding="utf-8")
 
     # 保存质量缓存
     save_all()
