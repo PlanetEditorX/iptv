@@ -86,6 +86,20 @@ def channel_sort_key(name: str):
     return ("ZZZ", name)
 
 # ============================
+# 频道类型划分
+# ============================
+
+def get_channel_type(name: str) -> str:
+    # 央视
+    if name.startswith("CCTV"):
+        return "tv"
+    # 卫视（湖南卫视、东方卫视、北京卫视…）
+    if name.endswith("卫视"):
+        return "tv"
+    # 其它全部归为媒体频道
+    return "entertainment"
+
+# ============================
 # 构建频道质量报表（核心）
 # ============================
 
@@ -121,7 +135,7 @@ def build_channel_report(channels, raw):
             "removed": removed,
             "best_res": best_res,
             "best_score": round(best_score, 1) if best_score >= 0 else 0,
-            "type": "entertainment" if not name.startswith("CCTV") else "tv"
+            "type": get_channel_type(name),
         }
 
     return report
@@ -203,7 +217,7 @@ def build_readme(report, failed_sources):
     html.append(f"- **总可用源数：** {total_usable}\n\n")
 
     # ============================
-    # TV 频道（使用自然排序）
+    # 电视频道（CCTV + 卫视，自然排序）
     # ============================
 
     html.append("## 📺 电视频道\n\n<table>")
@@ -226,7 +240,7 @@ def build_readme(report, failed_sources):
     html.append("</table>\n")
 
     # ============================
-    # 媒体频道（保持原排序）
+    # 媒体频道
     # ============================
 
     html.append("## 📡 媒体频道\n\n<table>")
