@@ -409,15 +409,22 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
             info = cache.get(url, {})
             w = info.get("width", 0)
             h = info.get("height", 0)
-            bitrate = info.get("bitrate", 0)
-            mbps = bitrate / 1_000_000
             delay = info.get("delay", 0)
             blur = info.get("blur", 0)
+            bitrate = info.get("bitrate", 0)
+
+            # bitrate 存在才显示
+            if bitrate and bitrate > 0:
+                mbps_text = f"码率：{bitrate / 1_000_000:.2f}Mbps，"
+            else:
+                mbps_text = ""   # 不显示码率字段
 
             print(
                 f"[{name}] {idx}/{total}  "
-                f"{'缓存' if cached_before else '检测'}  "
-                f"{w}x{h}  {mbps:.2f}Mbps  延迟{delay}s  清晰度{blur:.1f}  总分{score:.1f}",
+                f"{'缓存' if cached_before else '检测'} => "
+                f"分辨率：{w}x{h}，"
+                f"{mbps_text}"
+                f"延迟：{delay}s，清晰度：{blur:.1f}，总分：{score:.1f}",
                 flush=True
             )
 
@@ -517,7 +524,7 @@ def build_output_txt(channels, mode):
 
             raw_urls = channels[name]
 
-            if len(raw_urls) < 8:
+            if len(raw_urls) < 5:
                 continue
             if is_numeric_channel(name):
                 continue
@@ -564,7 +571,7 @@ def build_output_m3u(channels, mode):
 
             raw_urls = channels[name]
 
-            if len(raw_urls) < 8:
+            if len(raw_urls) < 5:
                 continue
             if is_numeric_channel(name):
                 continue

@@ -11,7 +11,7 @@ on:
 jobs:
 
   # ============================
-  # 三个构建 Job（自动匹配输出目录）
+  # 三个构建 Job
   # ============================
   build:
     runs-on: ubuntu-latest
@@ -22,38 +22,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 安装依赖
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y ffmpeg python3-pip
           pip3 install pillow numpy opencv-python-headless
 
-      # 构建
       - name: Build ${{ matrix.name }}
         run: |
           rm -rf output
           python3 scripts/build.py ${{ matrix.name }}
 
-          # 自动创建 output_目录
           mkdir -p output_${{ matrix.name }}
           mv output/* output_${{ matrix.name }}/
 
-      # ⭐ 输出当前 job 的 M3U 前 100 行
       - name: Show first 100 lines of M3U
         run: |
           echo "====== M3U Preview (first 100 lines) ======"
           head -n 100 output_${{ matrix.name }}/channels_${{ matrix.name }}.m3u || true
           echo "==========================================="
 
-      # 上传构建产物
       - name: Upload artifact ${{ matrix.name }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.name }}
           path: output_${{ matrix.name }}/
 
-      # 自动提交状态文件（fail_count.json / cache.json / source_fail.json）
       - name: Commit updated state files
         run: |
           git config --local user.name "github-actions[bot]"
@@ -78,24 +72,41 @@ jobs:
         with:
           path: merged/
 
+      - name: Show merged directory structure
+        run: |
+          echo "=== merged 目录结构 ==="
+          tree merged || ls -R merged
+          echo
+
       - name: Merge outputs
         run: |
           mkdir -p output
 
-          echo "合并 TXT..."
-          echo "" > output/channels_all.txt
-          for f in merged/*/output_*/channels_*.txt; do
-            echo "合并 $f"
-            cat "$f" >> output/channels_all.txt
-            echo "" >> output/channels_all.txt
+          echo "=== 合并 TXT ==="
+          touch output/channels_all.txt
+
+          for f in merged/*/channels_*.txt merged/*/output_*/channels_*.txt; do
+            if [ -f "$f" ]; then
+              echo "合并：$f"
+              cat "$f" >> output/channels_all.txt
+              echo "" >> output/channels_all.txt
+            fi
           done
 
-          echo "合并 M3U..."
-          echo '#EXTM3U' > output/channels_all.m3u
-          for f in merged/*/output_*/channels_*.m3u; do
-            echo "合并 $f"
-            grep -h -v '#EXTM3U' "$f" >> output/channels_all.m3u || true
+          echo
+          echo "=== 合并 M3U ==="
+          echo "#EXTM3U" > output/channels_all.m3u
+
+          for f in merged/*/channels_*.m3u merged/*/output_*/channels_*.m3u; do
+            if [ -f "$f" ]; then
+              echo "合并：$f"
+              grep -h -v "#EXTM3U" "$f" >> output/channels_all.m3u
+            fi
           done
+
+          echo
+          echo "=== 合并完成 ==="
+          ls -lh output
 
       - name: Upload final merged output
         uses: actions/upload-artifact@v4

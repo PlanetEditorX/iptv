@@ -103,7 +103,7 @@ def quality_score(url):
 
     # 评分
     if failed:
-        score = -999999
+        score = 0
     else:
         score = (w * h) / 1000 + bitrate / 10000 + blur - delay * 10
 
