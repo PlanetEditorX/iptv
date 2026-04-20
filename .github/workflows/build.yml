@@ -163,5 +163,5 @@ jobs:
           # 提交 README
           git add README.md || true
 
-          git commit -m "Unified IPTV Update" || echo "No changes"
+          git commit -m "IPTV Update" || echo "No changes"
           git push || true

@@ -124,7 +124,7 @@ def quality_score(url):
             ts = cache[url].get("ts", 0)
             if now - ts < EXPIRE_SECONDS:
                 return cache[url]["score"], True
-            # 否则：缓存过期 → 继续往下检测
+            # 否则缓存过期，继续检测
 
     # 2. ffprobe / ffmpeg 检测
     ok, w, h, bitrate = probe_stream(url)
@@ -133,13 +133,13 @@ def quality_score(url):
 
     failed = (not ok) or (w == 0) or (h == 0)
 
-    # 3. 评分（与原版一致）
+    # 3. 评分
     if failed:
         score = 0
     else:
         score = (w * h) / 1000 + bitrate / 10000 + blur - delay * 10
 
-    # 4. 写入缓存
+    # 4. 写入缓存（带时间戳）
     with cache_lock:
         cache[url] = {
             "width": w,
@@ -148,10 +148,10 @@ def quality_score(url):
             "delay": delay,
             "blur": blur,
             "score": score,
-            "ts": time.time()
+            "ts": now
         }
 
-    # 5. 上报原始观测（CI 合并时使用）
+    # 5. 上报原始观测
     RAW_RESULTS[url] = {
         "ok": not failed,
         "score": score,
