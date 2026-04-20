@@ -9,6 +9,8 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import sys
 from datetime import datetime, timezone, timedelta
+import time
+import random
 
 from quality import (
     quality_score,
@@ -396,15 +398,16 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
 
     results = {}
     meta = {}
-    THREADS = 6
+    THREADS = 4
 
     with ThreadPoolExecutor(max_workers=THREADS) as exe:
         # 这里 future.result() 会返回 (score, from_cache)
         future_map = {exe.submit(quality_score, u): u for u in good_urls}
 
         for idx, future in enumerate(as_completed(future_map), start=1):
+            time.sleep(random.uniform(0.1, 0.5))
             url = future_map[future]
-            score, cached_before = future.result()   # ⭐ 正确接收两个值
+            score, cached_before = future.result()   # 正确接收两个值
 
             info = cache.get(url, {})
             w = info.get("width", 0)
