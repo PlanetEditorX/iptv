@@ -9,6 +9,7 @@ from pathlib import Path
 from PIL import Image
 import numpy as np
 import cv2
+import time
 
 # ============================
 # 全局路径
@@ -25,6 +26,7 @@ CACHE_FILE = STATE_DIR / "cache.json"
 cache_lock = threading.Lock()
 cache = {}
 RAW_RESULTS = {}
+EXPIRE_SECONDS = 24 * 3600
 
 # ============================
 # JSON 工具
@@ -115,10 +117,14 @@ def snapshot_blur_score(url, timeout=5):
 # ============================
 
 def quality_score(url):
-    # 1. 缓存命中
+    now = time.time()
+    # 1. 缓存命中 + 未过期
     with cache_lock:
         if url in cache:
-            return cache[url]["score"], True
+            ts = cache[url].get("ts", 0)
+            if now - ts < EXPIRE_SECONDS:
+                return cache[url]["score"], True
+            # 否则：缓存过期 → 继续往下检测
 
     # 2. ffprobe / ffmpeg 检测
     ok, w, h, bitrate = probe_stream(url)
@@ -141,7 +147,8 @@ def quality_score(url):
             "bitrate": bitrate,
             "delay": delay,
             "blur": blur,
-            "score": score
+            "score": score,
+            "ts": time.time()
         }
 
     # 5. 上报原始观测（CI 合并时使用）
