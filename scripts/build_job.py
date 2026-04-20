@@ -42,6 +42,12 @@ BLACKLIST = []
 URL_SOURCE = {}
 
 # ============================
+# 黑名单调试记录
+# ============================
+
+FILTERED_LOG = defaultdict(list)
+
+# ============================
 # 名称规范化
 # ============================
 
@@ -112,7 +118,7 @@ def normalize_url(url: str) -> str:
     ))
 
 # ============================
-# 添加频道源（完整黑名单逻辑）
+# 添加频道源（增强黑名单调试）
 # ============================
 
 def add_channel(channels, name, url, source_url=None):
@@ -126,6 +132,11 @@ def add_channel(channels, name, url, source_url=None):
     if name not in WHITELIST:
         for key in BLACKLIST:
             if key in name or key in url:
+                FILTERED_LOG[name].append({
+                    "url": url,
+                    "keyword": key,
+                    "source": source_url
+                })
                 return
 
     if is_numeric_channel(name):
@@ -190,7 +201,7 @@ def detect_and_parse(content, channels, source_url=None):
         parse_txt_like(text, channels, source_url)
 
 # ============================
-# 并发检测 + 排序（无判刑）
+# 并发检测 + 排序
 # ============================
 
 def detect_and_sort_urls(name, urls, is_entertainment=False):
@@ -230,8 +241,7 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
             )
 
             results[url] = score
-
-    # 媒体频道过滤（保留原逻辑）
+    # 媒体频道过滤
     if is_entertainment:
         filtered = {}
         for url, score in results.items():
@@ -247,7 +257,7 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
     return sorted(results.keys(), key=lambda u: results[u], reverse=True)
 
 # ============================
-# TXT 输出（完整拆分逻辑）
+# TXT 输出
 # ============================
 
 def channel_sort_key(name: str):
@@ -422,7 +432,7 @@ def build_output_m3u(channels, mode):
     return "\n".join(lines)
 
 # ============================
-# 主流程（无判刑）
+# 主流程
 # ============================
 
 def load_live_urls():
@@ -497,6 +507,10 @@ def main(mode):
 
     # 保存 raw_results
     save_all(mode)
+
+    # 保存黑名单过滤日志
+    filtered_file = OUTPUT_DIR / f"filtered_{mode}.json"
+    filtered_file.write_text(json.dumps(FILTERED_LOG, ensure_ascii=False, indent=2), encoding="utf-8")
 
 if __name__ == "__main__":
     mode = sys.argv[1]

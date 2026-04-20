@@ -140,8 +140,11 @@ jobs:
       # ============================
       - name: Cleanup raw_results
         run: |
-          echo "=== 清理 raw_results_* ==="
+          echo "=== 清理 raw结果 ==="
           rm -f sources/state/raw_results_*.json || true
+
+          echo "=== 清理 黑名单过滤  ==="
+          rm -f merged/output-*/filtered_*.json || true
 
       # ============================
       # 最终一次性提交所有文件
