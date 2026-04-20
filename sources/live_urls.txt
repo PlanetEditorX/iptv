@@ -1,3 +1,5 @@
 https://d.kstore.dev/download/12441/ds9.txt$電視接口
 https://orange-band-8374.lovereallyworld.workers.dev$cf接口
 https://iptv-org.github.io/iptv/index.m3u$iptv-org
+https://gh-proxy.com/raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.m3u$vbskycn-iptv4
+https://gh-proxy.com/raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv6.m3u$vbskycn-iptv6
