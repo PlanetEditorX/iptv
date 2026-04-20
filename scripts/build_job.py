@@ -317,11 +317,9 @@ def build_output_m3u(channels, mode):
         return f"https://www.xn--rgv465a.top/tvlogo/{name}.png"
 
     def get_group(name):
-        if name.startswith("CCTV"):
-            return "📺 央视"
-        if "卫视" in name:
-            return "🛰️ 卫视"
-        return "🎬 媒体"
+        if name.startswith("CCTV") or "卫视" in name:
+            return "📺 电视频道"
+        return "🎬 媒体频道"
 
     # ============================
     # CCTV + 卫视
