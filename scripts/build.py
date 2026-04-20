@@ -24,6 +24,9 @@ LIVE_URLS_FILE = SOURCES_DIR / "live_urls.txt"
 CHANNEL_LIST_FILE = SOURCES_DIR / "channel_list.txt"
 BLACKLIST_FILE = SOURCES_DIR / "blacklist.txt"
 
+# 全局频道质量报表
+CHANNEL_REPORT = {}
+
 # ============================
 # 图标 + EPG ID 映射
 # ============================
@@ -211,19 +214,13 @@ def is_numeric_channel(name: str) -> bool:
     n = re.sub(r"[台频道]+$", "", n)
     return n.isdigit()
 
+# ============================
+# URL 归一化
+# ============================
+
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 
 def normalize_url(url: str) -> str:
-    """
-    专业级 URL 归一化：
-    - 去掉无意义参数
-    - 参数排序
-    - 去掉重复 CDN
-    - 去掉 session/token/ts
-    - 去掉尾部斜杠
-    - 统一 m3u8/flv 格式
-    """
-
     if not url.startswith("http"):
         return url
 
@@ -247,16 +244,11 @@ def normalize_url(url: str) -> str:
     # 去掉尾部斜杠
     path = parsed.path.rstrip("/")
 
-    # 去掉 .m3u8? → .m3u8
-    if path.endswith(".m3u8") or path.endswith(".flv"):
-        pass
-    else:
-        # 去掉奇怪的后缀
-        path = re.sub(r"\.m3u8.*$", ".m3u8", path)
-        path = re.sub(r"\.flv.*$", ".flv", path)
+    path = re.sub(r"\.m3u8.*$", ".m3u8", path)
+    path = re.sub(r"\.flv.*$", ".flv", path)
 
     # 重建 URL
-    normalized = urlunparse((
+    return urlunparse((
         parsed.scheme,
         parsed.netloc,
         path,
@@ -264,8 +256,6 @@ def normalize_url(url: str) -> str:
         sorted_query,
         parsed.fragment
     ))
-
-    return normalized
 
 # ============================
 # 添加频道源
@@ -283,7 +273,7 @@ def add_channel(channels, name, url, blacklist):
         if key in name or key in url:
             return
 
-    # 数字频道过滤（可选）
+    # 数字频道过滤
     if is_numeric_channel(name):
         return
 
@@ -298,6 +288,7 @@ def add_channel(channels, name, url, blacklist):
 # ============================
 # 解析 TXT / M3U / JSON
 # ============================
+
 def parse_txt_like(content, channels, blacklist):
     for line in content.splitlines():
         line = line.strip()
@@ -381,29 +372,27 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
             print(
                 f"[{name}] {idx}/{total}  "
                 f"{'缓存' if cached else '检测'}  "
-                f"{w}x{h}  {bitrate}kbps  延迟{delay}s  清晰度{blur:.1f}  总分{score:.1f}",
+                f"{w}x{h}  延迟{delay}s  清晰度{blur:.1f}  总分{score:.1f}",
                 flush=True
             )
 
             results[url] = score
-            meta[url] = (w, h, score)
+            meta[url] = (w, h, bitrate, delay, blur, score)
 
             # 超时或失败源累积 fail_count
             if score <= 0:
                 fail_count[url] = fail_count.get(url, 0) + 1
 
-    # ============================
     # 娱乐频道专属过滤逻辑
-    # ============================
     if is_entertainment:
         filtered = {}
 
-        for url, (w, h, score) in meta.items():
-            # 1. 分辨率低于 1080p → 丢弃
+        for url, (w, h, bitrate, delay, blur, score) in meta.items():
+            # 分辨率低于 720p → 丢弃
             if w < 1280 or h < 720:
                 continue
 
-            # 2. 超时源（score=0）丢弃
+            # 超时源（score=0）丢弃
             if score <= 0:
                 continue
 
@@ -412,16 +401,45 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
         # 如果全部源都是低分辨率或超时 → 删除频道
         if not filtered:
             print(f">>> {name} 全部为低分辨率或超时，删除该频道\n")
+            CHANNEL_REPORT[name] = {
+                "total": total,
+                "usable": 0,
+                "removed": True,
+                "best_res": "N/A",
+                "best_score": 0,
+                "type": "entertainment"
+            }
             return []
 
-        # 用过滤后的源排序
         results = filtered
 
-    # ============================
     # 统计可用源
-    # ============================
     usable = sum(1 for s in results.values() if s > 0)
+
+    # 选一个最佳源（分数最高）
+    best_url = None
+    best_score = -1
+    best_res = "N/A"
+    for url, score in results.items():
+        if score > best_score:
+            best_score = score
+            info = cache.get(url, {})
+            w = info.get("width", 0)
+            h = info.get("height", 0)
+            best_res = f"{w}x{h}" if w and h else "N/A"
+            best_url = url
+
     print(f">>> {name} 排序完成（可用 {usable} / 总 {total}）\n")
+
+    # 写入全局报表
+    CHANNEL_REPORT[name] = {
+        "total": total,
+        "usable": usable,
+        "removed": False,
+        "best_res": best_res,
+        "best_score": round(best_score, 1) if best_score >= 0 else 0,
+        "type": "entertainment" if is_entertainment else "tv"
+    }
 
     return sorted(results.keys(), key=lambda u: results[u], reverse=True)
 
@@ -541,7 +559,67 @@ def build_output_m3u(channels, whitelist, blacklist, mode):
     return "\n".join(lines)
 
 # ============================
-# 主流程（支持 mode）
+# 自动生成 README.md（HTML 质量报表）
+# ============================
+
+def build_readme():
+    readme_path = ROOT / "README.md"
+
+    tv_rows = []
+    ent_rows = []
+
+    total_channels = len(CHANNEL_REPORT)
+    removed_channels = sum(1 for x in CHANNEL_REPORT.values() if x["removed"])
+    kept_channels = total_channels - removed_channels
+    total_usable = sum(x["usable"] for x in CHANNEL_REPORT.values())
+
+    for name, info in sorted(CHANNEL_REPORT.items(), key=lambda x: (x[1]["removed"], x[0])):
+        # 高分频道加 ⭐（得分 >= 2000）
+        star = " ⭐" if info["best_score"] >= 2000 and not info["removed"] else ""
+
+        row = (
+            f"<tr>"
+            f"<td>{name}{star}</td>"
+            f"<td>{info['usable']} / {info['total']}</td>"
+            f"<td>{info['best_res']}</td>"
+            f"<td>{info['best_score']}</td>"
+            f"<td>{'<span style=\"color:red\">已删除</span>' if info['removed'] else '<span style=\"color:green\">保留</span>'}</td>"
+            f"</tr>"
+        )
+
+        if info["type"] == "entertainment":
+            ent_rows.append(row)
+        else:
+            tv_rows.append(row)
+
+    html = []
+    html.append("# IPTV 质量报表\n")
+    html.append("> 本报表由构建脚本自动生成，展示最近一次检测结果。\n\n")
+
+    # ======= 总统计 =======
+    html.append("## 📊 总览统计\n")
+    html.append(f"- **总频道数：** {total_channels}\n")
+    html.append(f"- **保留频道数：** {kept_channels}\n")
+    html.append(f"- **已删除频道数：** {removed_channels}\n")
+    html.append(f"- **总可用源数：** {total_usable}\n\n")
+
+    # ======= 电视频道 =======
+    html.append("## 📺 电视频道\n\n<table>")
+    html.append("<tr><th>频道</th><th>可用源/总源</th><th>最佳分辨率</th><th>最高得分</th><th>状态</th></tr>")
+    html.extend(tv_rows or ['<tr><td colspan="5">无数据</td></tr>'])
+    html.append("</table>\n")
+
+    # ======= 娱乐频道 =======
+    html.append("## 📡 娱乐频道\n\n<table>")
+    html.append("<tr><th>频道</th><th>可用源/总源</th><th>最佳分辨率</th><th>最高得分</th><th>状态</th></tr>")
+    html.extend(ent_rows or ['<tr><td colspan="5">无数据</td></tr>'])
+    html.append("</table>\n")
+
+    readme_path.write_text("\n".join(html), encoding="utf-8")
+    print("[done] wrote README.md quality report")
+
+# ============================
+# 主流程
 # ============================
 
 def main():
@@ -572,6 +650,8 @@ def main():
     (OUTPUT_DIR / f"channels_{mode}.m3u").write_text(out_m3u, encoding="utf-8")
 
     print(f"[done] wrote channels_{mode}.txt + channels_{mode}.m3u")
+
+    build_readme()
 
     save_all()
 
