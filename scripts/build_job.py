@@ -221,6 +221,20 @@ def detect_and_parse(content, channels, source_url=None):
         parse_txt_like(text, channels, source_url)
 
 # ============================
+# 自动识别本地源
+# ============================
+
+def is_local_source(url: str) -> bool:
+    u = url.lower()
+    return (
+        u.startswith("rtp://")
+        or u.startswith("udp://")
+        or "://239." in u
+        or "://224." in u
+        or "/rtp/" in u
+    )
+
+# ============================
 # 并发检测 + 排序
 # ============================
 
@@ -235,17 +249,23 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
     THREADS = 4
 
     with ThreadPoolExecutor(max_workers=THREADS) as exe:
-        future_map = {exe.submit(quality_score, u): u for u in good_urls}
+        future_map = {}
 
+        for u in good_urls:
+
+            # 本地源：不测速，默认 100 分
+            if is_local_source(u):
+                results[u] = 100.0
+                print(f"[{name}] 本地源 → 默认 100 分 | {u}", flush=True)
+                continue
+
+            # 远程源：正常测速
+            future_map[exe.submit(quality_score, u)] = u
+
+        # 处理远程源测速结果
         for idx, future in enumerate(as_completed(future_map), start=1):
             url = future_map[future]
             score, cached = future.result()
-            # 来源加权：本地 spider 源优先
-            if URL_SOURCE.get(url) == "local_spider":
-                score += 15
-
-            # 限制最高分为 100
-            score = min(score, 100)
 
             info = cache.get(url, {})
             w = info.get("width", 0)
@@ -259,20 +279,15 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
             else:
                 mbps_text = "N/A"
 
-            source = URL_SOURCE.get(url, "remote")
-            source_text = "本地源" if source == "local_spider" else "远程源"
-
-            max_len = 80  # 日志里最多显示多少字符
-            show_url = url if len(url) <= max_len else url[:max_len] + "..."
-
             print(
-                f"[{name}] {idx}/{total} {source_text} "
+                f"[{name}] {idx}/{total} "
                 f"{'缓存' if cached else '检测'} → "
-                f"{w}x{h} | {mbps_text} | 延迟 {delay}s | 清晰度 {blur:.1f} | 得分 {score:.1f} | {show_url}",
+                f"{w}x{h} | {mbps_text} | 延迟 {delay}s | 清晰度 {blur:.1f} | 得分 {score:.1f}",
                 flush=True
             )
 
             results[url] = score
+
     # 媒体频道过滤
     if is_entertainment:
         filtered = {}
@@ -286,6 +301,7 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
 
     print(f"[{name}] 检测完成，可用 {sum(1 for s in results.values() if s > 0)} / {total}\n", flush=True)
 
+    # 排序：本地源 100 分永远排前面
     return sorted(results.keys(), key=lambda u: results[u], reverse=True)
 
 # ============================

@@ -99,6 +99,16 @@ def get_channel_type(name: str) -> str:
     # 其它全部归为媒体频道
     return "entertainment"
 
+def is_local_source(url: str) -> bool:
+    u = url.lower()
+    return (
+        u.startswith("rtp://")
+        or u.startswith("udp://")
+        or "://239." in u
+        or "://224." in u
+        or "/rtp/" in u
+    )
+
 # ============================
 # 构建频道质量报表（核心）
 # ============================
@@ -107,17 +117,24 @@ def build_channel_report(channels, raw):
     report = {}
 
     for name, urls in channels.items():
-        total = len(urls)
+        total = 0
         usable = 0
         best_score = -1
         best_res = "N/A"
 
         for url in urls:
+
+            # README 不统计本地源
+            if is_local_source(url):
+                continue
+
             info = raw.get(url)
             if not info:
                 continue
 
+            total += 1
             score = info["score"]
+
             if score > 0:
                 usable += 1
 
