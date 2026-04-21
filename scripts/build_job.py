@@ -259,10 +259,13 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
             source = URL_SOURCE.get(url, "remote")
             source_text = "本地源" if source == "local_spider" else "远程源"
 
+            max_len = 80  # 日志里最多显示多少字符
+            show_url = url if len(url) <= max_len else url[:max_len] + "..."
+
             print(
                 f"[{name}] {idx}/{total} {source_text} "
                 f"{'缓存' if cached else '检测'} → "
-                f"{w}x{h} | {mbps_text} | 延迟 {delay}s | 清晰度 {blur:.1f} | 得分 {score:.1f}",
+                f"{w}x{h} | {mbps_text} | 延迟 {delay}s | 清晰度 {blur:.1f} | 得分 {score:.1f} | {show_url}",
                 flush=True
             )
 
