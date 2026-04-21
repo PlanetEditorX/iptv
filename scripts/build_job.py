@@ -458,8 +458,8 @@ def build_output_m3u(channels, mode):
 
             raw_urls = channels[name]
 
-            if len(raw_urls) < 5:
-                continue
+            # if len(raw_urls) < 5:
+            #     continue
 
             if is_numeric_channel(name):
                 continue
