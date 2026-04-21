@@ -158,10 +158,17 @@ def add_channel(channels, name, url, source_url=None):
     if not is_good_url(url):
         return
 
+    # 1. local_spider 永远优先
+    if source_url == "local_spider":
+        URL_SOURCE[url] = "local_spider"
+
+    # 2. 如果 URL 从未出现过，记录来源
+    elif url not in URL_SOURCE:
+        URL_SOURCE[url] = source_url
+
+    # 3. 添加到频道列表
     if url not in channels[name]:
         channels[name].append(url)
-        if source_url:
-            URL_SOURCE[url] = source_url
 
 # ============================
 # 解析 TXT / M3U / JSON
