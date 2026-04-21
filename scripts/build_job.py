@@ -244,6 +244,9 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
             if URL_SOURCE.get(url) == "local_spider":
                 score += 15
 
+            # 限制最高分为 100
+            score = min(score, 100)
+
             info = cache.get(url, {})
             w = info.get("width", 0)
             h = info.get("height", 0)
