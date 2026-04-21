@@ -42,3 +42,4 @@ https://pan.vma.cc/pan/down.php/350735607a786faaaa69aa5bbe3a3078.txt$Web2接口
 https://wget.la/https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/huyayqk.m3u$虎牙一起看
 https://wget.la/https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/douyuyqk.m3u$斗鱼一起看
 https://wget.la/https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/yylunbo.m3u$YY轮播接口
+https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E7%A7%BB%E5%8A%A8ipv6.m3u$Tvlist-awesome-m3u-m3u8
