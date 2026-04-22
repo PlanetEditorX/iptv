@@ -33,8 +33,10 @@ jobs:
 
           if [[ -n "$RUNNERS" ]]; then
             echo "local_available=true" >> $GITHUB_OUTPUT
+            echo "Result: Self-hosted runner FOUND"
           else
             echo "local_available=false" >> $GITHUB_OUTPUT
+            echo "Result: No self-hosted runner online"
           fi
 
   # ============================
