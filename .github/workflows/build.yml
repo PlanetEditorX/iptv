@@ -46,11 +46,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Install dependencies (cloud only)
+        if: runner.environment != 'self-hosted'
         run: |
           sudo apt update
           sudo apt install -y ffmpeg python3-pip
           pip3 install pillow numpy opencv-python-headless
+
+      - name: Install Python libs (self-hosted only)
+        if: runner.environment == 'self-hosted'
+        run: |
+          pip3 install --user pillow numpy opencv-python-headless || true
 
       - name: Build ${{ matrix.name }}
         run: |
