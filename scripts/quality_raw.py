@@ -111,6 +111,42 @@ def snapshot_blur_score(url, timeout=5):
         return 0
 
 # ============================
+# ffmpeg：检测静态画面（帧差）
+# ============================
+
+def is_static_stream(url, timeout=5):
+    try:
+        # 抓取两帧
+        tmp1 = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False).name
+        tmp2 = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False).name
+
+        cmd1 = ["ffmpeg", "-v", "quiet", "-y", "-i", url, "-vframes", "1", tmp1]
+        run_silent(cmd1, timeout=timeout)
+
+        time.sleep(1)
+
+        cmd2 = ["ffmpeg", "-v", "quiet", "-y", "-i", url, "-vframes", "1", tmp2]
+        run_silent(cmd2, timeout=timeout)
+
+        # 读取两帧
+        img1 = Image.open(tmp1).convert("L")
+        img2 = Image.open(tmp2).convert("L")
+
+        arr1 = np.array(img1)
+        arr2 = np.array(img2)
+
+        # 帧差
+        diff = cv2.absdiff(arr1, arr2)
+        score = np.mean(diff)
+
+        # 阈值：< 2 基本就是静态画面
+        return score < 2
+
+    except:
+        # 读取失败 → 当作静态
+        return True
+
+# ============================
 # 正态分布观感映射：raw_score → 0~100
 # ============================
 
@@ -143,7 +179,16 @@ def quality_score(url):
 
     failed = (not ok) or (w == 0) or (h == 0)
 
-    # 3. 评分
+    # 3. 静态画面检测（假频道）
+    if not failed:
+        try:
+            if is_static_stream(url):
+                print(f"[static] 静态画面 → {url}")
+                failed = True
+        except:
+            pass
+
+    # 4. 评分
     if failed:
         raw_score = -100
     else:
@@ -154,10 +199,10 @@ def quality_score(url):
 
         raw_score = resolution_score + blur_score + bitrate_score - delay_penalty
 
-    # 4. 映射到 0~100
+    # 5. 映射到 0~100
     final_score = map_to_0_100(raw_score)
 
-    # 5. 写入缓存
+    # 6. 写入缓存
     with cache_lock:
         cache[url] = {
             "width": w,
@@ -170,7 +215,7 @@ def quality_score(url):
             "ts": now
         }
 
-    # 6. 上报原始观测
+    # 7. 上报原始观测
     RAW_RESULTS[url] = {
         "ok": not failed,
         "raw_score": raw_score,
