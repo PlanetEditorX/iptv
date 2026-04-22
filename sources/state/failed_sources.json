@@ -150,5 +150,25 @@
   "http://43.251.226.110:8880/play/359.m3u8": {
     "fail_time": "2026-04-22",
     "remove_time": "2026-05-22"
+  },
+  "http://120.224.178.16:9901/tsfile/live/0003_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "fail_time": "2026-04-22",
+    "remove_time": "2026-05-22"
+  },
+  "http://117.161.12.116/live/program/live/cctv38m/8000000/mnf.m3u8": {
+    "fail_time": "2026-04-22",
+    "remove_time": "2026-05-22"
+  },
+  "http://124.128.73.58:9901/tsfile/live/0003_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "fail_time": "2026-04-22",
+    "remove_time": "2026-05-22"
+  },
+  "http://116.9.204.242:9901/tsfile/live/0003_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "fail_time": "2026-04-22",
+    "remove_time": "2026-05-22"
+  },
+  "https://zby.130519.xyz/PLTV/11/224/3221226165/index.m3u8": {
+    "fail_time": "2026-04-22",
+    "remove_time": "2026-05-22"
   }
 }
