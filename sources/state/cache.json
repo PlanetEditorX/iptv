@@ -69748,5 +69748,725 @@
     "raw_score": -100,
     "score": 0.0,
     "ts": 1776935567.0664399
+  },
+  "http://43.251.226.110:8880/play/1176.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937326.4041746
+  },
+  "https://live.ottiptv.cc/huya/29580970": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937326.502718
+  },
+  "https://live.ottiptv.cc/huya/11602075": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937326.5067422
+  },
+  "http://43.251.226.110:8880/play/1133.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937338.5714023
+  },
+  "http://43.251.226.110:8880/play/1061.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937431.0657551
+  },
+  "https://live.ottiptv.cc/huya/23860039": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937471.573181
+  },
+  "http://cfss.cc/cdn/huya/23860039.flv": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937471.5596786
+  },
+  "http://cfss.cc/cdn/hy/23860039.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937471.5880842
+  },
+  "http://cfss.cc/cdn/huya/23734169.flv": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937486.7933066
+  },
+  "http://cfss.cc/cdn/hy/23734169.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937486.802898
+  },
+  "https://live.ottiptv.cc/huya/23734169": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937486.822718
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/yxt_4000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937699.0476122
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/yxt_4000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937699.0258617
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/yxt_4000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937699.0405412
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/dzds_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937702.6104076
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/dzds_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937702.6063237
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/dzds_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937702.6081188
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/xcxwzhH264_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937706.1421773
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/xcxwzhH264_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937706.1294687
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/xcxwzhH264_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937706.1342876
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/tjxwH265_4000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937710.4218104
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/tjxwH265_4000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937710.407463
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/tjxwH265_4000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937710.42132
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/qlds1t_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937714.0538259
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/qlds1t_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937714.041966
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/qlds1t_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937714.0448067
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/lsxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937717.9901838
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/lsxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937717.9781096
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/lsxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937718.019914
+  },
+  "http://43.251.226.110:8880/play/1054.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937722.0429122
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/djyzh_4000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937722.068889
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/djyzh_4000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937722.0485086
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/djyzh_4000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937722.0911672
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/jkhdst_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937725.5784786
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/jkhdst_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937725.5732017
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/jkhdst_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937725.5874293
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/jnyx_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937733.4378486
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/jnyx_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937733.4345803
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/jnyx_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937733.4259453
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/lzxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937735.1810462
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/lzxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937735.182504
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/lzxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937735.1930966
+  },
+  "https://isus.cc/php/huya.php?id=11274154": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937739.148796
+  },
+  "http://39.153.130.167:35455/huya/11274154": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937739.1576898
+  },
+  "https://live.ottiptv.cc/huya/11274154": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937739.145095
+  },
+  "https://www.goodiptv.club/huya/11274154": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937739.1678698
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/lcxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937742.848277
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/lcxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937742.8519886
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/lcxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937742.8615904
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/yjxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937748.0765584
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/yjxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937748.0532608
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/yjxw_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937748.1274903
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/ycpd_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937751.5021517
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/ycpd_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937751.521779
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/ycpd_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937751.5320392
+  },
+  "http://43.251.226.110:8880/play/1062.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937762.1415417
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/qbjxwzh_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937762.1563077
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/qbjxwzh_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937762.1377618
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/qbjxwzh_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937762.15485
+  },
+  "http://leireese.top:9557/edge-cache02.live3.omd.sc96655.com/live/mbxwzh_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937769.4388795
+  },
+  "http://183.214.23.16:2380/hw1live.rxip.sc96655.com.huan.tv/live/mbxwzh_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937769.4927137
+  },
+  "http://linqiush.top:9557/edge-cache02.live3.omd.sc96655.com/live/mbxwzh_2000.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937769.4082944
+  },
+  "http://39.153.130.167:35455/huya/11352876": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937784.45222
+  },
+  "https://isus.cc/php/huya.php?id=11352876": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937784.4577415
+  },
+  "http://cfss.cc/cdn/huya/11352876.flv": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937784.4482787
+  },
+  "http://aiony.top:35455/huya/11352876": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937784.4332206
+  },
+  "http://223.110.243.169/PLTV/3/224/3221227252/index.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937786.239659
+  },
+  "http://223.110.245.139/PLTV/4/224/3221227492/index.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937786.2394252
+  },
+  "http://223.110.245.170/PLTV/3/224/3221227252/index.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937786.2401757
+  },
+  "http://125.210.152.18:9090/live/HLJWSHD_H265.m3u8": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937786.238681
+  },
+  "https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1776988800-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-6a8b68497842a22fb176138faa8bc3bf&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937323.2912297
+  },
+  "https://v4-702cae17a28d6e4f0c0002bba021d934.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?edge_slice=true&sub_m3u8=true&user_session_id=ddec88631ff550e2e3c5508ea7045083": {
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0,
+    "raw_score": -100,
+    "score": 0.0,
+    "ts": 1776937323.4471874
   }
 }
