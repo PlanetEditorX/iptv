@@ -42,7 +42,7 @@ cache = load_json(CACHE_FILE)
 RAW_RESULTS = {}
 EXPIRE_SECONDS = 24 * 3600
 
-# 直播源失败计数（具体 URL）
+# 直播源失败计数
 stream_fail = load_json(STREAM_FAIL_FILE)
 
 # ============================
@@ -96,7 +96,7 @@ def measure_first_frame_delay(url, timeout=5):
         return 999
 
 # ============================
-# ffmpeg：截图 + 清晰度（Laplacian）
+# ffmpeg：截图 + 清晰度
 # ============================
 
 def snapshot_blur_score(url, timeout=5):
@@ -112,13 +112,11 @@ def snapshot_blur_score(url, timeout=5):
         return 0
 
 # ============================
-# ffmpeg：检测静态画面（帧差）
+# 静态画面检测
 # ============================
 
 def is_black_or_solid_color(arr, threshold=5):
-    mean_val = np.mean(arr)
-    std_val = np.std(arr)
-    return std_val < threshold
+    return np.std(arr) < threshold
 
 def detect_logo(img, region_ratio=0.2):
     h, w = img.shape
@@ -131,9 +129,7 @@ def detect_logo(img, region_ratio=0.2):
     edges = cv2.Canny(roi, 80, 150)
     edge_ratio = np.sum(edges > 0) / edges.size
 
-    if mean_val > 80 and std_val > 20 and edge_ratio > 0.02:
-        return True
-    return False
+    return mean_val > 80 and std_val > 20 and edge_ratio > 0.02
 
 def is_static_stream(url, timeout=5, checks=3, interval=1):
     static_count = 0
@@ -162,16 +158,13 @@ def _check_static_once(url, timeout=5):
             return False
 
         diff = cv2.absdiff(img1, img2)
-        changed_pixels = np.sum(diff > 10)
-        total_pixels = diff.size
-        change_ratio = changed_pixels / total_pixels
-
+        change_ratio = np.sum(diff > 10) / diff.size
         return change_ratio < 0.005
     except:
         return False
 
 # ============================
-# 正态分布观感映射：raw_score → 0~100
+# raw_score → 0~100
 # ============================
 
 def map_to_0_100(raw_score):
@@ -188,42 +181,36 @@ def map_to_0_100(raw_score):
 def quality_score(url):
     now = time.time()
 
-    # 1. 缓存命中
+    # 缓存命中
     with cache_lock:
         if url in cache:
             ts = cache[url].get("ts", 0)
             if now - ts < EXPIRE_SECONDS:
                 return cache[url]["score"], True
 
-    # 2. ffprobe / ffmpeg 检测
     ok, w, h, bitrate = probe_stream(url)
     delay = measure_first_frame_delay(url)
     blur = snapshot_blur_score(url)
 
     failed = (not ok) or (w == 0) or (h == 0)
 
-    # 3. 静态画面检测（假频道）
     if not failed:
         try:
             if is_static_stream(url):
-                print(f"[static] 静态画面 → {url}")
                 failed = True
         except:
             pass
 
-    # 4. 评分
     if failed:
         raw_score = -100
     else:
         resolution_score = (w * h) / 50000
         blur_score = min(blur / 20, 20)
-        bitrate_score = 0
         delay_penalty = min(delay, 5) * 15
-        raw_score = resolution_score + blur_score + bitrate_score - delay_penalty
+        raw_score = resolution_score + blur_score - delay_penalty
 
     final_score = map_to_0_100(raw_score)
 
-    # 5. 写入缓存
     with cache_lock:
         cache[url] = {
             "width": w,
@@ -236,7 +223,6 @@ def quality_score(url):
             "ts": now
         }
 
-    # 6. 记录原始观测
     RAW_RESULTS[url] = {
         "ok": not failed,
         "raw_score": raw_score,
@@ -248,7 +234,7 @@ def quality_score(url):
         "blur": blur
     }
 
-    # 7. 更新直播源失败计数
+    # 直播源失败计数
     if final_score > 0:
         stream_fail[url] = 0
     else:
@@ -257,7 +243,7 @@ def quality_score(url):
     return final_score, False
 
 # ============================
-# 保存（cache + raw_results + stream_fail）
+# 保存
 # ============================
 
 def cleanup_cache():
@@ -288,5 +274,4 @@ def save_all(job_name=None):
         raw_file = STATE_DIR / f"raw_results_{job_name}.json"
         save_json(raw_file, RAW_RESULTS)
 
-    # 保存直播源失败计数
     save_json(STREAM_FAIL_FILE, stream_fail)
