@@ -13,7 +13,6 @@ https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u$IPTV
 https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv6/result.m3u$IPTV-IPv6
 https://chinaiptv.pages.dev/Multicast/chongqing/mobile.txt$CHINA-IPTV
 https://gitee.com/yimi321/tv/raw/master/tv.png$壹米接口
-http://rihou.cc:555/gggg.nzk$日后接口
 https://d.kstore.dev/download/11344/yunduan.txt$云端接口
 https://wget.la/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt$月下接口
 https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u$Guovin接口
@@ -39,7 +38,5 @@ https://wget.la/https://raw.githubusercontent.com/xmbjm/IPTV/master/output/user_
 https://wget.la/https://github.com/Kimentanm/aptv/raw/master/m3u/iptv.m3u$APTV接口
 https://gongdian.top/tv/ku9/webview.txt#JS=https://gongdian.top/tv/ku9/js/webview.js$web1接口
 https://pan.vma.cc/pan/down.php/350735607a786faaaa69aa5bbe3a3078.txt$Web2接口
-https://wget.la/https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/huyayqk.m3u$虎牙一起看
-https://wget.la/https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/douyuyqk.m3u$斗鱼一起看
-https://wget.la/https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/yylunbo.m3u$YY轮播接口
 https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E7%A7%BB%E5%8A%A8ipv6.m3u$Tvlist-awesome-m3u-m3u8
+https://raw.githubusercontent.com/zilong7728/Collect-IPTV/refs/heads/main/best_sorted.m3u$zilong7728/Collect-IPTV
