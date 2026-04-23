@@ -1,6 +1,6 @@
 # IPTV 质量报表
 
-⏱ **构建时间：2026-04-23 13:54:37 (CST)**
+⏱ **构建时间：2026-04-23 15:53:02 (CST)**
 
 
 ## ❌ 失效上游源（连续 10 次失败）
@@ -709,121 +709,1314 @@
   - 失效时间：2026-04-23
   - 删除时间：2026-05-23
 
+- `http://23.237.228.134/live5/CCTV1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://hls-gateway.vpstv.net/streams/476879.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://nn.7x9d.cn/xzc2.php?hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMS9pbmRleC5tM3U4&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY%3D`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://A/ku9/js/webview.js?id=https%3A%2F%2Fyangshipin.cn%2Ftv%2Fhome%3Fpid%3D600001859`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://8.138.7.223/tv/mgitv.php?id=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/reallive-cctv1/1.m3u8?Contentid=reallive-cctv1&channel-id=ystenlive&livemode=1&mode=1&stbId=toShengfen`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.129.172.105:9999/tsfile/live/0001_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226736/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2605:6400:20:e33:19c6:b2fe:332b:d62d]:9090/live/3025.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000018602&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/5068253659616166748/1.m3u8?Contentid=5068253659616166748&channel-id=wasusyt&livemode=1&mode=1&stbId=toShengfen`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://www.kaniptv.cn/mk.php?id=cctv1&ip=node-111-20-163-124.speedtest.cn%3A8001`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://218.3.138.25:1111/tsfile/live/1000_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2605:6400:20:e33:19c6:b2fe:332b:d62d]:9090/live/3807.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.87.19.109:80/PLTV/88888973/224/3221225737/10000100000000060000000000334541_0.smil/01.m3u8?accountinfo=UoQbCSdhOfs+Fhzpjb+WON1faRQ9pU15SBx6EULzJM%2Fq63EjPL5%2FUXSVfEKzDq3x22CBjqHLOLP9Vdf8+YjRnwWZ1F4+6A1eDkDeh5XZlpvpn23wIF+ldb6dnBPa8zHj%2CEND&fmt=ts2hls%2C244%2C01.m3u8&tenantId=8601`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000001000004953&channel-id=bestzb&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://36.36.200.198:44330/tsfile/live/0001_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.40.39.246:352/newlive/live/hls/1/live.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://A/ku9/js/webview.js?id=https%3A%2F%2Ftv.cctv.com%2Flive%2Fcctv1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://183.215.134.239:19901/tsfile/live/0001_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=218.95.39.31%3A59999&u=http%3A%2F%2Fedge-cache02.live3.omd.sc96655.com%2Flive%2FCCTV-1H265_4000.m3u8+%24%E8%9C%80%E5%B0%8F%E6%9E%9C`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000010000030810&channel-id=bestzb&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226737/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=111.43.114.137%3A1080&u=http%3A%2F%2Fottrrs.hl.chinamobile.com%2FPLTV%2F88888888%2F224%2F3221226016%2Findex.m3u8+%24%E9%BB%91%E9%BE%99%E6%B1%9F%E7%A7%BB%E5%8A%A8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/cctv1?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=478674d2f4e92891de4f30951016036f`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000004000002226&channel-id=bestzb&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/cctv1?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=92aee428179a0ecc7495490888c0cba9`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/cctv1?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=7d30132546d771c3ffff77a937dee30d`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqca/cctv1hd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=reallive-cctv1&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2605:6400:20:e33:19c6:b2fe:332b:d62d]:9090/live/1402_7500.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://tvphp1.rbq.plus/jd1.php?id=cctv1%24JDY`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://play.kankanlive.com/live/1661761962676984.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/cctv1?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=458e34213492c68772e565c06868d4af`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226231/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.87.19.109:80/PLTV/88888973/224/3221225768/10000100000000060000000000337107_0.smil/01.m3u8?accountinfo=UoQbCSdhOfs+Fhzpjb+WON1faRQ9pU15SBx6EULzJM%2Fq63EjPL5%2FUXSVfEKzDq3x89LkMQWQANc0MwdJOKzoZQWZ1F4+6A1eDkDeh5XZlpvpn23wIF+ldb6dnBPa8zHj%2CEND&fmt=ts2hls%2C244%2C01.m3u8&tenantId=8601`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/reallive-hdcctv1/1.m3u8?Contentid=reallive-hdcctv1&channel-id=ystenlive&livemode=1&mode=1&stbId=toShengfen`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://ott.mobaibox.com/PLTV/4/224/3221227543/index.m3u8?socks5=45.78.62.148%3A3356`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqpub/cctv1hd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000152$安徽联通专用`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226231/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000021973&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://124.236.93.22:2380/ywotttv.bj.chinamobile.com/TVOD/88888888/224/3221226431/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://8.138.7.223/tv/mgitv.php?id=5`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://112.123.206.32:808/hls/1/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226705/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://z.b.bkpcp.top/m.php?id=cctv1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.129.172.232:9999/tsfile/live/0001_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.35:6610/000000001000/1000000001000018602/index.m3u8?Contentid=1000000001000018602&channel-id=ystenlive&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a0a:df::404b]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226016/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226895/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://migu.188766.xyz?id=CCTV1&migutoken=b6884b5a66dd670acbbfb9462b9d0fae&type=yy`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://dd.ddzb.fun/php/migu.php?id=cctv1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226694/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://nn.7x9d.cn/xzc2.php?hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvNDAvaW5kZXgubTN1OA%3D%3D&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY%3D`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://36.40.236.110:9999/tsfile/live/0001_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.221.137.234:44330/tsfile/live/0001_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.33:6610/000000001000/1000000001000021973/index.m3u8?Contentid=1000000001000021973&channel-id=bestzb&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://116.149.160.228:9003//hls/1/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://58.57.40.22:9901/tsfile/live/0001_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000005000265001&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://27.18.251.45:7788/608807420`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.129.172.50:9999/tsfile/live/0001_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226635/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2605:6400:20:e33:19c6:b2fe:332b:d62d]:9090/live/1001.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://60.191.56.186:8888/hls/1/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://8.138.7.223/tv/mgitv.php?id=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://iptv.huuc.edu.cn/hls/cctv1hd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://migu.188766.xyz?id=CCTV1&migutoken=6ab86954018858f618ab5c2eb7cfc859&type=yy`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://175.154.151.98:808/hls/1/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225804/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000311/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://121.19.134.139:808/tsfile/live/0001_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.56.90.5/000000000000/1000000005000265001/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://101.35.240.114:88/live.php?id=CCTV1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.238.94.10:9901/tsfile/live/1018_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226195/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://101.35.240.114:88/live.php?id=CCTV2`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.87.19.109:80/PLTV/88888973/224/3221225738/10000100000000060000000000334543_0.smil/01.m3u8?accountinfo=UoQbCSdhOfs+Fhzpjb+WON1faRQ9pU15SBx6EULzJM%2Fq63EjPL5%2FUXSVfEKzDq3x9ZwJZK5v8A25s5ynmqdLpAWZ1F4+6A1eDkDeh5XZlpvpn23wIF+ldb6dnBPa8zHj%2CEND&fmt=ts2hls%2C244%2C01.m3u8&tenantId=8601`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/8878432746825677699/1.m3u8?Contentid=8878432746825677699&channel-id=wasusyt&livemode=1&mode=1&stbId=toShengfen`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/cctv2?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=d55832b54a62754d87c8d80e8d0af412`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226195/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2605:6400:20:e33:19c6:b2fe:332b:d62d]:9090/live/1002.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://116.149.160.228:9003//hls/2/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://43.251.226.89:8080/play/2.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://219.150.217.47:6610/PLTV1/60/index.m3u8?icpid=dxrm1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://www.kaniptv.cn/mk.php?id=live1009&ip=sdxztest1.abcnic.com%3A`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221225588/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://36.36.200.198:44330/tsfile/live/0002_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000012442&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://36.40.236.110:9999/tsfile/live/0002_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000317/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226224/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqca/gzwshd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://27.18.251.45:7788/631780532`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://27.41.245.32:801/hls/2/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://123.129.70.178:9901/tsfile/live/0002_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000005000031113&channel-id=bestzb&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqpub/cctv2hd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://iptv.huuc.edu.cn/hls/cctv2hd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://23.237.228.134/live5/CCTV2.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2605:6400:20:e33:19c6:b2fe:332b:d62d]:9090/live/1602_7500.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://A/ku9/js/webview.js?id=https%3A%2F%2Fyangshipin.cn%2Ftv%2Fhome%3Fpid%3D600001800`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000011000031101&channel-id=bestzb&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://123.129.70.178:9901/tsfile/live/0002_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000023315&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://tvphp1.rbq.plus/jd1.php?id=cctv2%24JDY`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://migu.188766.xyz?id=CCTV2&migutoken=f3416c907756c9117357e8ed146021e9&type=yy`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqbv/cctv2hd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://69.30.246.194/live/cctv2.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqca/cctv2hd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.87.19.109:80/PLTV/88888973/224/3221225767/10000100000000060000000000337109_0.smil/01.m3u8?accountinfo=UoQbCSdhOfs+Fhzpjb+WON1faRQ9pU15SBx6EULzJM%2Fq63EjPL5%2FUXSVfEKzDq3xIXcYUKna%2F4PdvsWWzE38fAWZ1F4+6A1eDkDeh5XZlpvpn23wIF+ldb6dnBPa8zHj%2CEND&fmt=ts2hls%2C244%2C01.m3u8&tenantId=8601`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.129.172.232:9999/tsfile/live/0002_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.40.39.246:352/newlive/live/hls/2/live.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000477$安徽联通专用`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225588/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.129.172.105:9999/tsfile/live/0002_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=111.43.114.137%3A1080&u=http%3A%2F%2Fottrrs.hl.chinamobile.com%2FPLTV%2F88888888%2F224%2F3221225588%2Findex.m3u8+%24%E9%BB%91%E9%BE%99%E6%B1%9F%E7%A7%BB%E5%8A%A8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226195/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/5353323539453949720/1.m3u8?Contentid=5353323539453949720&channel-id=ystenlive&livemode=1&mode=1&stbId=toShengfen`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.221.137.234:44330/tsfile/live/0002_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a0a:df::404b]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225588/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.129.172.50:9999/tsfile/live/0002_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://121.19.134.139:808/tsfile/live/0002_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.33:6610/000000001000/1000000001000012442/index.m3u8?Contentid=1000000001000012442&channel-id=bestzb&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://migu.188766.xyz?id=CCTV2&migutoken=bc3a573601c95e70eec1a7dcff0a16bb&type=yy`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.129.172.28:9999/tsfile/live/0002_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://nn.7x9d.cn/xzc2.php?hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMi9pbmRleC5tM3U4&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY%3D`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000005000265002&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000317/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.34:6610/000000001000/1000000001000012442/index.m3u8?Contentid=1000000001000012442&channel-id=ystenlive&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://A/ku9/js/webview.js?id=https%3A%2F%2Ftv.cctv.com%2Flive%2Fcctv2`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/cctv2?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=d0894b01592c0f48f99c44a148ca8447`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://112.123.206.32:808/hls/2/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226893/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.238.94.10:9901/tsfile/live/1019_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=218.95.39.31%3A59999&u=http%3A%2F%2Fedge-cache02.live3.omd.sc96655.com%2Flive%2FCCTV-2H265_4000.m3u8+%24%E8%9C%80%E5%B0%8F%E6%9E%9C`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://60.191.56.186:8888/hls/2/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226739/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://58.57.40.22:9901/tsfile/live/1001_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://58.57.40.22:9901/tsfile/live/1002_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000011218&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010212/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://36.40.236.110:9999/tsfile/live/0003_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://iptv.huuc.edu.cn/hls/cctv3hd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://121.19.134.6:808/tsfile/live/0003_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.129.172.50:9999/tsfile/live/0003_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://8.138.7.223/tv/mgitv.php?id=14`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://116.149.160.228:9003//hls/3/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.238.94.10:9901/tsfile/live/1020_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/cctv3?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=dae69a23c264c77eefa2354094bbf46b`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000359/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://69.30.246.194/live/cctv3.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://101.35.240.114:88/live.php?id=CCTV3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.33:6610/000000001000/1000000001000011218/index.m3u8?Contentid=1000000001000011218&channel-id=bestzb&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.87.19.109:80/PLTV/88888973/224/3221226350/10000100000000060000000001464865_0.smil/01.m3u8?accountinfo=UoQbCSdhOfs+Fhzpjb+WON1faRQ9pU15SBx6EULzJM%2Fq63EjPL5%2FUXSVfEKzDq3xwpiwOpXKbvjTVJ07NBgH7AWZ1F4+6A1eDkDeh5XZlpvpn23wIF+ldb6dnBPa8zHj%2CEND&fmt=ts2hls%2C244%2C01.m3u8&tenantId=8601`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=111.43.114.137%3A1080&u=http%3A%2F%2Fottrrs.hl.chinamobile.com%2FPLTV%2F88888888%2F224%2F3221226021%2Findex.m3u8+%24%E9%BB%91%E9%BE%99%E6%B1%9F%E7%A7%BB%E5%8A%A8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226397/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000359/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://A/ku9/js/webview.js?id=https%3A%2F%2Ftv.cctv.com%2Flive%2Fcctv3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://219.150.217.47:6610/PLTV1/80/index.m3u8?icpid=dxrm1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://112.46.85.60:8009/hls/3/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://60.191.56.186:8888/hls/3/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000371/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=218.95.39.31%3A59999&u=http%3A%2F%2Fedge-cache02.live3.omd.sc96655.com%2Flive%2FCCTV-3H265_4000.m3u8+%24%E8%9C%80%E5%B0%8F%E6%9E%9C`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226021/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gmxw.7766.org:808/hls/91/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.129.172.232:9999/tsfile/live/0003_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://migu.188766.xyz?id=CCTV3&migutoken=53643a1f466f706fe85aa419bea859bf&type=yy`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000004000014098&channel-id=FifastbLive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000309/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221225942/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://223.159.8.222:8099/tsfile/live/0107_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000005866&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2605:6400:20:e33:19c6:b2fe:332b:d62d]:9090/live/1406_7500.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.33:6610/000000001000/1000000001000005866/index.m3u8?Contentid=1000000001000005866&channel-id=bestzb&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://iptv.huuc.edu.cn/hls/dfhd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://migu.188766.xyz?id=%E4%B8%9C%E6%96%B9%E5%8D%AB%E8%A7%86&migutoken=5f281a8a665f4367984b2ccb0b23a64d&type=yy`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://219.150.217.47:6610/PLTV1/980/index.m3u8?icpid=dxrm1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000309/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226345/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqca/dfwshd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://23.237.228.134/live6/dongnan.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://58.57.40.22:9901/tsfile/live/1030_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226898/1.m3u8?GuardEncType=2&accountinfo=~~V2.0~0uh4lyjjBCCN7TCq21vSIQ~tP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://121.19.134.139:808/tsfile/live/1022_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a0a:df::404b]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226345/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.224.178.16:9901/tsfile/live/0122_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/dongfangweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=3433f27cf6adcff6f7d7ca24155aab41`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://migu.188766.xyz?id=%E4%B8%9C%E6%96%B9%E5%8D%AB%E8%A7%86&migutoken=d30a6db07f9a401217557c7884f1897e&type=yy`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://183.11.239.36:808/hls/114/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=111.43.114.137%3A1080&u=http%3A%2F%2Fottrrs.hl.chinamobile.com%2FPLTV%2F88888888%2F224%2F3221225735%2Findex.m3u8+%24%E9%BB%91%E9%BE%99%E6%B1%9F%E7%A7%BB%E5%8A%A8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226345/index.m3u8#http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225735/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2605:6400:20:e33:19c6:b2fe:332b:d62d]:9090/live/1201.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://10.255.126.3:8006/AHBKLIVE/00005000000000000000000000000263$安徽联通专用`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://zby.130519.xyz/PLTV/11/224/3221225725/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://218.3.138.25:1111/tsfile/live/1020_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/dongfangweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=1f254bac0e50a789df71841f98a0ea9a`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=6081477947334326291&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://A/ku9/js/webview.js?id=https%3A%2F%2Fyangshipin.cn%2Ftv%2Fhome%3Fpid%3D600002483`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://36.40.236.110:9999/tsfile/live/0109_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001336/index.m3u8?virtualDomain=yinhe.live_hls.zte.com%24IPV6`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.40.39.246:352/newlive/live/hls/20/live.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=218.95.39.31%3A59999&u=http%3A%2F%2Fedge-cache02.live3.omd.sc96655.com%2Flive%2FdfwsH265_4000.m3u8+%24%E8%9C%80%E5%B0%8F%E6%9E%9C`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010219/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.87.19.109:80/PLTV/88888973/224/3221225686/10000100000000060000000000333818_0.smil/01.m3u8?accountinfo=UoQbCSdhOfs+Fhzpjb+WON1faRQ9pU15SBx6EULzJM%2Fq63EjPL5%2FUXSVfEKzDq3xYs2oelcrWhz3Z2r9JG+IlwWZ1F4+6A1eDkDeh5XZlpvpn23wIF+ldb6dnBPa8zHj%2CEND&fmt=ts2hls%2C244%2C01.m3u8&tenantId=8601`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://101.35.240.114:88/live.php?id=%E4%B8%9C%E6%96%B9%E5%8D%AB%E8%A7%86`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://nn.7x9d.cn/xzc2.php?hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMzgvaW5kZXgubTN1OA%3D%3D&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY%3D`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226217/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225797/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000030202&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.goodiptv.club/api/sxg.php?id=dfwsH265_4000`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://migu.188766.xyz?id=%E4%B8%9C%E6%96%B9%E5%8D%AB%E8%A7%86&migutoken=ac8c75794aef72642096aacc7a4114a7&type=yy`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000010000032246&channel-id=FifastbLive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqpub/dfwshd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.goodiptv.club/api/sxg.php?id=ynws_4000`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:5e00:24::1e]:6060/200000001898/460000089800010119/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226444/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226444/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.33:6610/000000001000/1000000002000024694/index.m3u8?Contentid=1000000002000024694&channel-id=bestzb&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.76.248.139/live/bfgd/4200000115.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.238.94.10:9901/tsfile/live/1069_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=218.95.39.31%3A59999&u=http%3A%2F%2Fedge-cache02.live3.omd.sc96655.com%2Flive%2Fynws_4000.m3u8+%24%E8%9C%80%E5%B0%8F%E6%9E%9C`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://api.kkitv.itv888.cn:8080/hls/jwvhleddq5/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a0a:df::4031]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226444/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226444/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000367/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://nn.7x9d.cn/xzc2.php?hls=aHR0cDovLzIyMi44NS4xOTguOTI6ODAwMC9obHMvMzUvaW5kZXgubTN1OA%3D%3D&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY%3D`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://223.159.8.222:8099/tsfile/live/0119_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://tvlive.ynradio.com/live/yunnanweishi/chunks.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://124.128.73.58:9901/tsfile/live/0119_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000006000040019&channel-id=bestzb&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2605:6400:20:e33:19c6:b2fe:332b:d62d]:9090/live/1239.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.87.19.109:80/PLTV/88888973/224/3221225670/10000100000000060000000000331495_0.smil/01.m3u8?accountinfo=UoQbCSdhOfs+Fhzpjb+WON1faRQ9pU15SBx6EULzJM%2Fq63EjPL5%2FUXSVfEKzDq3xCUUur6owkxcEYsCD4MlRbwWZ1F4+6A1eDkDeh5XZlpvpn23wIF+ldb6dnBPa8zHj%2CEND&fmt=ts2hls%2C244%2C01.m3u8&tenantId=8601`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://A/ku9/js/webview.js?id=https%3A%2F%2Fyangshipin.cn%2Ftv%2Fhome%3Fpid%3D600190402`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000002000024694&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/yunnanweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=6d5d2634644cc4e0928f4afdca9dc4fe`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/yunnanweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=57f7256aeb9a8d4606f5b4cf7b5aeb13`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://cssbyd.imwork.net:8082/hls/36/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://183.11.239.36:808/hls/52/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:5e01:34::22]:6610/ZTE_CMS/00000001000000060000000000000305/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://zby.130519.xyz/PLTV/11/224/3221226151/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000367/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000060$安徽联通专用`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://23.237.228.134/live8/yunnan.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226444/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.37:6610/000000001000/1000000002000024694/index.m3u8?IASHttpSessionId=OTT&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/yunnanweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=59a7b5e496b1ed2af50a575e9081c7e7`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://58.57.40.22:9901/tsfile/live/1047_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.43.126.240:9003/hls/60/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqpub/ynwshd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://zby.130519.xyz/PLTV/11/224/3221226109/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221227028/1.m3u8?GuardEncType=2&accountinfo=~~V2.0~GfQPqRNVeBjTMsZ48qu0SA~tP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000011000031120&channel-id=FifastbLive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://219.150.217.47:6610/PLTV1/1320/index.m3u8?icpid=dxrm1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://dd.ddzb.fun/php/migu.php?id=ynws`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/yunnanweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=3ab1c660ac3a19f6884caf24c8d97390`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=111.43.114.137%3A1080&u=http%3A%2F%2Fottrrs.hl.chinamobile.com%2FPLTV%2F88888888%2F224%2F3221226444%2Findex.m3u8+%24%E9%BB%91%E9%BE%99%E6%B1%9F%E7%A7%BB%E5%8A%A8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225751/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:74f0:22::7]:6410/270000001128/9900000035/index.m3u8?Contentid=9900000035&channel-id=newtv&livemode=4`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226900/1.m3u8?GuardEncType=2&accountinfo=~~V2.0~cYPi33WFyhvd6SjmqUKhJg~tP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=8186688740528366039&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://tv.iill.top/migu/bjws&token=2276b9830bd9e6d7f4858f72fe6095ad7d4eeb9d25164399bb076f31d3ce364b`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.224.178.16:9901/tsfile/live/0126_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000005000265027&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://36.40.236.110:9999/tsfile/live/0142_2.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://A/ku9/js/webview.js?id=https%3A%2F%2Fyangshipin.cn%2Ftv%2Fhome%3Fpid%3D600002309`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://38.75.136.137:98/gslb/dsdqca/bjwshd.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.87.19.109:80/PLTV/88888973/224/3221225688/10000100000000060000000000333853_0.smil/01.m3u8?accountinfo=UoQbCSdhOfs+Fhzpjb+WON1faRQ9pU15SBx6EULzJM%2Fq63EjPL5%2FUXSVfEKzDq3xP1nCG8AWssDJrTAHC0A%2FmwWZ1F4+6A1eDkDeh5XZlpvpn23wIF+ldb6dnBPa8zHj%2CEND&fmt=ts2hls%2C244%2C01.m3u8&tenantId=8601`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://183.11.239.36:808/hls/41/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000302/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/beijingweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=83e17d40a257c99cd03440142db1b4a4`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226450/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000010000011502&channel-id=bestzb&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000302/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://124.128.73.58:9901/tsfile/live/0122_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.221.137.234:44330/tsfile/live/0138_1.m3u8?authid=0&key=txiptv&playlive=0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://119.29.13.205:1234/630287636`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000017156&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://218.3.138.25:1111/tsfile/live/1021_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225796/1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://58.57.40.22:9901/tsfile/live/1032_1.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://live.264788.xyz/channel/beijingweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=14da0d2cdf18d9845e3d9d4fc51357e0`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.160.17.2:59901/tsfile/live/0001_28.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=111.43.114.137%3A1080&u=http%3A%2F%2Fottrrs.hl.chinamobile.com%2FPLTV%2F88888888%2F224%2F3221225728%2Findex.m3u8+%24%E9%BB%91%E9%BE%99%E6%B1%9F%E7%A7%BB%E5%8A%A8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://j.s.bkpcp.top/jj/bjws`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000021288&channel-id=ystenlive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://61.136.172.236:9901/tsfile/live/0122_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://120.40.39.246:352/newlive/live/hls/37/live.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://go.bkpcp.top/mg/bjws`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://10.255.126.3:8006/AHBKLIVE/00000001000000050000000000000194$安徽联通专用`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://218.3.138.25:1111/tsfile/live/1021_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.42:6610/000000001000/1000000001000017156/index.m3u8?Contentid=1000000001000017156&channel-id=ystenlive&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=218.95.39.31%3A59999&u=http%3A%2F%2Fedge-cache02.live3.omd.sc96655.com%2Flive%2FbjwsH265_4000.m3u8+%24%E8%9C%80%E5%B0%8F%E6%9E%9C`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `https://migu.188766.xyz?id=%E5%8C%97%E4%BA%AC%E5%8D%AB%E8%A7%86&migutoken=bd4602e350ef0358223637cce4d9c72d&type=yy`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://111.29.9.33:6610/000000001000/1000000001000017156/index.m3u8?Contentid=1000000001000017156&channel-id=bestzb&livemode=1&stbId=3`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226222/index.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://116.9.204.242:9901/tsfile/live/0122_1.m3u8?authid=0&key=txiptv&playlive=1`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://[2409:8087:7000:20:1000::22]:6060/yinhe/2/ch00000090990000001335/index.m3u8?virtualDomain=yinhe.live_hls.zte.com%24IPV6`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://satellitepull.cnr.cn/live/wxbtv/playlist.m3u8`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://cdn6.bkpcp.top/tl/tuiliu.php?id=bjws`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
+- `http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=5000000004000031556&channel-id=FifastbLive&livemode=1&mode=1&stbId=yu`
+  - 失效时间：2026-04-23
+  - 删除时间：2026-05-23
+
 
 
 ## 📊 总览统计
 
-- **总频道数：** 433
-- **保留频道数：** 86
-- **已删除频道数：** 347
-- **总可用源数：** 7158
+- **总频道数：** 435
+- **保留频道数：** 0
+- **已删除频道数：** 435
+- **总可用源数：** 0
 
 
 ## 📺 电视频道
 
 <table>
 <tr><th>频道</th><th>可用源/总源</th><th>最佳分辨率</th><th>最高得分</th><th>状态</th></tr>
-<tr><td>CCTV1</td><td>287 / 1458</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV2</td><td>281 / 1211</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV3</td><td>225 / 1194</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV4</td><td>249 / 406</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV5</td><td>343 / 591</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV6</td><td>225 / 421</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV7</td><td>168 / 320</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV8</td><td>264 / 425</td><td>1920x1080</td><td>97.3</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV9</td><td>249 / 399</td><td>1920x1080</td><td>97.5</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV10</td><td>198 / 361</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV11</td><td>143 / 286</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV12</td><td>165 / 300</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV13</td><td>237 / 387</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV14</td><td>24 / 52</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV15</td><td>32 / 39</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV16</td><td>19 / 22</td><td>1920x1080</td><td>93.2</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CCTV17</td><td>16 / 21</td><td>1920x1080</td><td>96.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>三沙卫视</td><td>14 / 58</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>东南卫视</td><td>49 / 113</td><td>1920x1080</td><td>95.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>东方卫视</td><td>227 / 794</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>云南卫视</td><td>128 / 621</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>兵团卫视</td><td>1 / 1</td><td>1280x720</td><td>86.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>内蒙古卫视</td><td>1 / 1</td><td>1280x720</td><td>74.4</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>北京卫视</td><td>184 / 679</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>吉林卫视</td><td>142 / 281</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>四川卫视</td><td>145 / 268</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>大湾区卫视</td><td>41 / 110</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>天津卫视</td><td>145 / 243</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>宁夏卫视</td><td>69 / 179</td><td>1920x1080</td><td>95.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>安徽卫视</td><td>120 / 224</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>山东卫视</td><td>112 / 333</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>山西卫视</td><td>62 / 149</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>广东卫视</td><td>124 / 296</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>广西卫视</td><td>77 / 181</td><td>1920x1080</td><td>97.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>江苏卫视</td><td>140 / 267</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>江西卫视</td><td>118 / 593</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>河北卫视</td><td>132 / 239</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>河南卫视</td><td>158 / 281</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>浙江卫视</td><td>143 / 713</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>海南卫视</td><td>55 / 169</td><td>1920x1080</td><td>97.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>深圳卫视</td><td>280 / 788</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>湖北卫视</td><td>155 / 674</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>湖南卫视</td><td>222 / 827</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>甘肃卫视</td><td>88 / 456</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>西藏卫视</td><td>1 / 1</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>贵州卫视</td><td>133 / 600</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>辽宁卫视</td><td>111 / 483</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>重庆卫视</td><td>103 / 167</td><td>1920x1080</td><td>94.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>陕西卫视</td><td>123 / 161</td><td>1920x1080</td><td>97.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>青海卫视</td><td>90 / 211</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>黑龙江卫视</td><td>65 / 157</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
+<tr><td>CCTV1</td><td>0 / 1129</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV2</td><td>0 / 885</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV3</td><td>0 / 769</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV4</td><td>0 / 863</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV5</td><td>0 / 1312</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV6</td><td>0 / 693</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV7</td><td>0 / 733</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV8</td><td>0 / 735</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV9</td><td>0 / 653</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV10</td><td>0 / 681</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV11</td><td>0 / 681</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV12</td><td>0 / 703</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV13</td><td>0 / 651</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV14</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV15</td><td>0 / 3</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV16</td><td>0 / 3</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CCTV17</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>三沙卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>东南卫视</td><td>0 / 17</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>东方卫视</td><td>0 / 552</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>云南卫视</td><td>0 / 487</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>兵团卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>内蒙古卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>凤凰卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>北京卫视</td><td>0 / 622</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>吉林卫视</td><td>0 / 504</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>四川卫视</td><td>0 / 578</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>大湾区卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>天津卫视</td><td>0 / 571</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>宁夏卫视</td><td>0 / 447</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>安多卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>安徽卫视</td><td>0 / 618</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>山东卫视</td><td>0 / 680</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>山东教育卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>山西卫视</td><td>0 / 359</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>广东卫视</td><td>0 / 854</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>广西卫视</td><td>0 / 504</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>康巴卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>延边卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>新疆卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>星空卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>海峡卫视</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>江苏卫视</td><td>0 / 627</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>江西卫视</td><td>0 / 245</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>河北卫视</td><td>0 / 393</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>河南卫视</td><td>0 / 462</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>浙江卫视</td><td>0 / 66</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>海南卫视</td><td>0 / 439</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>海峡卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>深圳卫视</td><td>0 / 55</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>湖北卫视</td><td>0 / 47</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>湖南卫视</td><td>0 / 45</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>甘肃卫视</td><td>0 / 42</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>西藏卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>贵州卫视</td><td>0 / 57</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>辽宁卫视</td><td>0 / 159</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>重庆卫视</td><td>0 / 448</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>陕西卫视</td><td>0 / 238</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>青海卫视</td><td>0 / 348</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>香港卫视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>黑龙江卫视</td><td>0 / 447</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 </table>
 
 ## 📡 媒体频道
 
 <table>
 <tr><th>频道</th><th>可用源/总源</th><th>最佳分辨率</th><th>最高得分</th><th>状态</th></tr>
-<tr><td>CHC动作电影</td><td>1 / 3</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>CHC影迷电影</td><td>1 / 1</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>HD</td><td>3 / 11</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>NewTV超级综艺</td><td>2 / 4</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>NewTV金牌综艺</td><td>1 / 1</td><td>1920x1080</td><td>95.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>之江纪录</td><td>15 / 15</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>咪咕视频</td><td>16 / 38</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>哈哈炫动</td><td>1 / 1</td><td>1920x1080</td><td>25.3</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>四海钓鱼</td><td>1 / 2</td><td>1920x1080</td><td>93.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>国内喜剧</td><td>1 / 1</td><td>1920x1080</td><td>95.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>埋堆堆</td><td>19 / 208</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>大湾区卫视国际版</td><td>6 / 6</td><td>1280x720</td><td>86.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>广东珠江</td><td>44 / 59</td><td>1280x720</td><td>79.8</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>广西国际</td><td>21 / 37</td><td>1920x1080</td><td>90.5</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>最美的青春</td><td>8 / 8</td><td>1280x720</td><td>56.8</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>梨园频道</td><td>1 / 1</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>欢乐集结号</td><td>8 / 8</td><td>1280x720</td><td>86.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>浙江卫视4K</td><td>3 / 8</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>浙江生活</td><td>1 / 1</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>浙江经济</td><td>15 / 15</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>浙江经济生活</td><td>1 / 1</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>湖北</td><td>6 / 15</td><td>1280x720</td><td>86.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>湖北影视</td><td>40 / 48</td><td>1280x720</td><td>86.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>湖北综合</td><td>2 / 5</td><td>1280x720</td><td>86.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>湖南卫视4K</td><td>5 / 10</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>湖南娱乐</td><td>28 / 35</td><td>1280x720</td><td>86.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>火影忍者</td><td>6 / 6</td><td>1920x1080</td><td>89.3</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>神雕侠侣</td><td>6 / 6</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>福建公共</td><td>1 / 1</td><td>1280x720</td><td>76.4</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>福建少儿</td><td>1 / 4</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>福建电视剧</td><td>2 / 2</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>赛事最经典</td><td>3 / 3</td><td>1280x720</td><td>77.4</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>辽宁卫视HD</td><td>2 / 6</td><td>1920x1080</td><td>90.7</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>金鹰纪实</td><td>1 / 2</td><td>1920x1080</td><td>89.3</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>雪豹</td><td>3 / 13</td><td>1104x622</td><td>0.7</td><td><span style="color:green">保留</span></td></tr>
 <tr><td>1080p</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>1080pNot247</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>241080p</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -832,12 +2025,15 @@
 <tr><td>Andromeda</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>Arirang</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>CHC</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>CHC家庭影院</td><td>0 / 3</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CHC动作电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CHC家庭影院</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>CHC影迷电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>CNA</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>DAZNCombat</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>DJ</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>Euronews</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>FYtv</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>FYtv</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>HD</td><td>0 / 15</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>Hktv</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>KCTV</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>KIX</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -845,7 +2041,9 @@
 <tr><td>NewTV</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>NewTV动作电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>NewTV惊悚悬疑</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>NewTV超级电影</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>NewTV超级电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>NewTV超级综艺</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>NewTV金牌综艺</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>Nosey</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>Not247</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>Pdtv</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -857,13 +2055,13 @@
 <tr><td>RTHK31</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>SXtv</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>TVB</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>TVBPLUS</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>TVBPLUS</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>TVBPlus</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>TVBS</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>TVB星河</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>TopGear</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>UFC</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>VIUTV</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>VIUTV</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>WorldPokerTour</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>cct4</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>ipanda</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -872,50 +2070,51 @@
 <tr><td>w400</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>三国演义</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>三立新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>上海教育</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>上海教育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>上海新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>上海纪实</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>上虞文化影院</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>上虞新商都</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>世界地理</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>东方财经</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>东森洋片</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>东方财经</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>东森洋片</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>东森电影</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>东森超视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>东森超视</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>东莞新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>东莞生活资讯</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>中华特产</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>中国天气</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>中天新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>中央新影发现之旅</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>中国天气</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>中天新闻</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>中央新影发现之旅</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>中学生</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>中视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>乐游</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>五星体育</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>之江纪录</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>乐游</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>五星体育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>优漫卡通</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>体坛名栏汇</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>佛山综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>倚天屠龙记</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>公视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>兵器科技</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>凤凰中文</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>凤凰中文</td><td>0 / 6</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>凤凰卫视中文台</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>凤凰资讯</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>凤凰香港</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>凤凰资讯</td><td>0 / 3</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>凤凰香港</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>刑事侦缉档案</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>刘德华电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>创世纪</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>功夫电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>动作电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>动漫</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>动漫秀场</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>动漫秀场</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>劲爆体育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>北京卡酷少儿</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>北京纪实科教</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>北京纪实科教</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>千禧经典</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>千禧经典台</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>华丽翡翠台</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>华视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>华视</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>南京十八</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>南京教科</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>南宁公共</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -925,37 +2124,44 @@
 <tr><td>卡酷少儿</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>发现之旅</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>叙州新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>台视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>台视</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>台视新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>名侦探柯南</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>周星驰电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>和美乡途轮播台</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>咪咕视频</td><td>0 / 4</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>咪咕视频4M1080</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>咪视界2</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>哆啦A梦</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>哈哈炫动</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>哈尔滨新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>喜羊羊与灰太狼</td><td>0 / 2</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>喜羊羊与灰太狼</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>四川科教</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>四海钓鱼</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>国内喜剧</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>埋堆堆</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>士兵突击</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>大唐双龙传</td><td>0 / 4</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>大时代</td><td>0 / 2</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>天元围棋</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>大唐双龙传</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>大时代</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>大湾区卫视国际版</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>天元围棋</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>天映经典</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>天映频道</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>天映频道</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>天龙八部</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>央视台球</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>女性时尚</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>妙手仁心</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>媒体频道</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>宁夏经济</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>安徽国际</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>安徽影视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>安徽综艺体育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>安徽综艺体育</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>宜兴新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>宰相刘罗锅</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>家庭理财</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>寻秦记</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>封神榜</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>射雕英雄传</td><td>0 / 4</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>射雕英雄传</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>山东体育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>山东少儿</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>山东教育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -965,6 +2171,7 @@
 <tr><td>广东少儿</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>广东新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>广东民生</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>广东珠江</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>广东移动</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>广元</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>广元综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -972,46 +2179,50 @@
 <tr><td>广州新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>广州竞赛</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>广州综合</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>广西影视</td><td>0 / 15</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>广西国际</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>广西影视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>广西新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>康熙王朝</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>强森电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>快乐垂钓</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>怀旧剧场</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>恐怖电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>惊悚悬疑</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>恐怖电影</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>惊悚悬疑</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>成龙电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>我是一颗小虎牙</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>扫黄先锋</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>抗战经典影片</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>文物宝库</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>新动力量创一流</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>新片放映厅</td><td>0 / 7</td><td>1280x720</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>新视觉</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>新片放映厅</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>新视觉</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>无线新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>无线新闻台</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>无线星河</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>明珠</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>明珠台</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>明珠台</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>最强综艺趴</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>最美的青春</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>李连杰电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>林正英影院</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>梨园频道</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>楚汉骄雄</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>欢笑剧场</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>欢乐集结号</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>欢笑剧场</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>武乡新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>武术世界</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>武林外传</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>武术世界</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>武林外传</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>武汉教育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>民視</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>民视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>民視</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>民视</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>民视台湾</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>民视新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>民视第一</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>永嘉新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>汕头经济</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>汕头综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>江苏卫视4K</td><td>0 / 1</td><td>3840x2160</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>江苏卫视4K</td><td>0 / 4</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>江苏城市</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>江苏影视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>江苏教育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -1021,15 +2232,19 @@
 <tr><td>河北少儿科教</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>河北都市</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>河南民生</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>河源综合</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>法治天地</td><td>0 / 3</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>河源综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>法治天地</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>洗冤录</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>浙江国际</td><td>0 / 92</td><td>1280x720</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>浙江卫视4K</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>浙江国际</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>浙江少儿</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>浙江教科影视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>浙江新闻</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>浙江民生</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>浙江民生休闲</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>浙江生活</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>浙江经济</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>浙江经济生活</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>浙江钱江</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>浙江钱江都市</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>海南公共</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -1039,12 +2254,17 @@
 <tr><td>海南自贸</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>淘电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>游戏风云</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>湖北</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>湖北垄上</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>湖北影视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>湖北教育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>湖北生活</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>湖北经视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>湖北综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>湖南公共</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>湖南卫视4K</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>湖南国际</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>湖南娱乐</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>湖南教育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>湖南电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>湖南电视剧</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -1053,9 +2273,11 @@
 <tr><td>湖州公共</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>溧水新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>潍坊高新区</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>澳视澳门</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>澳视澳门</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>火影忍者</td><td>0 / 6</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>炫动卡通</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>爱动漫</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>狂飙</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>猫和老鼠</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>王晶电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>甄子丹电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -1063,20 +2285,24 @@
 <tr><td>睛彩广场舞</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>石家庄娱乐</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>石家庄新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>神探狄仁杰1</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>神探狄仁杰1</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>神探狄仁杰2</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>神雕侠侣</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>福建公共</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>福建少儿</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>福建文体</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>福建新闻</td><td>0 / 1</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>福建旅游</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>福建新闻</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>福建旅游</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>福建电视剧</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>福建经济</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>福建经视</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>福建综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>科幻电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>笑傲江湖</td><td>0 / 9</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>笑傲江湖</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>笑看风云</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>第一剧场</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>第一剧场</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>第一财经</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>精品体育</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>精品体育</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>精灵宝可梦</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>纪实人文</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>纪实科教</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -1107,7 +2333,9 @@
 <tr><td>象视界</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>财富天下</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>贺岁电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>赛事最经典</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>赵本删不删</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>辽宁卫视HD</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>辽宁影视剧</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>辽宁都市</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>连云港新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -1119,21 +2347,23 @@
 <tr><td>邵氏武侠</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>邵氏电影</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>郸城新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>都市剧场</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>都市剧场</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>重庆汽摩</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>重温经典</td><td>0 / 2</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>重温经典</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>野蛮亲家</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>金川新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>金庸武侠</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>金枝欲孽</td><td>0 / 4</td><td>1280x720</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>金枝欲孽</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>金色学堂</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>金鹰卡通</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>鉴证实录</td><td>0 / 4</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>金鹰纪实</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>鉴证实录</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>铁齿铜牙纪晓岚</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>镇江新闻综合</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>陀枪师姐</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>陈情令</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>雍正王朝</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>雪豹</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>靓剑</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>靖天戏剧</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>靖天映画</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
@@ -1143,10 +2373,10 @@
 <tr><td>飞天小女警</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>高尔夫网球</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>鬼吹灯之云南虫谷</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>鬼吹灯之怒晴湘西</td><td>0 / 15</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>鬼吹灯之精绝古城</td><td>0 / 15</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>鬼吹灯之龙岭迷窟</td><td>0 / 18</td><td>1920x1080</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>魅力足球</td><td>0 / 1</td><td>N/A</td><td>0.0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>鬼吹灯之怒晴湘西</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>鬼吹灯之精绝古城</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>鬼吹灯之龙岭迷窟</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>魅力足球</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>魔法少女</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>鹿鼎记</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
 <tr><td>黄金翡翠台</td><td>0 / 0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
