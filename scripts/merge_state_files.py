@@ -71,9 +71,6 @@ def load_channels():
     channels = {}
 
     for f in OUTPUT_DIR.glob("channels_*.txt"):
-        if "all" in f.name:
-            continue  # 不要用 channels_all.txt（包含失败源）
-
         for line in f.read_text(encoding="utf-8").splitlines():
             line = line.strip()
             if not line or "," not in line:
