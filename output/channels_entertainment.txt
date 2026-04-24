@@ -1,25 +1,32 @@
 媒体频道,#genre#
-三沙卫视,https://live.264788.xyz/channel/sanshaweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=40ce8e7e766a97b9b5f39c4f54ea627c
-三沙卫视,http://192.151.150.154/live/ssws.m3u8
 三沙卫视,http://198.204.228.26/live/ssws.m3u8
+三沙卫视,https://live.264788.xyz/channel/sanshaweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=40ce8e7e766a97b9b5f39c4f54ea627c
 三沙卫视,http://107.150.60.122/live/ssws.m3u8
+三沙卫视,http://192.151.150.154/live/ssws.m3u8
 三沙卫视,http://43.251.226.110:8880/play/45.m3u8
 
-之江纪录,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8
 之江纪录,http://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8
-之江纪录,http://43.251.226.110:8880/play/1895.m3u8
+之江纪录,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8
+之江纪录,http://43.251.226.110:8880/play/1934.m3u8
 之江纪录,http://ali-m-l.cztv.com/channels/lantian/channel12/1080p.m3u8
 之江纪录,https://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8
 
 埋堆堆,https://live.iill.top/huya/23903196
+埋堆堆,https://live.iill.top/huya/23865080
 
+大湾区卫视,https://www.freetv.top/migu/608917627.m3u8?migutoken=6e23ed23803d2776218fbd5b6931d4dd0d0a20d0269ca0da6b2efaaf101f71c62689ec1d6f73e16a10d1b756f7e23f0de494b881e2bc39c12250715721f84c185577680003f363869dba1b7e90
+大湾区卫视,https://www.freetv.top/migu/608917627.m3u8?migutoken=bad0a45eea94649f2e7f1b35e1d98d034b874a02984a76abb21e4537dee28f974e6da241dc7705109722be71c8b1302302b51cd4cb06c69ca55fdcf7279d415e0a0fce7c492b6842956ab34fcc
 大湾区卫视,https://stream1.freetv.fun/9e44565ab6186689007a295d8b94b2a970fafde637068b0e3837e5f84689a8f3.m3u8
+大湾区卫视,https://t.freetv.fun/live/da-wan-qu-wei-shi-4.m3u8
 大湾区卫视,http://192.151.150.154/live/gdgj.m3u8
 大湾区卫视,http://107.150.60.122/live/gdgj.m3u8
 大湾区卫视,http://198.204.228.26/live/gdgj.m3u8
+大湾区卫视,http://220.231.188.194:8088/hls/31/index.m3u8
 
 
-广东珠江,http://43.251.226.110:8880/play/1101.m3u8
+广东珠江,http://107.150.60.122/live/gdzja.m3u8
+广东珠江,http://198.204.228.26/live/gdzja.m3u8
+广东珠江,http://192.151.150.154/live/gdzja.m3u8
 广东珠江,http://107.150.60.122/live/gdzj.m3u8
 广东珠江,http://198.204.228.26/live/gdzj.m3u8
 广东珠江,http://67.220.71.199:2347/livehttpplay?channel_id=20144
@@ -31,16 +38,26 @@
 
 
 浙江国际,http://ali-xwl.cztv.com/live/channel101080Plxw.m3u8
+浙江国际,http://ali-xwl.cztv.com/live/channel10720Plxw.m3u8
 浙江国际,https://stream1.freetv.fun/zhe-jiang-guo-ji-4.m3u8
 
-湖北,http://198.204.228.26/live/hbzh.m3u8
 湖北,http://107.150.60.122/live/hbzh.m3u8
+湖北,http://198.204.228.26/live/hbzh.m3u8
 湖北,http://192.151.150.154/live/hbzh.m3u8
 
-湖北影视,https://stream1.freetv.fun/hu-bei-ying-shi-1.ctv
-湖北影视,https://stream1.freetv.fun/hu-bei-ying-shi-1.m3u8
+湖北影视,http://198.204.228.26/live/hbys.m3u8
 湖北影视,http://192.151.150.154/live/hbys.m3u8
+湖北影视,https://stream1.freetv.fun/hu-bei-ying-shi-1.m3u8
+湖北影视,https://stream1.freetv.fun/hu-bei-ying-shi-1.ctv
 湖北影视,http://107.150.60.122/live/hbys.m3u8
 湖北影视,http://61.184.46.85:85/tsfile/live/1000_1.m3u8?authid=0%24%E8%8D%86%E5%B7%9E%E7%94%B5%E4%BF%A1&key=txiptv&playlive=1
 
-火影忍者,http://43.251.226.110:8880/play/1801.m3u8
+
+狂飙,https://live.ottiptv.cc/yy/1355142167
+
+雪豹,http://live.metshop.top/huya/29580970
+雪豹,http://cfss.cc/cdn/huya/29580970.flv
+
+
+
+鬼吹灯之龙岭迷窟,http://live.metshop.top/huya/29465863
