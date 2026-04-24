@@ -51,6 +51,11 @@ UPSTREAM_BLOCKLIST = {}
 
 FILTERED_LOG = defaultdict(list)
 
+# 自动创建必要目录（本地调试用）
+SOURCES_DIR.mkdir(parents=True, exist_ok=True)
+STATE_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
 # ============================
 # 工具函数
 # ============================
@@ -65,6 +70,11 @@ def load_json(path, default):
 
 def save_json(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+def is_numeric_channel(name: str) -> bool:
+    n = name.strip()
+    n = re.sub(r"[台频道]+$", "", n)
+    return n.isdigit()
 
 # ============================
 # 名称规范化
@@ -610,3 +620,7 @@ def main(mode):
     update_upstream_fail(live_sources)
 
     print("\n[done] 构建完成\n")
+
+if __name__ == "__main__":
+    mode = sys.argv[1] if len(sys.argv) > 1 else "cctv"
+    main(mode)

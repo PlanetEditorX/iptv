@@ -1,0 +1,212 @@
+{
+  "http://110.241.191.163:808/hls/22/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://118.77.205.171:9003/hls/22/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://123.160.20.172:85/tsfile/live/0135_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://123.160.20.172:85/tsfile/live/0131_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://118.77.205.171:9003/hls/18/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://110.241.191.163:808/hls/24/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://110.241.191.163:808/hls/25/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://118.77.205.171:9003/hls/28/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://123.160.20.172:85/tsfile/live/1006_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://110.241.191.163:808/hls/23/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://123.160.20.172:85/tsfile/live/0126_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://118.77.205.171:9003/hls/37/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://123.160.20.172:85/tsfile/live/0132_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://110.241.191.163:808/hls/30/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://118.77.205.171:9003/hls/32/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://118.77.205.171:9003/hls/30/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://123.160.20.172:85/tsfile/live/0120_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://110.241.191.163:808/hls/49/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://123.160.20.172:85/tsfile/live/0142_1.m3u8?authid=0&key=txiptv&playlive=1": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://118.77.205.171:9003/hls/24/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  },
+  "http://110.241.191.163:808/hls/33/index.m3u8": {
+    "ok": false,
+    "raw_score": -100,
+    "score": 0.0,
+    "width": 0,
+    "height": 0,
+    "bitrate": 0,
+    "delay": 999,
+    "blur": 0
+  }
+}

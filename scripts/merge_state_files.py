@@ -117,6 +117,8 @@ def build_channel_report(channels, raw):
     report = {}
 
     for name, urls in channels.items():
+        if name == '电视频道':
+            continue
         total = 0
         usable = 0
         best_score = -1
