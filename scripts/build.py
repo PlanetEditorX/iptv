@@ -46,6 +46,10 @@ BLACKLIST = []
 UPSTREAM_BLOCKLIST = {}  # {url: {"fail_time": "...", "remove_time": "..."}}
 UPSTREAM_BLOCKLIST_FILE = STATE_DIR / "upstream_blocklist.json"
 
+# 统计每个上游源解析出的直播源数量 & 失败数量
+SOURCE_TOTAL = defaultdict(int)
+SOURCE_FAIL = defaultdict(int)
+
 def load_upstream_blocklist():
     if UPSTREAM_BLOCKLIST_FILE.exists():
         try:
@@ -402,13 +406,12 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
     THREADS = 4
 
     with ThreadPoolExecutor(max_workers=THREADS) as exe:
-        # 这里 future.result() 会返回 (score, from_cache)
         future_map = {exe.submit(quality_score, u): u for u in good_urls}
 
         for idx, future in enumerate(as_completed(future_map), start=1):
             time.sleep(random.uniform(0.1, 0.5))
             url = future_map[future]
-            score, cached_before = future.result()   # 正确接收两个值
+            score, cached_before = future.result()
 
             info = cache.get(url, {})
             w = info.get("width", 0)
@@ -417,17 +420,11 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
             blur = info.get("blur", 0)
             bitrate = info.get("bitrate", 0)
 
-            # bitrate 存在才显示
-            if bitrate and bitrate > 0:
-                mbps_text = f"码率：{bitrate / 1_000_000:.2f}Mbps，"
-            else:
-                mbps_text = ""   # 不显示码率字段
-
             print(
                 f"[{name}] {idx}/{total}  "
                 f"{'缓存' if cached_before else '检测'} => "
                 f"分辨率：{w}x{h}，"
-                f"{mbps_text}"
+                f"{f'码率：{bitrate/1_000_000:.2f}Mbps，' if bitrate else ''}"
                 f"延迟：{delay}s，清晰度：{blur:.1f}，总分：{score:.1f}",
                 flush=True
             )
@@ -435,15 +432,20 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
             results[url] = score
             meta[url] = (w, h, bitrate, delay, blur, score)
 
-            # 永久封禁逻辑
-            if score <= 0:
-                stream_fail[url] = stream_fail.get(url, 0) + 1
-            else:
-                src = URL_SOURCE.get(url)
-                if src:
+            # ===== 上游源统计 =====
+            src = URL_SOURCE.get(url)
+            if src:
+                SOURCE_TOTAL[src] += 1
+                if score <= 0:
+                    SOURCE_FAIL[src] += 1
+                else:
                     SOURCE_OK[src] = True
 
-    # 媒体频道过滤
+            # URL 永久封禁
+            if score <= 0:
+                stream_fail[url] = stream_fail.get(url, 0) + 1
+
+    # ===== 媒体频道过滤 =====
     if is_entertainment:
         filtered = {}
         for url, (w, h, bitrate, delay, blur, score) in meta.items():
@@ -467,7 +469,7 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
 
         results = filtered
 
-    # 统计
+    # ===== 统计 =====
     usable = sum(1 for s in results.values() if s > 0)
 
     best_url = None
@@ -705,21 +707,19 @@ def build_readme():
 def main(mode):
     OUTPUT_DIR.mkdir(exist_ok=True)
 
-    # 加载上游源
     live_sources = load_live_urls()
 
-    # 加载白名单 / 黑名单（全局）
     global WHITELIST, BLACKLIST
     WHITELIST = load_channel_whitelist()
     BLACKLIST = load_blacklist()
 
     channels = defaultdict(list)
 
-    # 初始化上游源状态
+    # 初始化
     for src, label in live_sources:
         SOURCE_OK[src] = False
 
-    # 解析所有上游源（只解析，不做成功/失败判断）
+    # 解析上游源
     for src, label in live_sources:
         try:
             content = fetch_text(src)
@@ -727,11 +727,7 @@ def main(mode):
         except Exception as e:
             print(f"[error] {src} -> {e}")
 
-    # ============================
-    # 先输出 TXT / M3U（这里会触发 detect_and_sort_urls，
-    # 在 detect_and_sort_urls 里会根据 score>0 设置 SOURCE_OK[src] = True）
-    # ============================
-
+    # 生成输出（会触发 detect_and_sort_urls）
     txt = build_output_txt(channels, mode)
     m3u = build_output_m3u(channels, mode)
 
@@ -739,7 +735,7 @@ def main(mode):
     (OUTPUT_DIR / f"channels_{mode}.m3u").write_text(m3u, encoding="utf-8")
 
     # ============================
-    # 检测跑完之后，再做上游源连续失败统计
+    # 上游源失败统计（最终版）
     # ============================
 
     updated_live_urls = []
@@ -747,36 +743,38 @@ def main(mode):
     today = datetime.now(cst).strftime("%Y-%m-%d")
 
     for src, label in live_sources:
-        ok = SOURCE_OK.get(src, False)
+        total = SOURCE_TOTAL.get(src, 0)
+        failed = SOURCE_FAIL.get(src, 0)
 
-        if ok:
+        # 没解析出直播源 → 视为失败
+        if total == 0:
+            failed = 1
+            total = 1
+
+        if failed == total:
+            # 全部失败
+            UPSTREAM_FAIL[src] = UPSTREAM_FAIL.get(src, 0) + 1
+            print(f"[source] {src} 全部失败（连续 {UPSTREAM_FAIL[src]} 次）")
+
+            if UPSTREAM_FAIL[src] >= 10:
+                # 永久删除
+                remove_date = (datetime.now(cst) + timedelta(days=30)).strftime("%Y-%m-%d")
+                UPSTREAM_BLOCKLIST[src] = {
+                    "fail_time": today,
+                    "remove_time": remove_date
+                }
+                print(f"[source] {src} 连续 10 次失败 → 已永久删除")
+                continue  # 不写入 updated_live_urls → 从 live_urls.txt 删除
+
+            updated_live_urls.append((src, label))
+        else:
+            # 有成功源 → 清零失败次数
             UPSTREAM_FAIL[src] = 0
+            updated_live_urls.append((src, label))
 
             if src in UPSTREAM_BLOCKLIST:
-                print(f"[source] {src} 恢复正常 → 从失败列表移除")
+                print(f"[source] {src} 恢复正常 → 从 blocklist 移除")
                 del UPSTREAM_BLOCKLIST[src]
-
-            updated_live_urls.append((src, label))
-            continue
-
-        UPSTREAM_FAIL[src] = UPSTREAM_FAIL.get(src, 0) + 1
-        fail_times = UPSTREAM_FAIL[src]
-
-        print(f"[source] {src} 全部失败（连续 {fail_times} 次）")
-
-        if fail_times < 10:
-            updated_live_urls.append((src, label))
-            continue
-
-        if src not in UPSTREAM_BLOCKLIST:
-            remove_date = (datetime.now(cst) + timedelta(days=30)).strftime("%Y-%m-%d")
-            UPSTREAM_BLOCKLIST[src] = {
-                "fail_time": today,
-                "remove_time": remove_date
-            }
-            print(f"[source] {src} 连续 10 次失败 → 已永久删除（记录到 UPSTREAM_BLOCKLIST")
-
-        # 不写入 updated_live_urls → 从 live_urls.txt 删除
 
     # 写回 live_urls.txt
     with LIVE_URLS_FILE.open("w", encoding="utf-8") as f:
@@ -789,10 +787,7 @@ def main(mode):
     save_upstream_blocklist(UPSTREAM_BLOCKLIST)
     save_upstream_fail(UPSTREAM_FAIL)
 
-    # 保存质量缓存
     save_all()
-
-    # 生成 README
     build_readme()
 
 # ============================
