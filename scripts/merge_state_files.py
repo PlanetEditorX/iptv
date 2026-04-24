@@ -212,15 +212,6 @@ def build_readme(report, upstream_blocklist):
     build_time = datetime.now(cst).strftime("%Y-%m-%d %H:%M:%S")
     html.append(f"⏱ **构建时间：{build_time} (CST)**\n\n")
 
-    # 失效上游源
-    if upstream_blocklist:
-        html.append("## ❌ 失效上游源（连续 10 次失败）\n")
-        for url, info in upstream_blocklist.items():
-            html.append(f"- `{url}`")
-            html.append(f"  - 失效时间：{info['fail_time']}")
-            html.append(f"  - 删除时间：{info['remove_time']}\n")
-        html.append("\n")
-
     # 总览统计
     total_channels = len(report)
     removed_channels = sum(1 for x in report.values() if x["removed"])
@@ -253,6 +244,15 @@ def build_readme(report, upstream_blocklist):
             f"<td>{status}</td>"
             f"</tr>"
         )
+
+    # 失效上游源
+    if upstream_blocklist:
+        html.append("## ❌ 失效上游源（连续 10 次失败）\n")
+        for url, info in upstream_blocklist.items():
+            html.append(f"- `{url}`")
+            html.append(f"  - 失效时间：{info['fail_time']}")
+            html.append(f"  - 删除时间：{info['remove_time']}\n")
+        html.append("\n")
 
     html.append("</table>\n")
 
