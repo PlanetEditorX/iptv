@@ -228,7 +228,7 @@ def build_readme(report, upstream_blocklist):
     # ============================
 
     html.append("## 📺 电视频道\n\n<table>")
-    html.append("<tr><th>频道</th><th>可用源/总源</th><th>最佳分辨率</th><th>最高得分</th><th>状态</th></tr>")
+    html.append("<tr><th>频道</th><th>可用源</th><th>最佳分辨率</th><th>最高得分</th><th>状态</th></tr>")
 
     tv_items = [(name, info) for name, info in report.items() if info["type"] == "tv"]
 
@@ -237,7 +237,7 @@ def build_readme(report, upstream_blocklist):
         html.append(
             f"<tr>"
             f"<td>{name}</td>"
-            f"<td>{info['usable']} / {info['total']}</td>"
+            f"<td>{info['usable']}</td>"
             f"<td>{info['best_res']}</td>"
             f"<td>{info['best_score']}</td>"
             f"<td>{status}</td>"
