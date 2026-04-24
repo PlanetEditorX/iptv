@@ -69,23 +69,23 @@ URL_SOURCE = {}
 SOURCE_OK = {}
 
 # 上游源连续失败计数
-SOURCE_FAIL_FILE = STATE_DIR / "source_fail.json"
+UPSTREAM_FAIL_FILE = STATE_DIR / "upstream_fail.json"
 
-def load_source_fail():
-    if SOURCE_FAIL_FILE.exists():
+def load_upstream_fail():
+    if UPSTREAM_FAIL_FILE.exists():
         try:
-            return json.loads(SOURCE_FAIL_FILE.read_text(encoding="utf-8"))
+            return json.loads(UPSTREAM_FAIL_FILE.read_text(encoding="utf-8"))
         except:
             return {}
     return {}
 
-def save_source_fail(data):
-    SOURCE_FAIL_FILE.write_text(
+def save_upstream_fail(data):
+    UPSTREAM_FAIL_FILE.write_text(
         json.dumps(data, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
 
-SOURCE_FAIL = load_source_fail()
+UPSTREAM_FAIL = load_upstream_fail()
 
 # 全局频道质量报表
 CHANNEL_REPORT = {}
@@ -750,7 +750,7 @@ def main(mode):
         ok = SOURCE_OK.get(src, False)
 
         if ok:
-            SOURCE_FAIL[src] = 0
+            UPSTREAM_FAIL[src] = 0
 
             if src in UPSTREAM_BLOCKLIST:
                 print(f"[source] {src} 恢复正常 → 从失败列表移除")
@@ -759,8 +759,8 @@ def main(mode):
             updated_live_urls.append((src, label))
             continue
 
-        SOURCE_FAIL[src] = SOURCE_FAIL.get(src, 0) + 1
-        fail_times = SOURCE_FAIL[src]
+        UPSTREAM_FAIL[src] = UPSTREAM_FAIL.get(src, 0) + 1
+        fail_times = UPSTREAM_FAIL[src]
 
         print(f"[source] {src} 全部失败（连续 {fail_times} 次）")
 
@@ -787,7 +787,7 @@ def main(mode):
                 f.write(f"{src}\n")
 
     save_upstream_blocklist(UPSTREAM_BLOCKLIST)
-    save_source_fail(SOURCE_FAIL)
+    save_upstream_fail(UPSTREAM_FAIL)
 
     # 保存质量缓存
     save_all()

@@ -167,7 +167,7 @@ jobs:
           # 只提交真正需要跨运行保存的状态文件
           git add sources/state/stream_fail.json || true
           git add sources/state/upstream_blocklist.json || true
-          git add sources/state/source_fail.json || true
+          git add sources/state/upstream_fail.json || true
           git add sources/live_urls.txt || true
           git add sources/state/cache.json || true
 
