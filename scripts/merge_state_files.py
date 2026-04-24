@@ -66,7 +66,6 @@ def merge_raw():
 # ============================
 # 读取 channels_xxx.txt（可用源）
 # ============================
-
 def load_channels():
     channels = {}
 
@@ -76,7 +75,11 @@ def load_channels():
             if not line or "," not in line:
                 continue
             name, url = line.split(",", 1)
-            channels.setdefault(name, []).append(url)
+
+            # 去重
+            url_list = channels.setdefault(name, [])
+            if url not in url_list:
+                url_list.append(url)
 
     return channels
 
