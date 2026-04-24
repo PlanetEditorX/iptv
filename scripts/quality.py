@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = ROOT / "sources/state"
 
 CACHE_FILE = STATE_DIR / "cache.json"
-FAIL_FILE  = STATE_DIR / "fail_count.json"
+STREAM_FAIL_FILE  = STATE_DIR / "stream_fail.json"
 
 # ============================
 # 全局缓存 + 失败计数
@@ -36,7 +36,7 @@ def save_json(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 cache = load_json(CACHE_FILE)
-fail_count = load_json(FAIL_FILE)
+stream_fail = load_json(STREAM_FAIL_FILE)
 
 # ============================
 # 静默运行子进程
@@ -123,9 +123,9 @@ def quality_score(url):
     # 更新失败计数
     with fail_lock:
         if failed:
-            fail_count[url] = fail_count.get(url, 0) + 1
+            stream_fail[url] = stream_fail.get(url, 0) + 1
         else:
-            fail_count[url] = 0
+            stream_fail[url] = 0
 
     # 评分
     if failed:
@@ -147,9 +147,9 @@ def quality_score(url):
     return score, False
 
 # ============================
-# 保存（cache + fail_count）
+# 保存（cache + stream_fail）
 # ============================
 
 def save_all():
     save_json(CACHE_FILE, cache)
-    save_json(FAIL_FILE, fail_count)
+    save_json(STREAM_FAIL_FILE, stream_fail)

@@ -21,7 +21,7 @@ RAW_FILES = [
     STATE_DIR / "raw_results_entertainment.json",
 ]
 
-FAIL_COUNT_FILE = STATE_DIR / "fail_count.json"
+STREAM_FAIL_FILE = STATE_DIR / "stream_fail.json"
 FAILED_SOURCES_FILE = STATE_DIR / "failed_sources.json"
 LIVE_URLS_FILE = SOURCES_DIR / "live_urls.txt"
 README_FILE = ROOT / "README.md"
@@ -158,11 +158,11 @@ def build_channel_report(channels, raw):
     return report
 
 # ============================
-# 判刑逻辑（fail_count / failed_sources）
+# 判刑逻辑（stream_fail / failed_sources）
 # ============================
 
 def recompute_fail(raw):
-    fail_count = load_json(FAIL_COUNT_FILE)
+    stream_fail = load_json(STREAM_FAIL_FILE)
     failed_sources = load_json(FAILED_SOURCES_FILE)
 
     cst = timezone(timedelta(hours=8))
@@ -170,11 +170,11 @@ def recompute_fail(raw):
 
     for url, info in raw.items():
         if info["score"] > 0:
-            fail_count[url] = 0
+            stream_fail[url] = 0
         else:
-            fail_count[url] = fail_count.get(url, 0) + 1
+            stream_fail[url] = stream_fail.get(url, 0) + 1
 
-        if fail_count[url] >= 10:
+        if stream_fail[url] >= 10:
             if url not in failed_sources:
                 remove_date = (datetime.now(cst) + timedelta(days=30)).strftime("%Y-%m-%d")
                 failed_sources[url] = {
@@ -182,7 +182,7 @@ def recompute_fail(raw):
                     "remove_time": remove_date
                 }
 
-    return fail_count, failed_sources
+    return stream_fail, failed_sources
 
 # ============================
 # live_urls 清理
@@ -296,9 +296,9 @@ def main():
     report = build_channel_report(channels, raw)
 
     print("=== 判刑 ===")
-    fail_count, failed_sources = recompute_fail(raw)
+    stream_fail, failed_sources = recompute_fail(raw)
 
-    save_json(FAIL_COUNT_FILE, fail_count)
+    save_json(STREAM_FAIL_FILE, stream_fail)
     save_json(FAILED_SOURCES_FILE, failed_sources)
 
     print("=== 清理 live_urls ===")

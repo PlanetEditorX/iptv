@@ -96,7 +96,7 @@ jobs:
           python3 scripts/merge_cache.py
 
       # ============================
-      # 统一判刑（fail_count / failed_sources / live_urls / README）
+      # 统一判刑（stream_fail / failed_sources / live_urls / README）
       # ============================
       - name: Merge state files
         run: |
@@ -165,7 +165,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
           # 只提交真正需要跨运行保存的状态文件
-          git add sources/state/fail_count.json || true
+          git add sources/state/stream_fail.json || true
           git add sources/state/failed_sources.json || true
           git add sources/state/source_fail.json || true
           git add sources/live_urls.txt || true

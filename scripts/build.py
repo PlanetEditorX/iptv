@@ -15,7 +15,7 @@ import random
 from quality import (
     quality_score,
     cache,
-    fail_count,
+    stream_fail,
     save_all
 )
 
@@ -389,8 +389,8 @@ def detect_and_parse(content, channels, source_url=None):
 # ============================
 
 def detect_and_sort_urls(name, urls, is_entertainment=False):
-    # 永久封禁：fail_count >= 10 的 URL 不再使用
-    urls = [u for u in list(set(urls)) if fail_count.get(u, 0) < 10]
+    # 永久封禁：stream_fail >= 10 的 URL 不再使用
+    urls = [u for u in list(set(urls)) if stream_fail.get(u, 0) < 10]
 
     good_urls = [u for u in urls if is_good_url(u)]
     total = len(good_urls)
@@ -437,7 +437,7 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
 
             # 永久封禁逻辑
             if score <= 0:
-                fail_count[url] = fail_count.get(url, 0) + 1
+                stream_fail[url] = stream_fail.get(url, 0) + 1
             else:
                 src = URL_SOURCE.get(url)
                 if src:
