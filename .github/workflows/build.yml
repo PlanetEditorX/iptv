@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: output-${{ matrix.name }}
-          path: output_${{ matrix.name }}/
+          path: output-${{ matrix.name }}/
 
       # 上传 raw_results + cache
       - name: Upload state artifact
