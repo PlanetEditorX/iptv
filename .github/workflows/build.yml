@@ -33,11 +33,7 @@ jobs:
 
       - name: Build ${{ matrix.name }}
         run: |
-          rm -rf output
           python3 scripts/build_job.py ${{ matrix.name }}
-
-          mkdir -p output_${{ matrix.name }}
-          mv output/* output_${{ matrix.name }}/
 
       # 上传频道输出（m3u / txt）
       - name: Upload output artifact
