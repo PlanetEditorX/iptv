@@ -557,7 +557,8 @@ def fetch_text(url, timeout=8, retries=3):
                 return ""
 
 def main(mode):
-    OUTPUT_DIR.mkdir(exist_ok=True)
+    # 强制创建 output 目录，避免 GitHub Actions 报错
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     global WHITELIST, BLACKLIST
     WHITELIST = load_channel_whitelist()
@@ -580,12 +581,18 @@ def main(mode):
         content = local_file.read_text(encoding="utf-8")
         detect_and_parse(content, channels, source_url="local_spider")
 
-    # 输出 TXT / M3U
+    # ============================
+    # 输出 TXT / M3U（永远生成文件）
+    # ============================
     txt = build_output_txt(channels, mode)
     m3u = build_output_m3u(channels, mode)
 
-    (OUTPUT_DIR / f"channels_{mode}.txt").write_text(txt, encoding="utf-8")
-    (OUTPUT_DIR / f"channels_{mode}.m3u").write_text(m3u, encoding="utf-8")
+    txt_path = OUTPUT_DIR / f"channels_{mode}.txt"
+    m3u_path = OUTPUT_DIR / f"channels_{mode}.m3u"
+
+    # 即使为空也写入，避免 mv output/* 报错
+    txt_path.write_text(txt or "", encoding="utf-8")
+    m3u_path.write_text(m3u or "", encoding="utf-8")
 
     # 保存测速缓存
     save_all(mode)
