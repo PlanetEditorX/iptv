@@ -162,25 +162,22 @@ def build_channel_report(channels, raw):
 # ============================
 
 def recompute_fail(raw):
+    # 失败直播源
     stream_fail = load_json(STREAM_FAIL_FILE)
+    # 上游源黑名单
     upstream_blocklist = load_json(UPSTREAM_BLOCKLIST_FILE)
 
     cst = timezone(timedelta(hours=8))
     today = datetime.now(cst).strftime("%Y-%m-%d")
 
     for url, info in raw.items():
+        # 当测试通过失败次数归零
         if info["score"] > 0:
             stream_fail[url] = 0
         else:
+            # 测试失败后次数+1
             stream_fail[url] = stream_fail.get(url, 0) + 1
 
-        if stream_fail[url] >= 10:
-            if url not in upstream_blocklist:
-                remove_date = (datetime.now(cst) + timedelta(days=30)).strftime("%Y-%m-%d")
-                upstream_blocklist[url] = {
-                    "fail_time": today,
-                    "remove_time": remove_date
-                }
 
     return stream_fail, upstream_blocklist
 
