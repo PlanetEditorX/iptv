@@ -22,7 +22,7 @@ RAW_FILES = [
 ]
 
 STREAM_FAIL_FILE = STATE_DIR / "stream_fail.json"
-FAILED_SOURCES_FILE = STATE_DIR / "failed_sources.json"
+UPSTREAM_BLOCKLIST_FILE = STATE_DIR / "upstream_blocklist.json"
 LIVE_URLS_FILE = SOURCES_DIR / "live_urls.txt"
 README_FILE = ROOT / "README.md"
 
@@ -158,12 +158,12 @@ def build_channel_report(channels, raw):
     return report
 
 # ============================
-# 判刑逻辑（stream_fail / failed_sources）
+# 判刑逻辑（stream_fail / upstream_blocklist）
 # ============================
 
 def recompute_fail(raw):
     stream_fail = load_json(STREAM_FAIL_FILE)
-    failed_sources = load_json(FAILED_SOURCES_FILE)
+    upstream_blocklist = load_json(UPSTREAM_BLOCKLIST_FILE)
 
     cst = timezone(timedelta(hours=8))
     today = datetime.now(cst).strftime("%Y-%m-%d")
@@ -175,27 +175,27 @@ def recompute_fail(raw):
             stream_fail[url] = stream_fail.get(url, 0) + 1
 
         if stream_fail[url] >= 10:
-            if url not in failed_sources:
+            if url not in upstream_blocklist:
                 remove_date = (datetime.now(cst) + timedelta(days=30)).strftime("%Y-%m-%d")
-                failed_sources[url] = {
+                upstream_blocklist[url] = {
                     "fail_time": today,
                     "remove_time": remove_date
                 }
 
-    return stream_fail, failed_sources
+    return stream_fail, upstream_blocklist
 
 # ============================
 # live_urls 清理
 # ============================
 
-def rebuild_live_urls(failed_sources):
+def rebuild_live_urls(upstream_blocklist):
     if not LIVE_URLS_FILE.exists():
         return
 
     new_lines = []
     for line in LIVE_URLS_FILE.read_text(encoding="utf-8").splitlines():
         url = line.split("$")[0]
-        if url not in failed_sources:
+        if url not in upstream_blocklist:
             new_lines.append(line)
 
     LIVE_URLS_FILE.write_text("\n".join(new_lines), encoding="utf-8")
@@ -204,7 +204,7 @@ def rebuild_live_urls(failed_sources):
 # README（频道级报表）
 # ============================
 
-def build_readme(report, failed_sources):
+def build_readme(report, upstream_blocklist):
     html = []
     html.append("# IPTV 质量报表\n")
 
@@ -213,9 +213,9 @@ def build_readme(report, failed_sources):
     html.append(f"⏱ **构建时间：{build_time} (CST)**\n\n")
 
     # 失效上游源
-    if failed_sources:
+    if upstream_blocklist:
         html.append("## ❌ 失效上游源（连续 10 次失败）\n")
-        for url, info in failed_sources.items():
+        for url, info in upstream_blocklist.items():
             html.append(f"- `{url}`")
             html.append(f"  - 失效时间：{info['fail_time']}")
             html.append(f"  - 删除时间：{info['remove_time']}\n")
@@ -296,16 +296,16 @@ def main():
     report = build_channel_report(channels, raw)
 
     print("=== 判刑 ===")
-    stream_fail, failed_sources = recompute_fail(raw)
+    stream_fail, upstream_blocklist = recompute_fail(raw)
 
     save_json(STREAM_FAIL_FILE, stream_fail)
-    save_json(FAILED_SOURCES_FILE, failed_sources)
+    save_json(UPSTREAM_BLOCKLIST_FILE, upstream_blocklist)
 
     print("=== 清理 live_urls ===")
-    rebuild_live_urls(failed_sources)
+    rebuild_live_urls(upstream_blocklist)
 
     print("=== 生成 README ===")
-    build_readme(report, failed_sources)
+    build_readme(report, upstream_blocklist)
 
     print("=== merge_state_files 完成 ===")
 

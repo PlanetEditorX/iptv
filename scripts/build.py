@@ -43,24 +43,24 @@ BLACKLIST = []
 # 上游源失效记录（写入 README）
 # ============================
 
-FAILED_SOURCES = {}  # {url: {"fail_time": "...", "remove_time": "..."}}
-FAILED_SOURCES_FILE = STATE_DIR / "failed_sources.json"
+UPSTREAM_BLOCKLIST = {}  # {url: {"fail_time": "...", "remove_time": "..."}}
+UPSTREAM_BLOCKLIST_FILE = STATE_DIR / "upstream_blocklist.json"
 
-def load_failed_sources():
-    if FAILED_SOURCES_FILE.exists():
+def load_upstream_blocklist():
+    if UPSTREAM_BLOCKLIST_FILE.exists():
         try:
-            return json.loads(FAILED_SOURCES_FILE.read_text(encoding="utf-8"))
+            return json.loads(UPSTREAM_BLOCKLIST_FILE.read_text(encoding="utf-8"))
         except:
             return {}
     return {}
 
-def save_failed_sources(data):
-    FAILED_SOURCES_FILE.write_text(
+def save_upstream_blocklist(data):
+    UPSTREAM_BLOCKLIST_FILE.write_text(
         json.dumps(data, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
 
-FAILED_SOURCES = load_failed_sources()
+UPSTREAM_BLOCKLIST = load_upstream_blocklist()
 
 # URL → 上游源映射
 URL_SOURCE = {}
@@ -606,24 +606,24 @@ def build_readme():
     # ============================
     # 清理过期失效上游源（超过 30 天）
     # ============================
-    global FAILED_SOURCES
+    global UPSTREAM_BLOCKLIST
     now = datetime.now(cst)
 
     cleaned = {}
-    for url, info in FAILED_SOURCES.items():
+    for url, info in UPSTREAM_BLOCKLIST.items():
         remove_time = datetime.strptime(info["remove_time"], "%Y-%m-%d")
         if now.date() <= remove_time.date():
             cleaned[url] = info
 
-    FAILED_SOURCES = cleaned
-    save_failed_sources(FAILED_SOURCES)
+    UPSTREAM_BLOCKLIST = cleaned
+    save_upstream_blocklist(UPSTREAM_BLOCKLIST)
 
     # ============================
     # 输出失效上游源
     # ============================
-    if FAILED_SOURCES:
+    if UPSTREAM_BLOCKLIST:
         html.append("## ❌ 失效上游源（自动管理）\n")
-        for url, info in FAILED_SOURCES.items():
+        for url, info in UPSTREAM_BLOCKLIST.items():
             html.append(f"- **URL：** `{url}`")
             html.append(f"  - 失效时间：{info['fail_time']}")
             html.append(f"  - 彻底删除时间：{info['remove_time']}\n")
@@ -752,9 +752,9 @@ def main(mode):
         if ok:
             SOURCE_FAIL[src] = 0
 
-            if src in FAILED_SOURCES:
+            if src in UPSTREAM_BLOCKLIST:
                 print(f"[source] {src} 恢复正常 → 从失败列表移除")
-                del FAILED_SOURCES[src]
+                del UPSTREAM_BLOCKLIST[src]
 
             updated_live_urls.append((src, label))
             continue
@@ -768,13 +768,13 @@ def main(mode):
             updated_live_urls.append((src, label))
             continue
 
-        if src not in FAILED_SOURCES:
+        if src not in UPSTREAM_BLOCKLIST:
             remove_date = (datetime.now(cst) + timedelta(days=30)).strftime("%Y-%m-%d")
-            FAILED_SOURCES[src] = {
+            UPSTREAM_BLOCKLIST[src] = {
                 "fail_time": today,
                 "remove_time": remove_date
             }
-            print(f"[source] {src} 连续 10 次失败 → 已永久删除（记录到 FAILED_SOURCES）")
+            print(f"[source] {src} 连续 10 次失败 → 已永久删除（记录到 UPSTREAM_BLOCKLIST")
 
         # 不写入 updated_live_urls → 从 live_urls.txt 删除
 
@@ -786,7 +786,7 @@ def main(mode):
             else:
                 f.write(f"{src}\n")
 
-    save_failed_sources(FAILED_SOURCES)
+    save_upstream_blocklist(UPSTREAM_BLOCKLIST)
     save_source_fail(SOURCE_FAIL)
 
     # 保存质量缓存
