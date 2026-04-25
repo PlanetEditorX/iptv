@@ -346,7 +346,7 @@ def build_output_txt(channels, mode):
             # 远程源按质量排序
             sorted_remote = detect_and_sort_urls(name, remote_urls)
 
-            urls = sorted_remote[:3] + local_urls + sorted_remote[3:]
+            urls = sorted_remote + local_urls
 
             for url in urls:
                 lines.append(f"{name},{url}")
@@ -446,7 +446,7 @@ def build_output_m3u(channels, mode):
             sorted_remote = detect_and_sort_urls(name, remote_urls)
 
             # 本地源追加在后面
-            urls = sorted_remote[:3] + local_urls + sorted_remote[3:]
+            urls = sorted_remote + local_urls
 
             tvg_id = name
             logo = get_logo(name)
