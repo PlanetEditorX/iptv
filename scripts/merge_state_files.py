@@ -193,7 +193,7 @@ def build_readme(report):
     html.append("## 📊 总览统计\n")
     html.append(f"- **总频道数：** {total_channels}")
     html.append(f"- **保留频道数：** {kept_channels}")
-    html.append(f"- **已删除频道数：** {removed_channels}")
+    html.append(f"- **已过滤频道数：** {removed_channels}")
     html.append(f"- **总可用远程源数：** {total_usable}\n\n")
 
     # 电视频道
@@ -203,7 +203,7 @@ def build_readme(report):
     tv_items = [(name, info) for name, info in report.items() if info["type"] == "tv"]
 
     for name, info in sorted(tv_items):
-        status = '<span style="color:red">已删除</span>' if info["removed"] else '<span style="color:green">保留</span>'
+        status = '<span style="color:red">过滤</span>' if info["removed"] else '<span style="color:green">保留</span>'
         html.append(
             f"<tr><td>{name}</td><td>{info['usable']}</td>"
             f"<td>{info['best_res']}</td><td>{info['best_score']}</td><td>{status}</td></tr>"
@@ -218,9 +218,9 @@ def build_readme(report):
     ent_items = [(name, info) for name, info in report.items() if info["type"] == "entertainment"]
 
     for name, info in sorted(ent_items):
-        status = '<span style="color:red">已删除</span>' if info["removed"] else '<span style="color:green">保留</span>'
+        status = '<span style="color:red">过滤</span>' if info["removed"] else '<span style="color:green">保留</span>'
         html.append(
-            f"<tr><td>{name}</td><td>{info['usable']} / {info['total']}</td>"
+            f"<tr><td>{name}</td><td>{info['total']}</td>"
             f"<td>{info['best_res']}</td><td>{info['best_score']}</td><td>{status}</td></tr>"
         )
 

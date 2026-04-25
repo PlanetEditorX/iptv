@@ -642,7 +642,7 @@ def build_readme():
     html.append("## 📊 总览统计\n")
     html.append(f"- **总频道数：** {total_channels}")
     html.append(f"- **保留频道数：** {kept_channels}")
-    html.append(f"- **已删除频道数：** {removed_channels}")
+    html.append(f"- **已过滤频道数：** {removed_channels}")
     html.append(f"- **总可用源数：** {total_usable}\n\n")
 
     # ============================
@@ -657,7 +657,7 @@ def build_readme():
             continue
 
         star = " ⭐" if info["best_score"] >= 2000 and not info["removed"] else ""
-        status = '<span style="color:red">已删除</span>' if info["removed"] else '<span style="color:green">保留</span>'
+        status = '<span style="color:red">过滤</span>' if info["removed"] else '<span style="color:green">保留</span>'
 
         html.append(
             f"<tr>"
@@ -683,7 +683,7 @@ def build_readme():
             continue
 
         star = " ⭐" if info["best_score"] >= 2000 and not info["removed"] else ""
-        status = '<span style="color:red">已删除</span>' if info["removed"] else '<span style="color:green">保留</span>'
+        status = '<span style="color:red">过滤</span>' if info["removed"] else '<span style="color:green">保留</span>'
 
         html.append(
             f"<tr>"

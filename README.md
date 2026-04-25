@@ -7,7 +7,7 @@
 
 - **总频道数：** 6
 - **保留频道数：** 4
-- **已删除频道数：** 2
+- **已过滤频道数：** 2
 - **总可用远程源数：** 27
 
 
@@ -18,8 +18,8 @@
 <tr><td>CCTV1</td><td>5</td><td>1920x1080</td><td>97.2</td><td><span style="color:green">保留</span></td></tr>
 <tr><td>CCTV2</td><td>8</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
 <tr><td>CCTV3</td><td>9</td><td>1920x1080</td><td>97.6</td><td><span style="color:green">保留</span></td></tr>
-<tr><td>北京卫视</td><td>0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
-<tr><td>浙江卫视</td><td>0</td><td>N/A</td><td>0</td><td><span style="color:red">已删除</span></td></tr>
+<tr><td>北京卫视</td><td>0</td><td>N/A</td><td>0</td><td><span style="color:red">过滤</span></td></tr>
+<tr><td>浙江卫视</td><td>0</td><td>N/A</td><td>0</td><td><span style="color:red">过滤</span></td></tr>
 <tr><td>湖南卫视</td><td>5</td><td>3840x2160</td><td>100.0</td><td><span style="color:green">保留</span></td></tr>
 </table>
 

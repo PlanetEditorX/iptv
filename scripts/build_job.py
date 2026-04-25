@@ -51,6 +51,9 @@ UPSTREAM_BLOCKLIST = {}
 
 FILTERED_LOG = defaultdict(list)
 
+# 最低源数量
+MINI_RAW_URLS = 5
+
 # 自动创建必要目录（本地调试用）
 SOURCES_DIR.mkdir(parents=True, exist_ok=True)
 STATE_DIR.mkdir(parents=True, exist_ok=True)
@@ -368,7 +371,7 @@ def build_output_txt(channels, mode):
 
             raw_urls = channels[name]
 
-            if len(raw_urls) < 3:
+            if len(raw_urls) < MINI_RAW_URLS:
                 continue
 
             if is_numeric_channel(name):
@@ -505,7 +508,7 @@ def build_output_m3u(channels, mode):
 
             raw_urls = channels[name]
 
-            if len(raw_urls) < 4:
+            if len(raw_urls) < MINI_RAW_URLS:
                 continue
 
             if is_numeric_channel(name):
