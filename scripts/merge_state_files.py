@@ -212,19 +212,20 @@ def build_readme(report):
     html.append("</table>\n")
 
     # 媒体频道
-    html.append("## 🎬 媒体频道（远程源统计）\n\n<table>")
-    html.append("<tr><th>频道</th><th>可用源</th><th>最佳分辨率</th><th>最高得分</th><th>状态</th></tr>")
-
     ent_items = [(name, info) for name, info in report.items() if info["type"] == "entertainment"]
 
-    for name, info in sorted(ent_items):
-        status = '<span style="color:red">过滤</span>' if info["removed"] else '<span style="color:green">保留</span>'
-        html.append(
-            f"<tr><td>{name}</td><td>{info['total']}</td>"
-            f"<td>{info['best_res']}</td><td>{info['best_score']}</td><td>{status}</td></tr>"
-        )
+    if ent_items:  # 只有在存在媒体频道时才生成
+        html.append("## 🎬 媒体频道（远程源统计）\n\n<table>")
+        html.append("<tr><th>频道</th><th>可用源</th><th>最佳分辨率</th><th>最高得分</th><th>状态</th></tr>")
 
-    html.append("</table>\n")
+        for name, info in sorted(ent_items):
+            status = '<span style="color:red">过滤</span>' if info["removed"] else '<span style="color:green">保留</span>'
+            html.append(
+                f"<tr><td>{name}</td><td>{info['total']}</td>"
+                f"<td>{info['best_res']}</td><td>{info['best_score']}</td><td>{status}</td></tr>"
+            )
+
+        html.append("</table>\n")
 
     README_FILE.write_text("\n".join(html), encoding="utf-8")
 
