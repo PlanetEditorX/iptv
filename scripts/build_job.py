@@ -349,14 +349,20 @@ def build_output_txt(channels, mode):
             # 远程源按质量排序
             sorted_remote = detect_and_sort_urls(name, remote_urls)
 
-            # 高质量远程源（score ≥ 80）
-            high_remote = [u for u in sorted_remote if cache.get(normalize_url(u), {}).get("score", 0) >= 80]
+            def get_score(u):
+                return cache.get(normalize_url(u), {}).get("score", 0)
 
-            # 低质量远程源（score < 80）
-            low_remote = [u for u in sorted_remote if cache.get(normalize_url(u), {}).get("score", 0) < 80]
+            # 高质量（> 90）
+            high_remote = [u for u in sorted_remote if get_score(u) > 90]
 
-            # 最终顺序：高质量远程 → 本地源 → 低质量远程
-            urls = high_remote + local_urls + low_remote
+            # 中质量（90 ≥ score ≥ 80）
+            mid_remote = [u for u in sorted_remote if 90 >= get_score(u) >= 80]
+
+            # 低质量（< 80）直接丢弃，不加入最终列表
+            # low_remote = [u for u in sorted_remote if get_score(u) < 80]
+
+            # 最终顺序：高质量 → 本地源 → 中质量
+            urls = high_remote + local_urls + mid_remote
 
             for url in urls:
                 lines.append(f"{name},{url}")
@@ -455,14 +461,20 @@ def build_output_m3u(channels, mode):
             # 远程源按质量排序
             sorted_remote = detect_and_sort_urls(name, remote_urls)
 
-            # 高质量远程源（score ≥ 80）
-            high_remote = [u for u in sorted_remote if cache.get(normalize_url(u), {}).get("score", 0) >= 80]
+            def get_score(u):
+                return cache.get(normalize_url(u), {}).get("score", 0)
 
-            # 低质量远程源（score < 80）
-            low_remote = [u for u in sorted_remote if cache.get(normalize_url(u), {}).get("score", 0) < 80]
+            # 高质量（> 90）
+            high_remote = [u for u in sorted_remote if get_score(u) > 90]
 
-            # 最终顺序：高质量远程 → 本地源 → 低质量远程
-            urls = high_remote + local_urls + low_remote
+            # 中质量（90 ≥ score ≥ 80）
+            mid_remote = [u for u in sorted_remote if 90 >= get_score(u) >= 80]
+
+            # 低质量（< 80）直接丢弃，不加入最终列表
+            # low_remote = [u for u in sorted_remote if get_score(u) < 80]
+
+            # 最终顺序：高质量 → 本地源 → 中质量
+            urls = high_remote + local_urls + mid_remote
 
             tvg_id = name
             logo = get_logo(name)
