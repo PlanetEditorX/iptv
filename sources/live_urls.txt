@@ -43,3 +43,4 @@ https://raw.githubusercontent.com/zilong7728/Collect-IPTV/refs/heads/main/best_s
 https://taoiptv.com/lives/50023.m3u?token=aca669e582447b39$taoiptv-1
 https://taoiptv.com/lives/50024.m3u?token=aca669e582447b39$taoiptv-2
 https://taoiptv.com/lives/51025.txt?token=aca669e582447b39$taoiptv-3
+https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt$咪咕
