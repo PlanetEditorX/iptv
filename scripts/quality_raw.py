@@ -162,7 +162,7 @@ def map_to_0_100(raw_score):
 # 质量检测（核心）
 # ============================
 
-def quality_score(url):
+def quality_score(url, source="unknown"):
     now = time.time()
 
     # 1. 缓存命中
@@ -212,7 +212,8 @@ def quality_score(url):
             "blur": blur,
             "raw_score": raw_score,
             "score": final_score,
-            "ts": now
+            "ts": now,
+            "source": source
         }
 
     # 7. 上报原始观测

@@ -279,7 +279,8 @@ def detect_and_sort_urls(name, urls, is_entertainment=False):
                     SOURCE_TOTAL[src] += 1
                 continue
 
-            future_map[exe.submit(quality_score, u)] = u
+            src = URL_SOURCE.get(u, "unknown")
+            future_map[exe.submit(quality_score, u, src)] = u
 
         for idx, future in enumerate(as_completed(future_map), start=1):
             url = future_map[future]
