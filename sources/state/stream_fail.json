@@ -4959,7 +4959,7 @@
   "https://live.264788.xyz/channel/chongqingweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=0d606a0ff89dc49b8efb489237c11095": 2,
   "http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000001096&channel-id=FifastbLive&livemode=1&mode=1&stbId=yu": 2,
   "http://123.129.70.178:9901/tsfile/live/0142_1.m3u8?authid=0&key=txiptv&playlive=1": 0,
-  "https://live.264788.xyz/channel/chongqingweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=a70f858363ae250a4fbf283111a42054": 2,
+  "https://live.264788.xyz/channel/chongqingweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=a70f858363ae250a4fbf283111a42054": 0,
   "https://zby.130519.xyz/PLTV/11/224/3221226171/index.m3u8": 2,
   "http://111.29.9.33:6610/000000001000/1000000001000001096/index.m3u8?Contentid=1000000001000001096&channel-id=bestzb&livemode=1&stbId=3": 2,
   "http://[2409:8087:1a0a:df::404b]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226409/index.m3u8": 2,
@@ -5198,7 +5198,7 @@
   "http://219.150.217.47:6610/PLTV1/1060/index.m3u8?icpid=dxrm1": 2,
   "http://[2409:8087:1a01:df::4077]/PLTV/88888888/224/3221226006/index.m3u8": 2,
   "http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226716/1.m3u8": 2,
-  "http://120.76.248.139/live/bfgd/4200000095.m3u8": 2,
+  "http://120.76.248.139/live/bfgd/4200000095.m3u8": 0,
   "http://cdn6.bkpcp.top/tl/tuiliu.php?id=hljws": 0,
   "http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=218.95.39.31%3A59999&u=http%3A%2F%2Fedge-cache02.live3.omd.sc96655.com%2Flive%2FhljwsH265_4000.m3u8+%24%E8%9C%80%E5%B0%8F%E6%9E%9C": 2,
   "http://1.31.14.70:54321/hls/15/index.m3u8": 0,
@@ -10928,5 +10928,6 @@
   "http://110.40.170.5:8889/fu4/live_ywds.php?id=13": 0,
   "http://110.40.170.5:8889/fu4/live_ywds.php?id=14": 0,
   "http://110.40.170.5:8889/fu4/live_ywds.php?id=46": 0,
-  "http://110.40.170.5:8889/fu4/live_ywdl.php?id=33": 0
+  "http://110.40.170.5:8889/fu4/live_ywdl.php?id=33": 0,
+  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=fe989468d0b518d9c0db324ac7036fda&wsTime=1777967885": 0
 }
