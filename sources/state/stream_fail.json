@@ -2527,7 +2527,7 @@
   "http://111.221.137.234:44330/tsfile/live/0126_1.m3u8?authid=0&key=txiptv&playlive=0": 2,
   "https://iptv.catvod.com/live.php?id=%E4%B8%9C%E6%96%B9%E5%8D%AB%E8%A7%86&line=2%24LR%E2%80%A214%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF13%E3%80%8F": 1,
   "https://live.264788.xyz/channel/dongfangweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=a98a89080092a7cf477ee2ef68844319": 0,
-  "http://198.204.228.26/live/dfwshd.m3u8": 2,
+  "http://198.204.228.26/live/dfwshd.m3u8": 0,
   "http://23.237.228.134/live3/dongfang.m3u8": 2,
   "https://live.goodiptv.club/api/sxg.php?id=dfwsH265_4000": 2,
   "http://219.150.217.47:6610/PLTV1/980/index.m3u8?icpid=dxrm1": 2,
@@ -10948,5 +10948,6 @@
   "https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1778083200-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-abfff4b7c487d1e78d8ab789a1146475&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c": 0,
   "http://183.129.255.66:8480/hls/7/index.m3u8": 0,
   "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=c2d2526fb44702e3761d03cbbd4f882d&wsTime=1778040035": 0,
-  "http://61.184.46.85:85/tsfile/live/1023_1.m3u8?authid=0%24%E8%8D%86%E5%B7%9E%E7%94%B5%E4%BF%A1&key=txiptv&playlive=1": 0
+  "http://61.184.46.85:85/tsfile/live/1023_1.m3u8?authid=0%24%E8%8D%86%E5%B7%9E%E7%94%B5%E4%BF%A1&key=txiptv&playlive=1": 0,
+  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=fb8bd5a11023df10dc5967995486cb23&wsTime=1778054296": 0
 }
