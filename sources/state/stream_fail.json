@@ -935,7 +935,7 @@
   "http://124.236.93.22:2380/ywotttv.bj.chinamobile.com/TVOD/88888888/224/3221226472/1.m3u8": 2,
   "http://z.b.bkpcp.top/m.php?id=cctv2": 0,
   "https://piccpndali.v.myalicdn.com/audio/cctv2_2.m3u8": 2,
-  "http://218.13.170.98:9901/tsfile/live/0002_1.m3u8": 2,
+  "http://218.13.170.98:9901/tsfile/live/0002_1.m3u8": 0,
   "http://61.184.46.85:85/tsfile/live/0002_1.m3u8?authid=0%24%E8%8D%86%E5%B7%9E%E7%94%B5%E4%BF%A1&key=txiptv&playlive=1": 0,
   "http://120.87.19.109:80/PLTV/88888973/224/3221225738/10000100000000060000000000334543_0.smil/01.m3u8?accountinfo=UoQbCSdhOfs+Fhzpjb+WON1faRQ9pU15SBx6EULzJM%2Fq63EjPL5%2FUXSVfEKzDq3x9ZwJZK5v8A25s5ynmqdLpAWZ1F4+6A1eDkDeh5XZlpvpn23wIF+ldb6dnBPa8zHj%2CEND&fmt=ts2hls%2C244%2C01.m3u8&tenantId=8601": 2,
   "http://[2409:8087:4c0a:22:1::11]:6410/170000001115/UmaiCHAN638727c125355/index.m3u8?AuthInfo=9kOOdBn7MFF%2F2bWjKgahUSPTZ4CK5oLfjaEYe9dogNMUNNEYLCPUtKY62j1Wp5u04wipypKUQ1TTuR2lXvBl5YpHqBJmlA19x22TD9bUOjk": 2,
@@ -4389,7 +4389,7 @@
   "http://107.150.60.122/live/szwshd.m3u8": 0,
   "http://cdn6.bkpcp.top/tl/tuiliu.php?id=szws": 0,
   "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226205/index.m3u8": 2,
-  "http://182.150.23.74:808/hls/20/index.m3u8": 2,
+  "http://182.150.23.74:808/hls/20/index.m3u8": 0,
   "http://222.214.208.34:59901/tsfile/live/0126_1.m3u8": 0,
   "http://yncbn.ks-cdn.gitv.tv/gitv_live/G_SHENZHEN-HQ/G_SHENZHEN-HQ.m3u8": 2,
   "http://112.123.243.37:50085/tsfile/live/1000_1.m3u8?authid=0&key=txiptv&playlive=0": 0,
@@ -11355,5 +11355,7 @@
   "http://101.66.198.224:9901/tsfile/live/0139_1.m3u8?authid=0%24LR%E2%80%A215%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF6%E3%80%8F&key=txiptv&playlive=0": 0,
   "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=e33a8c269bc2baa74b93046a029d898c&wsTime=1778476132": 0,
   "http://1.69.114.36:9901/tsfile/live/0117_1.m3u8?authid=0&key=txiptv&playlive=1": 0,
-  "http://101.66.198.224:9901/tsfile/live/0120_1.m3u8?authid=0%24LR%E2%80%A212%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF2%E3%80%8F&key=txiptv&playlive=0": 0
+  "http://101.66.198.224:9901/tsfile/live/0120_1.m3u8?authid=0%24LR%E2%80%A212%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF2%E3%80%8F&key=txiptv&playlive=0": 0,
+  "http://admin:admin@clnas0001.top:9981/stream/channelid/662033263?profile=pass": 0,
+  "http://admin:admin@clnas0001.top:9981/stream/channelid/1480951990?profile=pass": 0
 }
