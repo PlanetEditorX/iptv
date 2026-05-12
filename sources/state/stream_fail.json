@@ -11385,5 +11385,9 @@
   "https://t.freetv.fun/live/chcjia-ting-ying-yuan-4.m3u8": 0,
   "https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1778619600-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-81ec0665d1ee8ddaad08287b17b7b0b6&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c": 0,
   "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=f21935c86ef6f15f005e1f3b4c6c38a6&wsTime=1778587183": 0,
-  "http://1.69.114.36:9901/tsfile/live/1008_1.m3u8?authid=0&key=txiptv&playlive=1": 0
+  "http://1.69.114.36:9901/tsfile/live/1008_1.m3u8?authid=0&key=txiptv&playlive=1": 0,
+  "https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4_mbd.m3u8?auth_key=1778634000-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-ee4157a0adfd970856cdaf81bc13be93&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c": 0,
+  "https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1778634000-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-84a38c6608cb1e801cf029238e26d65b&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c": 0,
+  "http://fm1077.serv00.net/Smart.php?id=cctv13%24LR%E2%80%A213%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF13%E3%80%8F": 0,
+  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=fe2bf288d2480b481f95fe1ec101f6ad&wsTime=1778594419": 0
 }
