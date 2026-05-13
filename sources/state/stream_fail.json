@@ -11393,5 +11393,9 @@
   "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=1711f9701bb8475aff46112e96782cd8&wsTime=1778616000": 0,
   "https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1778673600-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-7609ae4b02dc7327eceed39dd033d4a5&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c": 0,
   "http://124.165.251.82:85/tsfile/live/0008_1.m3u8?authid=0%24LR%E2%80%A213%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF2%E3%80%8F&key=txiptv&playlive=1": 0,
-  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=b232506eba41c6c74417eef46c33a139&wsTime=1778637558": 0
+  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=b232506eba41c6c74417eef46c33a139&wsTime=1778637558": 0,
+  "http://183.223.157.33:9901/tsfile/live/0007_1.m3u8?authid=0%24LR%E2%80%A213%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF6%E3%80%8F&key=txiptv&playlive=1": 0,
+  "http://183.223.157.33:9901/tsfile/live/0019_1.m3u8?authid=0&key=txiptv&playlive=1": 0,
+  "http://183.223.157.33:9901/tsfile/live/0123_1.m3u8?authid=0%24LR%E2%80%A210%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF3%E3%80%8F&key=txiptv&playlive=1": 0,
+  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=84575cf83912cdd9a30e887a758bb24b&wsTime=1778644794": 0
 }
