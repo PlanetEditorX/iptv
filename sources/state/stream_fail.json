@@ -305,7 +305,7 @@
   "http://171.15.18.199:8180/TV00000000000000000009@HHZT": 4,
   "http://43.251.226.110:8880/play/476.m3u8": 0,
   "http://43.251.226.110:8880/play/617.m3u8": 0,
-  "http://120.76.248.139/live/bfgd/4200000128.m3u8": 4,
+  "http://120.76.248.139/live/bfgd/4200000128.m3u8": 0,
   "http://111.160.17.2:59901/tsfile/live/0001_10.m3u8?authid=0&key=txiptv&playlive=1": 4,
   "http://m.061899.xyz/mg/cctv9": 0,
   "http://43.251.226.110:8880/play/27.m3u8": 0,
@@ -11483,5 +11483,11 @@
   "http://bztv.tvbus.cc:8081/cdnlive/tjws.m3u8": 0,
   "http://183.10.180.218:212/tsfile/live/1014_1.m3u8": 0,
   "http://bztv.tvbus.cc:8081/cdnlive/jlws.m3u8": 0,
-  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=987e19ec7150919957716d3c3e2b47b3&wsTime=1778731217": 0
+  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=987e19ec7150919957716d3c3e2b47b3&wsTime=1778731217": 0,
+  "https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1778778000-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-8f6ac7e1efa802653a6fd85e473c63f9&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c": 0,
+  "http://183.10.180.218:212/tsfile/live/1129_1.m3u8": 0,
+  "https://iptv.catvod.com/live.php?id=%E5%8C%97%E4%BA%AC%E5%8D%AB%E8%A7%86%24LR%E2%80%A210%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF7%E3%80%8F": 0,
+  "http://113.141.220.55:9901/tsfile/live/0124_1.m3u8": 0,
+  "https://iptv.catvod.com/live.php?id=%E8%BE%BD%E5%AE%81%E5%8D%AB%E8%A7%86%24LR%E2%80%A212%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF11%E3%80%8F": 0,
+  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=1f51d02bc55d7a64bf4bf901a44dad87&wsTime=1778738457": 0
 }
