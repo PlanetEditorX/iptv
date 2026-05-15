@@ -1985,7 +1985,7 @@
   "http://111.29.9.38:6610/000000001000/1000000001000023734/index.m3u8?Contentid=1000000001000023734&channel-id=ystenlive&livemode=1&stbId=3": 2,
   "https://live.264788.xyz/channel/cctv10?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=5c17e973e6d2241c96beb2627f7dc3fe": 2,
   "https://piccpndali.v.myalicdn.com/audio/cctv10_2.m3u8": 2,
-  "http://61.184.46.85:85/tsfile/live/0010_1.m3u8?authid=0%24%C3%A8%EF%BF%BD%E2%80%A0%C3%A5%C2%B7%EF%BF%BD%C3%A7%E2%80%9D%C2%B5%C3%A4%C2%BF%C2%A1&key=txiptv&playlive=1": 2,
+  "http://61.184.46.85:85/tsfile/live/0010_1.m3u8?authid=0%24%C3%A8%EF%BF%BD%E2%80%A0%C3%A5%C2%B7%EF%BF%BD%C3%A7%E2%80%9D%C2%B5%C3%A4%C2%BF%C2%A1&key=txiptv&playlive=1": 0,
   "http://43.251.226.89:8080/play/11.m3u8": 2,
   "http://z.b.bkpcp.top/m.php?id=cctv10": 0,
   "http://107.150.60.122/live/cctv10hd.m3u8": 0,
@@ -3048,7 +3048,7 @@
   "https://iptv.catvod.com/live.php?id=%E5%A4%A9%E6%B4%A5%E5%8D%AB%E8%A7%86&line=2%24LR%E2%80%A218%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF11%E3%80%8F": 1,
   "http://1.94.31.214/php/py/k-web/ku9/py/socks5.py?ip=218.95.39.31%3A59999&u=http%3A%2F%2Fedge-cache02.live3.omd.sc96655.com%2Flive%2FtjwsH265_4000.m3u8+%24%E8%9C%80%E5%B0%8F%E6%9E%9C": 2,
   "https://t.freetv.fun/live/tian-jin-wei-shi-3.php": 0,
-  "https://live.264788.xyz/channel/tianjinweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=6cb7a48d729b22a36431f8ed1036f3c8": 2,
+  "https://live.264788.xyz/channel/tianjinweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=6cb7a48d729b22a36431f8ed1036f3c8": 0,
   "http://222.169.85.8:9901/tsfile/live/0135_1.m3u8?authid=0&key=txiptv&playlive=1": 2,
   "http://116.149.160.228:9003//hls/25/index.m3u8": 2,
   "http://223.95.198.3:8000/hls/26/index.m3u8": 2,
@@ -3435,7 +3435,7 @@
   "http://120.224.178.16:9901/tsfile/live/0142_1.m3u8?authid=0&key=txiptv&playlive=1": 2,
   "http://gslbserv.itv.cmvideo.cn:80/1.m3u8?Contentid=1000000001000028357&channel-id=FifastbLive&livemode=1&mode=1&stbId=yu": 2,
   "https://live.264788.xyz/channel/guangdongweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=d66348b222c74382e7cec90352efc43b": 0,
-  "https://live.264788.xyz/channel/guangdongweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=517b09b16a431a5fa7dbe1935d7a2400": 2,
+  "https://live.264788.xyz/channel/guangdongweishi?livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk&streamid=517b09b16a431a5fa7dbe1935d7a2400": 0,
   "http://k.061899.xyz/k.php?id=gdws": 0,
   "http://124.128.73.58:9901/tsfile/live/0125_1.m3u8?authid=0&key=txiptv&playlive=1": 2,
   "https://shyd.695847.xyz/cms001/ch00000090990000001550/index.m3u8": 2,
@@ -11652,5 +11652,8 @@
   "http://101.66.199.121:9901/tsfile/live/0142_1.m3u8?authid=0&key=txiptv&playlive=0": 0,
   "http://101.66.199.121:9901/tsfile/live/0143_1.m3u8?authid=0&key=txiptv&playlive=0": 0,
   "http://101.66.199.215:9901/tsfile/live/0121_1.m3u8?authid=0&key=txiptv&playlive=0": 0,
-  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=1cc636ae2224278d094128d8a12bfb52&wsTime=1778832069": 0
+  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=1cc636ae2224278d094128d8a12bfb52&wsTime=1778832069": 0,
+  "https://www.freetv.top/migu/641886773.m3u8?migutoken=03a1b82e35e58cd89a95034ecb29e77e50493397000ec2b1e4d1ce59af01e6420d6dbc068c8230ec03be3a35a20eed8714e0959e3570a08713a7a2e8d86085eabf8f1aa85744c80c38343988b2%24LR%E2%80%A219%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF14%E3%80%8F": 0,
+  "http://fm1077.serv00.net/Smart.php?id=cctv5plus%24LR%E2%80%A219%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF16%E3%80%8F": 0,
+  "http://tvcdn.stream3.hndt.com/tv/65c4a6d5017e1000b2b6ea2500000000_transios/playlist.m3u8?wsSecret=25f9e69969f8ddb6b87f5d72ea4735bd&wsTime=1778846321": 0
 }
