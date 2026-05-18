@@ -11816,5 +11816,19 @@
   "https://php.jdshipin.com:2096/TVOD/iptv.php?id=cctv5": 0,
   "https://php.jdshipin.com:2096/TVOD/iptv.php?id=cctv6": 0,
   "https://php.jdshipin.com:2096/TVOD/iptv.php?id=cctv7": 0,
-  "http://207.56.13.146:81/cdnlive/cctv13.m3u8": 0
+  "http://207.56.13.146:81/cdnlive/cctv13.m3u8": 0,
+  "http://59.39.89.130:60901/tsfile/live/0125_7.m3u8?authid=0&key=txiptv&playlive=1": 0,
+  "http://59.39.89.130:60901/tsfile/live/0125_7.m3u8?authid=0%24LR%E2%80%A29%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF2%E3%80%8F&key=txiptv&playlive=1": 0,
+  "http://docker.digital8.top/html/V4YD.php?access_token=DY0123_SPV4_471051813_V5reC&id=wsanhui": 0,
+  "http://59.39.89.130:60901/tsfile/live/0125_19.m3u8?authid=0%24LR%E2%80%A211%E2%80%A2IPV4%E3%80%8E%E7%BA%BF%E8%B7%AF6%E3%80%8F&key=txiptv&playlive=1": 0,
+  "http://docker.digital8.top/html/V4.php?access_token=DY0123_SPV4_471051813_V5reC&id=L02_wshenan": 0,
+  "http://docker.digital8.top/html/V4YD.php?access_token=DY0123_SPV4_471051813_V5reC&id=wshebei": 0,
+  "http://207.56.13.146:81/cdnlive/lyws.m3u8": 0,
+  "http://59.39.89.130:60901/tsfile/live/0001_1.m3u8?authid=0&key=txiptv&playlive=1": 0,
+  "https://php.jdshipin.com:2096/TVOD/iptv.php?id=cctv4": 0,
+  "https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1779123600-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-6d67c1619ca8c9e2fb2811560cd0f209&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c": 0,
+  "http://59.39.89.130:60901/tsfile/live/0006_1.m3u8?authid=0&key=txiptv&playlive=1": 0,
+  "https://php.jdshipin.com:2096/TVOD/iptv.php?id=cctv8": 0,
+  "http://59.39.89.130:60901/tsfile/live/0013_1.m3u8?authid=0&key=txiptv&playlive=1": 0,
+  "https://php.jdshipin.com:2096/TVOD/iptv.php?id=cctv13": 0
 }
